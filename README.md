@@ -1,137 +1,292 @@
-# Agentic Work System v6.0
+<div align="center">
 
-[![Turkish](https://img.shields.io/badge/lang-Turkish-red.svg)](./README.tr.md)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-6.0-green.svg)]()
+# 🚀 Antigravity Agentic Skills v6.0
+
+### The Operating System for AI Coding Agents
+
+[![Turkish](https://img.shields.io/badge/🇹🇷_Türkçe-Dokümantasyon-red?style=for-the-badge)](./README.tr.md)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+[![Version](https://img.shields.io/badge/Version-6.0-success?style=for-the-badge)]()
+[![Skills](https://img.shields.io/badge/Skills-138+-purple?style=for-the-badge)]()
+
+<br/>
 
 > **"If it's not written, it doesn't exist."** — *The Anti-Phantom Rule*
 
-This repository contains a complete **Operating System for Agents**, designed to standardize advanced agentic coding workflows. It enables AI models to maintain context, follow strict protocols, and utilize a vast library of specialized skills during pair-programming sessions.
+<br/>
 
-## ✨ What's New in v6.0
+**Transform your AI assistant into a specialized expert with 138+ skills, automatic context switching, and persistent memory.**
 
-- 🚀 **Auto-Trigger System** - No manual initialization needed
-- 🧠 **MCP Memory Integration** - Persistent state across sessions
-- 📦 **Smart Kit Selection** - Automatic skill loading based on keywords
-- ⚡ **Zero-Config Start** - Just prompt, system handles the rest
+[Get Started](#-quick-start) • [Features](#-key-features) • [Skills](#-skills-library) • [Installation](#-installation)
+
+</div>
 
 ---
 
-## 🏗️ System Architecture
+## 🎯 What is Antigravity?
 
-The system operates on a **"Context Injection"** model with **automatic triggering**. The AI loads specific rules and skills based on keywords in your prompt.
+Antigravity is a **plug-and-play skill system** that supercharges your AI coding assistant. Instead of generic responses, your AI becomes a specialized expert that:
+
+- 🧠 **Remembers context** across sessions with MCP Memory
+- 🎯 **Auto-selects the right tools** based on your prompt
+- 📚 **Loads specialized knowledge** for React, AWS, Security, and more
+- ⚡ **Works instantly** - just prompt naturally, no commands needed
+
+---
+
+## ✨ Key Features
+
+<table>
+<tr>
+<td width="50%">
+
+### 🚀 Zero-Config Auto-Trigger
+
+No initialization commands. No manual setup. Just start prompting.
+
+```
+You: "Create a React dashboard"
+
+AI automatically:
+✅ Detects "react" keyword
+✅ Loads FullStackKit
+✅ Activates react_expert skill
+✅ Starts building
+```
+
+</td>
+<td width="50%">
+
+### 🧠 Persistent Memory
+
+Your AI remembers decisions, preferences, and learnings across sessions.
+
+```
+Session 1: "Always use TypeScript"
+Session 2: AI remembers and applies it
+
+✅ Cross-session context
+✅ Project-specific memory
+✅ Learning from mistakes
+```
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 📦 Smart Kit Selection
+
+Automatic skill loading based on task context.
+
+| You Say | AI Loads |
+|---------|----------|
+| "React component" | FullStackKit |
+| "Docker deploy" | DevOpsKit |
+| "Fix security bug" | SecurityKit |
+| "Write prompt" | AIKit |
+
+</td>
+<td width="50%">
+
+### 🌐 138+ Specialized Skills
+
+Deep expertise in every major technology.
+
+- **Frontend:** React, Vue, CSS, Tailwind
+- **Backend:** Python, Node, APIs, Databases
+- **DevOps:** AWS, Docker, Kubernetes, Terraform
+- **AI/ML:** Prompt Engineering, RAG, LangChain
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🏗️ Architecture
 
 ```mermaid
-graph TD
-    A[User Prompt] -->|Auto-Analyze| B{Keyword Detection}
-    B -->|react, api, css| C[FullStackKit]
-    B -->|docker, aws, k8s| D[DevOpsKit]
-    B -->|prompt, ai, llm| E[AIKit]
-    B -->|security, auth| F[SecurityKit]
-    
-    subgraph "Auto-Trigger Engine"
-        G["GEMINI.md<br/>(Constitution v6.0)"]
-        H["MCP Memory<br/>(Persistent State)"]
-        I["skills_manifest.json<br/>(Skill Map)"]
+graph LR
+    subgraph "Your Prompt"
+        A["🗣️ Natural Language"]
     end
     
-    C -->|Auto-Load| J[react_expert]
-    C -->|Auto-Load| K[backend_api]
-    D -->|Auto-Load| L[aws_architect]
+    subgraph "Auto-Trigger Engine"
+        B["🔍 Keyword Detection"]
+        C["📦 Kit Selection"]
+        D["🧠 Memory Check"]
+    end
     
-    G -->|Inject| M((Active Session))
-    H -->|Restore| M
-    J -->|Inject| M
+    subgraph "Skill Kits"
+        E["🌐 FullStackKit"]
+        F["☁️ DevOpsKit"]
+        G["🤖 AIKit"]
+        H["🛡️ SecurityKit"]
+    end
     
-    style G fill:#f9f,stroke:#333
-    style H fill:#bbf,stroke:#333
-    style I fill:#bfb,stroke:#333
+    subgraph "Output"
+        I["⚡ Expert Response"]
+    end
+    
+    A --> B
+    B --> C
+    C --> D
+    D --> E & F & G & H
+    E & F & G & H --> I
+    
+    style A fill:#e1f5fe
+    style I fill:#c8e6c9
+    style E fill:#fff3e0
+    style F fill:#f3e5f5
+    style G fill:#fce4ec
+    style H fill:#ffebee
 ```
 
 ---
 
-## 🚀 Usage
+## 📦 Skills Library
 
-### Quick Start (v6.0 - Auto-Trigger)
-
-Simply start prompting. **No initialization command needed!**
-
-```
-You: "Create a React dashboard with user authentication"
-```
-
-The AI will automatically:
-1. ✅ Check MCP Memory for session state
-2. ✅ Detect keywords: `react`, `auth` → Select `FullStackKit` + `SecurityKit`
-3. ✅ Load skills: `react_expert`, `auth_patterns`
-4. ✅ Start working
-
-### Keyword Triggers
-
-| Keywords | Kit Selected | Skills Loaded |
-|----------|--------------|---------------|
-| react, css, database, api, sql | FullStackKit | react_expert, backend_api, database_design |
-| docker, aws, kubernetes, terraform | DevOpsKit | aws_architect, docker_optimization |
-| prompt, ai, llm, rag, agent | AIKit | prompt_engineering, rag_architecture |
-| security, auth, vuln, login | SecurityKit | secops_core, auth_patterns |
-| plan, agile, scrum, docs | ManagementKit | project_management, docs_readme |
-
----
-
-## 📁 Repository Structure
-
-```
-antigravity-agentic-skills/
-├── config/
-│   └── skills_manifest.json    # Kit definitions & skill mappings
-├── rules/
-│   └── GEMINI.md               # Constitution v6.0 (Auto-Trigger + MCP Memory)
-├── skills/                      # 138+ skill modules
-│   ├── react_expert/
-│   ├── backend_api/
-│   ├── aws_architect/
-│   └── ...
-└── workflows/
-    └── protokol_uygulama.md    # Legacy workflow (optional)
-```
-
----
-
-## 🛠️ Installation
-
-1. Clone the repository
-2. Copy contents to your local `.skillport` directory:
-   - Windows: `%USERPROFILE%\.skillport\`
-   - macOS/Linux: `~/.skillport/`
-3. Copy `rules/GEMINI.md` to your AI assistant's global rules
-4. Configure MCP Memory server (optional but recommended)
-
----
-
-## 📚 Skills Library (138+ Skills)
+<table>
+<tr>
+<td align="center" width="20%">
 
 ### 🌐 FullStackKit
-* **Target:** Web & Mobile, Databases, APIs
-* **Key Skills:** `react_expert`, `backend_api`, `database_design`, `python_pro`, `typescript_advanced`
+**Web & Mobile**
+
+`react_expert`
+`backend_api`
+`database_design`
+`typescript_advanced`
+`python_pro`
+
+</td>
+<td align="center" width="20%">
 
 ### ☁️ DevOpsKit
-* **Target:** Infrastructure, Cloud, CI/CD
-* **Key Skills:** `aws_architect`, `docker_optimization`, `kubernetes_specialist`, `terraform_engineer`
+**Infrastructure**
+
+`aws_architect`
+`docker_optimization`
+`kubernetes_specialist`
+`terraform_engineer`
+`deploy_cicd`
+
+</td>
+<td align="center" width="20%">
 
 ### 🤖 AIKit
-* **Target:** LLM Integration, RAG, Agents
-* **Key Skills:** `prompt_engineering`, `rag_architecture`, `agent_orchestration`, `langchain_patterns`
+**LLM & Agents**
+
+`prompt_engineering`
+`rag_architecture`
+`agent_orchestration`
+`langchain_patterns`
+`context_engineering`
+
+</td>
+<td align="center" width="20%">
 
 ### 🛡️ SecurityKit
-* **Target:** Audits, Penetration Testing
-* **Key Skills:** `secops_core`, `auth_patterns`, `better_auth`
+**Audits & Auth**
+
+`secops_core`
+`auth_patterns`
+`compliance_analyst`
+`better_auth`
+
+</td>
+<td align="center" width="20%">
 
 ### 📋 ManagementKit
-* **Target:** Documentation, Agile, Planning
-* **Key Skills:** `docs_readme`, `project_management`, `scrum_master`
+**Planning**
+
+`project_management`
+`scrum_master`
+`docs_readme`
+`roadmap_planner`
+
+</td>
+</tr>
+</table>
+
+---
+
+## ⚡ Quick Start
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/vuralserhat86/antigravity-agentic-skills.git
+```
+
+### 2️⃣ Copy Skills to Your System
+
+```bash
+# Windows
+copy skills\ %USERPROFILE%\.skillport\skills\
+
+# macOS/Linux
+cp -r skills/ ~/.skillport/skills/
+```
+
+### 3️⃣ Add GEMINI.md to Your AI's Rules
+
+Copy `rules/GEMINI.md` content to your AI assistant's global rules.
+
+### 4️⃣ Start Prompting! 🎉
+
+```
+"Create a React dashboard with authentication"
+```
+
+That's it! No initialization needed. The system auto-triggers.
+
+---
+
+## 🔄 How It Works
+
+```mermaid
+sequenceDiagram
+    participant U as 👤 You
+    participant A as 🤖 AI
+    participant M as 🧠 Memory
+    participant S as 📦 Skills
+    
+    U->>A: "Build a REST API"
+    A->>M: Check AntigravityState
+    M-->>A: Last Kit: FullStackKit
+    A->>A: Detect keyword: "API"
+    A->>S: Load backend_api skill
+    S-->>A: Skill instructions loaded
+    A->>U: Expert API implementation
+    A->>M: Save learnings
+```
+
+---
+
+## 🌟 Why Antigravity?
+
+| Without Antigravity | With Antigravity |
+|---------------------|------------------|
+| ❌ Generic AI responses | ✅ Expert-level code |
+| ❌ Forgets context each session | ✅ Persistent memory |
+| ❌ Manual skill specification | ✅ Auto-detection |
+| ❌ One-size-fits-all | ✅ 138+ specialized skills |
+| ❌ "Initialize system..." | ✅ Just prompt naturally |
 
 ---
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - see [LICENSE](LICENSE) for details.
+
+---
+
+<div align="center">
+
+**Built with ❤️ for the Agentic AI Community**
+
+[⬆ Back to Top](#-antigravity-agentic-skills-v60)
+
+</div>
