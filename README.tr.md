@@ -1,137 +1,292 @@
-# Agentic Work System v6.0
+<div align="center">
 
-[![English](https://img.shields.io/badge/lang-English-blue.svg)](./README.md)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-6.0-green.svg)]()
+# 🚀 Antigravity Agentic Skills v6.0
+
+### Yapay Zeka Kodlama Ajanları İçin İşletim Sistemi
+
+[![English](https://img.shields.io/badge/🇬🇧_English-Documentation-blue?style=for-the-badge)](./README.md)
+[![License](https://img.shields.io/badge/Lisans-MIT-blue?style=for-the-badge)](LICENSE)
+[![Version](https://img.shields.io/badge/Versiyon-6.0-success?style=for-the-badge)]()
+[![Skills](https://img.shields.io/badge/Skill-138+-purple?style=for-the-badge)]()
+
+<br/>
 
 > **"Yazılı değilse, yoktur."** — *The Anti-Phantom Rule*
 
-Bu depo, gelişmiş "Agentic Coding" (Otonom Kodlama) süreçlerini standartlaştırmak için tasarlanmış eksiksiz bir **Ajan İşletim Sistemi** içerir. Yapay zeka modellerinin bağlamı korumasını, sıkı protokollere uymasını ve pair-programming sırasında geniş bir yetenek kütüphanesini kullanmasını sağlar.
+<br/>
 
-## ✨ v6.0'daki Yenilikler
+**138+ skill, otomatik bağlam değiştirme ve kalıcı hafıza ile AI asistanınızı uzmanlaştırılmış bir kodlama ortağına dönüştürün.**
 
-- 🚀 **Otomatik Tetikleme** - Manuel başlatmaya gerek yok
-- 🧠 **MCP Memory Entegrasyonu** - Oturumlar arası kalıcı durum
-- 📦 **Akıllı Kit Seçimi** - Anahtar kelimelere göre otomatik skill yükleme
-- ⚡ **Sıfır Konfigürasyon** - Sadece prompt yaz, sistem gerisini halleder
+[Başla](#-hızlı-başlangıç) • [Özellikler](#-temel-özellikler) • [Skill'ler](#-skill-kütüphanesi) • [Kurulum](#-kurulum)
 
----
-
-## 🏗️ Sistem Mimarisi
-
-Sistem, **otomatik tetikleme** ile **"Context Injection"** (Bağlam Enjeksiyonu) modeliyle çalışır. AI, prompt'taki anahtar kelimelere göre kuralları ve yetenekleri dinamik olarak yükler.
-
-```mermaid
-graph TD
-    A[Kullanıcı Prompt'u] -->|Otomatik Analiz| B{Keyword Algılama}
-    B -->|react, api, css| C[FullStackKit]
-    B -->|docker, aws, k8s| D[DevOpsKit]
-    B -->|prompt, ai, llm| E[AIKit]
-    B -->|security, auth| F[SecurityKit]
-    
-    subgraph "Otomatik Tetikleme Motoru"
-        G["GEMINI.md<br/>(Anayasa v6.0)"]
-        H["MCP Memory<br/>(Kalıcı Durum)"]
-        I["skills_manifest.json<br/>(Yetenek Haritası)"]
-    end
-    
-    C -->|Otomatik Yükle| J[react_expert]
-    C -->|Otomatik Yükle| K[backend_api]
-    D -->|Otomatik Yükle| L[aws_architect]
-    
-    G -->|Enjekte| M((Aktif Oturum))
-    H -->|Geri Yükle| M
-    J -->|Enjekte| M
-    
-    style G fill:#f9f,stroke:#333
-    style H fill:#bbf,stroke:#333
-    style I fill:#bfb,stroke:#333
-```
+</div>
 
 ---
 
-## 🚀 Kullanım
+## 🎯 Antigravity Nedir?
 
-### Hızlı Başlangıç (v6.0 - Otomatik Tetikleme)
+Antigravity, AI kodlama asistanınızı **süper güçlü yapan tak-çalıştır bir skill sistemidir**. Genel cevaplar yerine, AI'ınız uzmanlaşmış bir ortağa dönüşür:
 
-Sadece prompt yaz. **Başlatma komutu gerekmez!**
+- 🧠 **Oturumlar arası bağlamı hatırlar** - MCP Memory ile
+- 🎯 **Doğru araçları otomatik seçer** - Prompt'a göre
+- 📚 **Uzmanlık bilgisi yükler** - React, AWS, Security ve daha fazlası
+- ⚡ **Anında çalışır** - Sadece prompt yaz, komut yok
+
+---
+
+## ✨ Temel Özellikler
+
+<table>
+<tr>
+<td width="50%">
+
+### 🚀 Sıfır Konfigürasyon
+
+Başlatma komutu yok. Manuel kurulum yok. Sadece prompt yaz.
 
 ```
-Sen: "Kullanıcı doğrulaması olan bir React dashboard oluştur"
-```
+Sen: "React dashboard oluştur"
 
 AI otomatik olarak:
-1. ✅ MCP Memory'den oturum durumunu kontrol eder
-2. ✅ Anahtar kelimeleri algılar: `react`, `auth` → `FullStackKit` + `SecurityKit` seçer
-3. ✅ Skill'leri yükler: `react_expert`, `auth_patterns`
-4. ✅ Çalışmaya başlar
-
-### Anahtar Kelime Tetikleyicileri
-
-| Anahtar Kelimeler | Seçilen Kit | Yüklenen Skill'ler |
-|-------------------|-------------|-------------------|
-| react, css, database, api, sql | FullStackKit | react_expert, backend_api, database_design |
-| docker, aws, kubernetes, terraform | DevOpsKit | aws_architect, docker_optimization |
-| prompt, ai, llm, rag, agent | AIKit | prompt_engineering, rag_architecture |
-| security, auth, vuln, login | SecurityKit | secops_core, auth_patterns |
-| plan, agile, scrum, docs | ManagementKit | project_management, docs_readme |
-
----
-
-## 📁 Depo Yapısı
-
-```
-antigravity-agentic-skills/
-├── config/
-│   └── skills_manifest.json    # Kit tanımları ve skill eşlemeleri
-├── rules/
-│   └── GEMINI.md               # Anayasa v6.0 (Otomatik Tetikleme + MCP Memory)
-├── skills/                      # 138+ skill modülü
-│   ├── react_expert/
-│   ├── backend_api/
-│   ├── aws_architect/
-│   └── ...
-└── workflows/
-    └── protokol_uygulama.md    # Eski workflow (opsiyonel)
+✅ "react" kelimesini algılar
+✅ FullStackKit yükler
+✅ react_expert skill aktif
+✅ İnşa başlar
 ```
 
+</td>
+<td width="50%">
+
+### 🧠 Kalıcı Hafıza
+
+AI, kararları, tercihleri ve öğrenilenleri oturumlar arası hatırlar.
+
+```
+Oturum 1: "Her zaman TypeScript kullan"
+Oturum 2: AI hatırlar ve uygular
+
+✅ Oturumlar arası bağlam
+✅ Projeye özel hafıza
+✅ Hatalardan öğrenme
+```
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 📦 Akıllı Kit Seçimi
+
+Görev bağlamına göre otomatik skill yükleme.
+
+| Sen Söylersin | AI Yükler |
+|--------------|----------|
+| "React component" | FullStackKit |
+| "Docker deploy" | DevOpsKit |
+| "Güvenlik açığı" | SecurityKit |
+| "Prompt yaz" | AIKit |
+
+</td>
+<td width="50%">
+
+### 🌐 138+ Uzmanlaşmış Skill
+
+Her büyük teknolojide derin uzmanlık.
+
+- **Frontend:** React, Vue, CSS, Tailwind
+- **Backend:** Python, Node, APIs, Databases
+- **DevOps:** AWS, Docker, Kubernetes, Terraform
+- **AI/ML:** Prompt Engineering, RAG, LangChain
+
+</td>
+</tr>
+</table>
+
 ---
 
-## 🛠️ Kurulum
+## 🏗️ Mimari
 
-1. Depoyu klonla
-2. İçeriği yerel `.skillport` dizinine kopyala:
-   - Windows: `%USERPROFILE%\.skillport\`
-   - macOS/Linux: `~/.skillport/`
-3. `rules/GEMINI.md` dosyasını AI asistanının global kurallarına kopyala
-4. MCP Memory sunucusunu yapılandır (opsiyonel ama önerilir)
+```mermaid
+graph LR
+    subgraph "Prompt'un"
+        A["🗣️ Doğal Dil"]
+    end
+    
+    subgraph "Otomatik Tetikleme Motoru"
+        B["🔍 Keyword Algılama"]
+        C["📦 Kit Seçimi"]
+        D["🧠 Hafıza Kontrolü"]
+    end
+    
+    subgraph "Skill Kit'leri"
+        E["🌐 FullStackKit"]
+        F["☁️ DevOpsKit"]
+        G["🤖 AIKit"]
+        H["🛡️ SecurityKit"]
+    end
+    
+    subgraph "Çıktı"
+        I["⚡ Uzman Yanıt"]
+    end
+    
+    A --> B
+    B --> C
+    C --> D
+    D --> E & F & G & H
+    E & F & G & H --> I
+    
+    style A fill:#e1f5fe
+    style I fill:#c8e6c9
+    style E fill:#fff3e0
+    style F fill:#f3e5f5
+    style G fill:#fce4ec
+    style H fill:#ffebee
+```
 
 ---
 
-## 📚 Yetenek Kütüphanesi (138+ Skill)
+## 📦 Skill Kütüphanesi
+
+<table>
+<tr>
+<td align="center" width="20%">
 
 ### 🌐 FullStackKit
-* **Hedef:** Web & Mobil, Veritabanları, API'ler
-* **Önemli Skill'ler:** `react_expert`, `backend_api`, `database_design`, `python_pro`, `typescript_advanced`
+**Web & Mobil**
+
+`react_expert`
+`backend_api`
+`database_design`
+`typescript_advanced`
+`python_pro`
+
+</td>
+<td align="center" width="20%">
 
 ### ☁️ DevOpsKit
-* **Hedef:** Altyapı, Bulut, CI/CD
-* **Önemli Skill'ler:** `aws_architect`, `docker_optimization`, `kubernetes_specialist`, `terraform_engineer`
+**Altyapı**
+
+`aws_architect`
+`docker_optimization`
+`kubernetes_specialist`
+`terraform_engineer`
+`deploy_cicd`
+
+</td>
+<td align="center" width="20%">
 
 ### 🤖 AIKit
-* **Hedef:** LLM Entegrasyonu, RAG, Ajanlar
-* **Önemli Skill'ler:** `prompt_engineering`, `rag_architecture`, `agent_orchestration`, `langchain_patterns`
+**LLM & Ajanlar**
+
+`prompt_engineering`
+`rag_architecture`
+`agent_orchestration`
+`langchain_patterns`
+`context_engineering`
+
+</td>
+<td align="center" width="20%">
 
 ### 🛡️ SecurityKit
-* **Hedef:** Denetimler, Sızma Testleri
-* **Önemli Skill'ler:** `secops_core`, `auth_patterns`, `better_auth`
+**Denetim & Auth**
+
+`secops_core`
+`auth_patterns`
+`compliance_analyst`
+`better_auth`
+
+</td>
+<td align="center" width="20%">
 
 ### 📋 ManagementKit
-* **Hedef:** Dökümantasyon, Agile, Planlama
-* **Önemli Skill'ler:** `docs_readme`, `project_management`, `scrum_master`
+**Planlama**
+
+`project_management`
+`scrum_master`
+`docs_readme`
+`roadmap_planner`
+
+</td>
+</tr>
+</table>
+
+---
+
+## ⚡ Hızlı Başlangıç
+
+### 1️⃣ Repoyu Klonla
+
+```bash
+git clone https://github.com/vuralserhat86/antigravity-agentic-skills.git
+```
+
+### 2️⃣ Skill'leri Sistemine Kopyala
+
+```bash
+# Windows
+copy skills\ %USERPROFILE%\.skillport\skills\
+
+# macOS/Linux
+cp -r skills/ ~/.skillport/skills/
+```
+
+### 3️⃣ GEMINI.md'yi AI Kurallarına Ekle
+
+`rules/GEMINI.md` içeriğini AI asistanının global kurallarına kopyala.
+
+### 4️⃣ Prompt Yazmaya Başla! 🎉
+
+```
+"Kimlik doğrulaması olan bir React dashboard oluştur"
+```
+
+Bu kadar! Başlatma komutu gerekmiyor. Sistem otomatik tetiklenir.
+
+---
+
+## 🔄 Nasıl Çalışır?
+
+```mermaid
+sequenceDiagram
+    participant U as 👤 Sen
+    participant A as 🤖 AI
+    participant M as 🧠 Hafıza
+    participant S as 📦 Skill'ler
+    
+    U->>A: "REST API yap"
+    A->>M: AntigravityState kontrol
+    M-->>A: Son Kit: FullStackKit
+    A->>A: Keyword algıla: "API"
+    A->>S: backend_api skill yükle
+    S-->>A: Skill talimatları yüklendi
+    A->>U: Uzman API implementasyonu
+    A->>M: Öğrenilenleri kaydet
+```
+
+---
+
+## 🌟 Neden Antigravity?
+
+| Antigravity Olmadan | Antigravity İle |
+|---------------------|------------------|
+| ❌ Genel AI cevapları | ✅ Uzman seviyesi kod |
+| ❌ Her oturumda unutur | ✅ Kalıcı hafıza |
+| ❌ Manuel skill belirtme | ✅ Otomatik algılama |
+| ❌ Herkese aynı | ✅ 138+ uzmanlaşmış skill |
+| ❌ "Sistemi başlat..." | ✅ Sadece doğal prompt |
 
 ---
 
 ## 📜 Lisans
 
-Bu proje MIT Lisansı altında lisanslanmıştır - detaylar için [LICENSE](LICENSE) dosyasına bakın.
+MIT Lisansı - detaylar için [LICENSE](LICENSE) dosyasına bakın.
+
+---
+
+<div align="center">
+
+**Agentic AI Topluluğu için ❤️ ile yapıldı**
+
+[⬆ Başa Dön](#-antigravity-agentic-skills-v60)
+
+</div>
