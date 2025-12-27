@@ -95,9 +95,60 @@ Sistemi tam kapasiteyle kullanabilmek için ortamınızda aşağıdaki araçlar�
 
 ---
 
-## ⚙️ Kurulum
+## ⚙️ Kurulum (Skillport - Motor)
 
-Agentic Work System'i yerel makinenize kurmak için aşağıdaki adımları izleyin.
+Bu sistem, yetenekleri yönetmek ve sunmak için **Skillport** kullanır. `uvx` (Kurulumsuz) veya `pip` aracılığıyla kurabilirsiniz.
+
+### Seçenek A: Kurulumsuz (Önerilen)
+[uv](https://docs.astral.sh/uv/getting-started/installation/) aracının yüklü olmasını gerektirir.
+
+MCP ayarlarınıza (VS Code / Claude / Cursor) şunu ekleyin:
+```json
+{
+  "mcpServers": {
+    "skillport": {
+      "command": "uvx",
+      "args": [
+        "--from", "git+https://github.com/xenitV1/skillport",
+        "skillport"
+      ]
+    }
+  }
+}
+```
+
+### Seçenek B: Kalıcı Kurulum (Pip)
+```bash
+pip install git+https://github.com/xenitV1/skillport.git
+```
+MCP Yapılandırması:
+```json
+{
+  "mcpServers": {
+    "skillport": {
+      "command": "skillport",
+      "args": []
+    }
+  }
+}
+```
+
+### 🧠 Antigravity Yeteneklerini Kaydet (Beyin)
+Bu depoda sunulan yetenekleri yüklemek için şu komutu çalıştırın:
+
+```bash
+# uvx kullanıyorsanız
+uvx --from git+https://github.com/xenitV1/skillport skillport add https://github.com/xenitV1/skillport/tree/main/.agent/skills
+
+# pip ile yüklediyseniz
+python -m skillport add https://github.com/xenitV1/skillport/tree/main/.agent/skills
+```
+
+---
+
+## 🏗️ Sistem Kurulumu (Yerel Protokoller)
+
+Kuralları ve İş Akışlarını yerel makinenize kurmak için aşağıdaki adımları izleyin.
 
 ### 1. Veri Klasörlerini Oluşturun
 Sistem, kullanıcı ana dizininizde belirli klasör yollarına ihtiyaç duyar.

@@ -95,9 +95,60 @@ To fully utilize this system, ensure your environment is set up with the followi
 
 ---
 
-## ⚙️ Installation
+## ⚙️ Installation (Skillpot - The Engine)
 
-Follow these steps to install the Agentic Work System on your local machine.
+This system uses **Skillport** to manage and serve agent skills. You can install it via `uvx` (Zero Install) or `pip`.
+
+### Option A: Zero Install (Recommended)
+Requires [uv](https://docs.astral.sh/uv/getting-started/installation/) installed.
+
+Add this to your MCP settings (VS Code / Claude / Cursor):
+```json
+{
+  "mcpServers": {
+    "skillport": {
+      "command": "uvx",
+      "args": [
+        "--from", "git+https://github.com/xenitV1/skillport",
+        "skillport"
+      ]
+    }
+  }
+}
+```
+
+### Option B: Permanent Install (Pip)
+```bash
+pip install git+https://github.com/xenitV1/skillport.git
+```
+MCP Config:
+```json
+{
+  "mcpServers": {
+    "skillport": {
+      "command": "skillport",
+      "args": []
+    }
+  }
+}
+```
+
+### 🧠 Register Antigravity Skills (The Brain)
+To load the skills provided in this repository, run:
+
+```bash
+# If using uvx
+uvx --from git+https://github.com/xenitV1/skillport skillport add https://github.com/xenitV1/skillport/tree/main/.agent/skills
+
+# If installed via pip
+python -m skillport add https://github.com/xenitV1/skillport/tree/main/.agent/skills
+```
+
+---
+
+## 🏗️ System Setup (Local Protocols)
+
+Follow these steps to set up the configuration files (Rules & Workflows) on your local machine.
 
 ### 1. Create Data Directories
 The system relies on specific folder paths in your user home directory.
