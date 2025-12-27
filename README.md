@@ -1,4 +1,4 @@
-# Agentic Work System (Protocol v5.1)
+# Agentic Work System
 
 [![Turkish](https://img.shields.io/badge/lang-Turkish-red.svg)](./README.tr.md)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)

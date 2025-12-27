@@ -58,4 +58,4 @@ Görevi bitirmeden önce kendine sor: "Bu görev sırasında, gelecekte hatırla
 Eğer evet ise, bunu **Hafıza Dosyasına** ekle.
 
 ---
-Protokol v5.1 - Fully Integrated Pathing
+Protokol - Fully Integrated Pathing

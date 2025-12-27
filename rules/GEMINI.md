@@ -2,7 +2,7 @@
 description: Global Agent Kuralları - Tüm işlemlerde geçerli temel kurallar.
 ---
 
-# GEMINI.md - Global Rules v5.1
+# GEMINI.md - Global Rules
 
 > [!IMPORTANT]
 > Bu kurallar Anayasa niteliğindedir. Her görüşme ve görevde MUTLAK geçerlidir.
