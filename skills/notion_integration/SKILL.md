@@ -1,0 +1,133 @@
+---
+name: notion_integration
+router_kit: FullStackKit
+description: Notion workspace entegrasyonu - bilgi yönetimi, toplantı hazırlığı, araştırma dokümantasyonu ve spec-to-implementation workflow'ları.
+metadata:
+  skillport:
+    category: documentation
+    tags:
+      - notion
+      - documentation
+      - workflow
+      - integration
+---
+
+# 📝 Notion Integration
+
+> Notion workspace ile kapsamlı entegrasyon rehberi.
+
+---
+
+## 📋 İçindekiler
+
+1. [Knowledge Capture](#1-knowledge-capture)
+2. [Meeting Intelligence](#2-meeting-intelligence)
+3. [Research Documentation](#3-research-documentation)
+4. [Spec to Implementation](#4-spec-to-implementation)
+
+---
+
+## 1. Knowledge Capture
+
+Sohbetleri ve tartışmaları yapılandırılmış dokümantasyona dönüştürme.
+
+### Workflow
+```
+1. İçerik çıkar → 2. Yapılandır → 3. Konum belirle → 4. Sayfa oluştur → 5. Bağla
+```
+
+### İçerik Türleri
+| Tür | Yapı |
+|-----|------|
+| **Concept** | Tanım → Özellikler → Örnekler → Kullanım |
+| **How-To** | Önkoşullar → Adımlar → Doğrulama → Sorun Giderme |
+| **Decision** | Bağlam → Karar → Gerekçe → Sonuçlar |
+| **FAQ** | Kısa Cevap → Detay → Örnekler |
+
+### Hedef Konumlar
+- Wiki sayfası (genel bilgi)
+- Proje sayfası (proje spesifik)
+- Database (yapılandırılmış veri)
+
+---
+
+## 2. Meeting Intelligence
+
+Toplantı hazırlığı ve doküman oluşturma.
+
+### Workflow
+```
+1. Notion'da ara → 2. İçerik getir → 3. Claude ile zenginleştir → 4. Pre-read oluştur → 5. Agenda oluştur
+```
+
+### Doküman Türleri
+
+| Doküman | Hedef Kitle | İçerik |
+|---------|-------------|--------|
+| **Pre-Read** | İç ekip | Tam bağlam, metrikler, stratejik düşünceler |
+| **Agenda** | Tüm katılımcılar | Hedef, gündem, tartışma konuları |
+
+### Toplantı Tipleri
+- **Karar toplantısı**: Seçenekler → Öneri → Tartışma → Karar
+- **Durum toplantısı**: İlerleme → Gelecek iş → Engelleyiciler
+- **Beyin fırtınası**: Hedef → Kısıtlar → Fikirler → Sonraki adımlar
+
+---
+
+## 3. Research Documentation
+
+Notion workspace'te araştırma ve dokümantasyon.
+
+### Workflow
+```
+1. Ara → 2. Sayfaları getir → 3. Analiz et → 4. Sentezle → 5. Doküman oluştur
+```
+
+### Çıktı Formatları
+- **Araştırma Özeti**: Kısa, odaklı bulgular
+- **Kapsamlı Rapor**: Detaylı analiz ve öneriler
+- **Hızlı Brief**: Ana noktalar ve aksiyonlar
+
+### Best Practices
+1. Geniş arama yap, sonra daralt
+2. Kaynaklara her zaman bağlantı ver
+3. Güncellik kontrolü yap
+4. Çapraz doğrulama yap
+
+---
+
+## 4. Spec to Implementation
+
+Spesifikasyonları uygulama planlarına dönüştürme.
+
+### Workflow
+```
+1. Spec bul → 2. Getir ve analiz et → 3. Plan oluştur → 4. Task database bul → 5. Görevler oluştur → 6. İlerleme takibi
+```
+
+### Spec Analizi
+| Tip | İçerik |
+|-----|--------|
+| **Fonksiyonel** | User stories, özellikler, veri gereksinimleri |
+| **Non-Fonksiyonel** | Performans, güvenlik, ölçeklenebilirlik |
+| **Kabul Kriterleri** | Test edilebilir koşullar, benchmarklar |
+
+### Task Breakdown Patterns
+- **Bileşene göre**: DB, API, Frontend, Test
+- **Özelliğe göre**: Dikey dilimler (auth, data entry)
+- **Önceliğe göre**: P0, P1, P2
+
+---
+
+## 🔧 Ortak Araçlar
+
+```
+Notion:notion-search     → Sayfa/database ara
+Notion:notion-fetch      → İçerik getir
+Notion:notion-create-pages → Sayfa oluştur
+Notion:notion-update-page  → Sayfa güncelle
+```
+
+---
+
+*Notion Integration v1.0 - Birleştirilmiş Skill*

@@ -1,0 +1,136 @@
+---
+name: design_tokens
+router_kit: FullStackKit
+description: 8-point grid spacing, typography scale ve color system. Temel tasarım değişkenleri.
+metadata:
+  skillport:
+    category: design
+    tags:
+      - tokens
+      - spacing
+      - typography
+      - colors
+    related:
+      - design-components
+      - design-patterns
+      - design-responsive
+---
+
+# 🎨 Design Tokens
+
+> Temel tasarım değişkenleri: spacing, typography, colors.
+
+---
+
+## 📐 1. Spacing System (8-Point Grid)
+
+### Temel Kural
+Tüm boşluklar 8'in katları olmalı.
+
+```
+4px   - Minimum (micro)
+8px   - XS
+16px  - SM (icon-text arası)
+24px  - MD (card içi)
+32px  - LG (component'ler arası)
+48px  - XL (section içi gruplar)
+64px  - 2XL (section'lar arası)
+96px  - 3XL (major section'lar)
+128px - 4XL (hero padding)
+```
+
+### Padding Yapısı
+| Element | Padding |
+|---------|---------|
+| Card/Container | 24px veya 32px |
+| Button | 12px / 24px (V/H) |
+| Input | 12px / 16px (V/H) |
+| Section (Desktop) | 64px - 96px |
+| Section (Mobile) | 32px - 48px |
+
+---
+
+## 🔤 2. Typography Scale
+
+### Font Sizes
+```
+12px  - Caption / Helper
+14px  - Small / Metadata
+16px  - Body (Base)
+20px  - Lead paragraph
+24px  - H4
+32px  - H3
+40px  - H2
+48px  - H1
+64px  - Hero
+```
+
+### Line Height
+| Tip | Oran |
+|-----|------|
+| Başlıklar (H1-H3) | 1.2 - 1.3 |
+| Body text | 1.5 - 1.6 |
+| Small text | 1.4 |
+| Hero text | 1.1 |
+
+### Font Weight
+```
+400 - Regular (Body)
+500 - Medium (Subtle emphasis)
+600 - Semibold (Subheadings, buttons)
+700 - Bold (Headings)
+800 - Extra bold (Hero)
+```
+
+---
+
+## 🎨 3. Color System
+
+### Contrast Ratios (WCAG)
+| Tip | Minimum |
+|-----|---------|
+| Normal text | 4.5:1 |
+| Large text (18px+) | 3:1 |
+| UI components | 3:1 |
+| AAA ideal | 7:1 |
+
+### Palet Yapısı
+```
+Primary:   50, 100, 200...900, 950 (10 shade)
+Secondary: 10 shades
+Neutral:   10 shades
+Success/Warning/Error/Info: 5 shades
+```
+
+### Opacity Scale
+```
+100% - Default
+75%  - Disabled
+60%  - Placeholder
+40%  - Dividers
+20%  - Subtle backgrounds
+10%  - Hover overlays
+```
+
+---
+
+## 📦 4. Border Radius
+
+```
+0px    - Sharp
+4px    - Small (buttons)
+8px    - Medium (cards) ← Default
+16px   - Large (feature cards)
+9999px - Full (pills, avatars)
+```
+
+---
+
+## 🔗 İlgili Skill'ler
+- `design-components` - Button, card, input sizing
+- `design-patterns` - Layout patterns, visual hierarchy
+- `design-responsive` - Breakpoints, fluid typography
+
+---
+
+*Design Tokens v1.0*
