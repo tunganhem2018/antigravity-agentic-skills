@@ -4,7 +4,7 @@
         "library_root": "C:\\Users\\mSv\\.skillport\\skills",
         "skill_file_pattern": "{skill_name}\\SKILL.md"
     },
-    "total_skills": 138,
+    "total_skills": 137,
     "kits": {
         "FullStackKit": {
             "description": "Web & Mobile development, UI/UX, Database, Backend APIs",

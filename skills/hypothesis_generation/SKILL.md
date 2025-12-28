@@ -5,7 +5,7 @@ description: Bilimsel hipotez oluşturma, deney tasarımı ve test metodolojisi 
 metadata:
   skillport:
     category: research
-    tags: [architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, hypothesis generation, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, utilities, version control, workflow]      - testing
+    tags: [architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, hypothesis generation, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, utilities, version control, workflow]
 ---
 
 # 🔬 Hypothesis Generation
