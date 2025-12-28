@@ -29,16 +29,16 @@ This repository represents the **"Brain"** of the agent defined by the `Super Pr
 
 ```mermaid
 graph TD
-    User[User Prompt] -->|Query| Protocol[Super Protokol v2]
-    Protocol -->|Search Keywords| MCP[MCP Server (Skillport)]
-    MCP -->|Scans| Manifest[skills_manifest.json]
-    Manifest -->|Indexes| Library[Skill Library (.skillport/skills)]
-    Library -->|Loads Context| Agent[AI Agent Context]
-    Agent -->|Executes| Code[Perfect Code Generation]
+    User["User Prompt"] -->|Query| Protocol["Super Protokol v2"]
+    Protocol -->|Search Keywords| MCP["MCP Server (Skillport)"]
+    MCP -->|Scans| Manifest["skills_manifest.json"]
+    Manifest -->|Indexes| Library["Skill Library (.skillport/skills)"]
+    Library -->|Loads Context| Agent["AI Agent Context"]
+    Agent -->|Executes| Code["Perfect Code Generation"]
     
     subgraph "Self-Healing Loop"
-    Audit[audit_skills.py] -->|Checks| Library
-    Heal[heal_skills.py] -->|Injects Metadata| Library
+    Audit["audit_skills.py"] -->|Checks| Library
+    Heal["heal_skills.py"] -->|Injects Metadata| Library
     end
 ```
 
