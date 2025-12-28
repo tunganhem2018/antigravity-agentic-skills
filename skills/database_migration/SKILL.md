@@ -5,9 +5,7 @@ description: Execute database migrations across ORMs and platforms with zero-dow
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - database_migration
-      - database_migration
+    tags: [schema change, flyway, liquibase, seed data, version control]
 
 ---
 

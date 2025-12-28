@@ -5,9 +5,7 @@ description: Hugging Face Transformers best practices including model loading, t
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - huggingface_transformers
-      - huggingface_transformers
+    tags: [nlp, bert, gpt, models, inference]
 
 ---
 

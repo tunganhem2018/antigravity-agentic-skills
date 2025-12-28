@@ -5,9 +5,7 @@ description: "Statistical modeling toolkit. OLS, GLM, logistic, ARIMA, time seri
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - python_data_stack
-      - python_data_stack
+    tags: [pandas, numpy, scipy, jupyter, analysis]
 
 ---
 

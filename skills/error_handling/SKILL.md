@@ -5,9 +5,7 @@ description: Master error handling patterns across languages including exception
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - error_handling
-      - error_handling
+    tags: [try-catch, sentry, logging, exceptions, debugging]
 
 ---
 

@@ -6,9 +6,7 @@ license: Complete terms in LICENSE.txt
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - canvas_design
-      - canvas_design
+    tags: [html5 canvas, webgl, fabricjs, drawing, graphics]
 
 ---
 

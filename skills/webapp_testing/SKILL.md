@@ -6,9 +6,7 @@ license: Complete terms in LICENSE.txt
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - webapp_testing
-      - webapp_testing
+    tags: [playwright, cypress, e2e, integration, browser]
 
 ---
 

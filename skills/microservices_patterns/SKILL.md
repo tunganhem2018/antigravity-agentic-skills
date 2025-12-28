@@ -5,9 +5,7 @@ description: Design microservices architectures with service boundaries, event-d
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - microservices_patterns
-      - microservices_patterns
+    tags: [saga, circuit breaker, api gateway, distributed systems, service mesh]
 
 ---
 

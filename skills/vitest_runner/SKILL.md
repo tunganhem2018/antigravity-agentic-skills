@@ -5,9 +5,7 @@ description: Modern JavaScript/TypeScript testing with Vitest including mocking 
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - vitest_runner
-      - vitest_runner
+    tags: [unit testing, jest compatible, vite, assertions, mocking]
 
 ---
 

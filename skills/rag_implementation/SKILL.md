@@ -5,9 +5,7 @@ description: Build Retrieval-Augmented Generation (RAG) systems for LLM applicat
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - rag_implementation
-      - rag_implementation
+    tags: [retrieval augmented generation, vector db, embedding, context, search]
 
 ---
 

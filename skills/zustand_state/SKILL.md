@@ -6,9 +6,7 @@ license: MIT
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - zustand_state
-      - zustand_state
+    tags: [lightweight state, react hooks, store, state management, minimalist]
 
 ---
 

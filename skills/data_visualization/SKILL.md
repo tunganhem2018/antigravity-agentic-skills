@@ -7,9 +7,7 @@ version: 1.0.0
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - data_visualization
-      - data_visualization
+    tags: [charts, d3, victory, recharts, dashboard]
 
 ---
 

@@ -10,9 +10,7 @@ allowed-tools: [Read]
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - state_management
-      - state_management
+    tags: [redux, context api, signals, observables, store]
 
 ---
 

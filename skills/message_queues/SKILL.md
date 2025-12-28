@@ -5,9 +5,7 @@ description: Async communication patterns using message brokers and task queues.
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - message_queues
-      - message_queues
+    tags: [rabbitmq, kafka, sqs, async, event bus]
 
 ---
 

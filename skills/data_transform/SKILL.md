@@ -5,9 +5,7 @@ description: Transform raw data into analytical assets using ETL/ELT patterns, S
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - data_transform
-      - data_transform
+    tags: [etl, pipeline, pandas, json manipulation, normalization]
 
 ---
 

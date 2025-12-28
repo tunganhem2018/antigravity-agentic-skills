@@ -6,9 +6,7 @@ license: Proprietary. LICENSE.txt has complete terms
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - docx
-      - docx
+    tags: [word, office, document automation, report generation, xml]
 
 ---
 

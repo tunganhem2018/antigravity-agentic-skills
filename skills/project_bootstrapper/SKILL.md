@@ -5,9 +5,7 @@ description: Sets up new projects or improves existing projects with development
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - project_bootstrapper
-      - project_bootstrapper
+    tags: [scaffold, setup, init, boilerplate, generator]
 
 ---
 

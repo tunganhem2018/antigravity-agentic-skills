@@ -6,9 +6,7 @@ license: Proprietary. LICENSE.txt has complete terms
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - pdf
-      - pdf
+    tags: [generation, parsing, layout, report, document]
 
 ---
 

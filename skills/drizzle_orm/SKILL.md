@@ -6,9 +6,7 @@ license: MIT
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - drizzle_orm
-      - drizzle_orm
+    tags: [typescript orm, sql builder, database schema, migrations, type-safety]
 
 ---
 

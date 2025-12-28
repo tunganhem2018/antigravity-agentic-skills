@@ -6,9 +6,7 @@ tools: Read, Write, Bash, Glob, Grep, stripe, paypal, square, razorpay, braintre
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - payment_integration
-      - payment_integration
+    tags: [stripe, paypal, checkout, transaction, billing]
 
 ---
 

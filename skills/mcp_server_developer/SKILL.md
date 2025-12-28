@@ -5,9 +5,7 @@ description: Model Context Protocol (MCP) server implementation specialist for C
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - mcp_server_developer
-      - mcp_server_developer
+    tags: [protocol, json-rpc, tool-use, server, integration]
 
 ---
 

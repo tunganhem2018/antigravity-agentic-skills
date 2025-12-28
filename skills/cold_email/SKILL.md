@@ -5,9 +5,7 @@ description: Generate personalized cold email sequences (7-14 emails) with A/B t
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - cold_email
-      - cold_email
+    tags: [outreach, sales, copywriting, email marketing, lead gen]
 
 ---
 

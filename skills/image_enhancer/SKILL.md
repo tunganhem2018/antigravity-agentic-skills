@@ -5,9 +5,7 @@ description: Improves the quality of images, especially screenshots, by enhancin
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - image_enhancer
-      - image_enhancer
+    tags: [processing, opencv, filters, upscaling, optimization]
 
 ---
 

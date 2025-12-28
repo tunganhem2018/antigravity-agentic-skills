@@ -6,9 +6,7 @@ license: Complete terms in LICENSE.txt
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - nestjs_specialist
-      - nestjs_specialist
+    tags: [typescript, backend framework, modules, dependency injection, decorators]
 
 ---
 

@@ -5,9 +5,7 @@ description: When validating system performance under load, identifying bottlene
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - performance_engineering
-      - performance_engineering
+    tags: [optimization, latency, throughput, profiling, scalability]
 
 ---
 

@@ -5,9 +5,7 @@ description: Analyzes target audience demographics, psychographics, behaviors, a
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - audience_intelligence
-      - audience_intelligence
+    tags: [analytics, user segments, demographics, behavior, market research]
 
 ---
 

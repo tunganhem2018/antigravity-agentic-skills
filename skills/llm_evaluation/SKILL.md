@@ -5,9 +5,7 @@ description: Implement comprehensive evaluation strategies for LLM applications 
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - llm_evaluation
-      - llm_evaluation
+    tags: [benchmarking, accuracy, hallucination check, testing, metrics]
 
 ---
 

@@ -5,9 +5,7 @@ description: Builds form components and data collection interfaces including con
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - form_builder
-      - form_builder
+    tags: [react-hook-form, zod, validation, inputs, forms]
 
 ---
 

@@ -5,9 +5,7 @@ description: Prisma ORM patterns including Prisma Client usage, queries, mutatio
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - prisma_orm
-      - prisma_orm
+    tags: [schema, database, typescript, migrations, client]
 
 ---
 

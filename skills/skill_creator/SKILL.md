@@ -6,8 +6,7 @@ license: Complete terms in LICENSE.txt
 metadata:
   skillport:
     category: skills
-    tags:
-      - agent-skills
+    tags: [meta-skill, instruction writing, prompt engineering, agent training, definition]
 ---
 
 # Skill Creator

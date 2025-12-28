@@ -6,9 +6,7 @@ license: Proprietary. LICENSE.txt has complete terms
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - pptx
-      - pptx
+    tags: [powerpoint, slides, presentation, automation, office]
 
 ---
 

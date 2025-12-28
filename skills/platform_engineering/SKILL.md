@@ -5,9 +5,7 @@ description: Design and implement Internal Developer Platforms (IDPs) with self-
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - platform_engineering
-      - platform_engineering
+    tags: [infrastructure as code, developer experience, internal tools, kubernetes, cloud]
 
 ---
 

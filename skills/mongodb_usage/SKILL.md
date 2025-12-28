@@ -5,9 +5,7 @@ description: This skill should be used when user asks to "query MongoDB", "show 
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - mongodb_usage
-      - mongodb_usage
+    tags: [nosql, mongoose, aggregation, documents, sharding]
 
 ---
 

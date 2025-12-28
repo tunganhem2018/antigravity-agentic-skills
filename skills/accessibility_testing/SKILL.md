@@ -5,9 +5,7 @@ description: Guide for conducting comprehensive accessibility audits of code to 
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - accessibility_testing
-      - accessibility_testing
+    tags: [wcag, a11y, screen reader, aria, compliance]
 
 ---
 

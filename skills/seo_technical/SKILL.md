@@ -5,9 +5,7 @@ description: Performs technical SEO audits covering site speed, crawlability, in
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - seo_technical
-      - seo_technical
+    tags: [crawling, indexing, sitemap, meta tags, schema.org]
 
 ---
 

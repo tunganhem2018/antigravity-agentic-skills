@@ -5,9 +5,7 @@ description: Creates high-quality, SEO-optimized content that ranks in search en
 metadata:
   skillport:
     category: auto-healed
-    tags:
-      - content_strategist
-      - content_strategist
+    tags: [copywriting, seo, blogging, editorial calendar, storytelling]
 
 ---
 
