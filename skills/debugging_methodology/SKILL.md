@@ -66,4 +66,33 @@ git bisect run npm test
 
 ---
 
-*Debugging Methodology v1.0*
+*Debugging Methodology v1.1 - Enhanced*
+
+## 🔄 Workflow
+
+> **Kaynak:** [Scientific Method in Debugging](https://queue.acm.org/detail.cfm?id=1839676)
+
+### Aşama 1: Incident Response (Triage)
+- [ ] **Log**: Hata mesajını ve call stack'i kaydet.
+- [ ] **Reproduce**: Hatayı lokalde veya test ortamında en az 1 kez tekrar et.
+- [ ] **Environment**: Versiyon farklarını (Prod vs Dev) kontrol et.
+
+### Aşama 2: Root Cause Analysis (RCA)
+- [ ] **Bisection**: Sorunun başladığı commit'i bul (`git bisect`).
+- [ ] **Isolation**: Sistemi parçalara ayırarak hatayı izole et (Unit Test yaz).
+- [ ] **Hypothesis**: En olası nedenleri listele ve Binary Search ile ele.
+
+### Aşama 3: Resolution & Prevention
+- [ ] **Fix**: En az müdahale ile sorunu çözen kodu yaz.
+- [ ] **Verify**: Hem fix'i hem de regression (yan etki) olmadığını test et.
+- [ ] **Post-Mortem**: "Neden oldu?" ve "Nasıl önlenir?" sorularını yanıtla.
+
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1 | "Bende çalışıyor" tuzağına düşüldü mi? (Ortam farkı kontrolü) |
+| 2 | Fix yaparken test yazıldı mı? (TDD) |
+| 3 | Benzer hatalar başka yerde var mı tarandı mı? |
+
+---
+*Debugging Methodology v1.1 - Enhanced*

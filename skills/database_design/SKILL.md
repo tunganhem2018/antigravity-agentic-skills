@@ -224,4 +224,30 @@ ZSET    → Leaderboard, ranking
 
 ---
 
-*Database Design v1.0 - 2025 Best Practices*
+*Database Design v1.1 - Enhanced*
+
+## 🔄 Workflow
+
+> **Kaynak:** [System Design Primer - Database](https://github.com/donnemartin/system-design-primer#database)
+
+### Aşama 1: Requirements & Modeling
+- [ ] **Access Patterns**: Veri nasıl okunacak? (Read-heavy vs Write-heavy).
+- [ ] **Conceptual**: Varlıkları (Entities) ve ilişkileri (ER Diagram) çiz.
+- [ ] **Engine**: İlişkisel (Postgres) mi NoSQL (Mongo/Redis) mi karar ver.
+
+### Aşama 2: Logical Design
+- [ ] **Normalization**: 3NF'e kadar normalize et. (Performans için denormalize edilecek alanları belirle).
+- [ ] **Constraints**: Foreign Key, Unique, Not Null kısıtlarını tanımla.
+- [ ] **Indices**: Sorgu desenlerine göre index planı yap.
+
+### Aşama 3: Physical Implementation
+- [ ] **Migration**: SQL dosyalarını oluştur (V1__init.sql).
+- [ ] **Capacity**: veri tiplerini (INT vs BIGINT, VARCHAR vs TEXT) optimize et.
+- [ ] **Security**: Rol tabanlı erişim (RLS) ve şifreleme ayarlarını yap.
+
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1 | ER diyagramı tüm use-case'leri kapsıyor mu? |
+| 2 | Her tablo için Primary Key var mı? |
+| 3 | EXPLAIN ile sorgu maliyetleri kontrol edildi mi? |
