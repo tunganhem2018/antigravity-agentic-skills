@@ -1,44 +1,26 @@
 {
-    "manifest_version": "v9.3-Distributed",
-    "config": {
-        "library_root": "C:\\Users\\mSv\\.skillport\\skills",
-        "skill_file_pattern": "{skill_name}\\SKILL.md"
+    "version": "2.0.0",
+    "updated_at": "2026-01-03",
+    "metadata": {
+        "total_skills": 137,
+        "standard": "Evidence-Based Workflow 2025"
     },
-    "total_skills": 137,
     "kits": {
         "FullStackKit": {
-            "description": "Web & Mobile development, UI/UX, Database, Backend APIs",
+            "description": "Comprehensive toolkit for frontend and backend development",
             "auto_triggers": [
                 "react",
-                "vue",
-                "angular",
                 "nextjs",
-                "css",
-                "tailwind",
-                "html",
-                "database",
-                "db",
-                "api",
-                "rest",
-                "graphql",
+                "typescript",
+                "node",
+                "fullstack",
+                "webapp",
                 "frontend",
-                "ui",
-                "ux",
-                "backend",
-                "server",
-                "sql",
-                "nosql",
-                "mobile",
-                "android",
-                "ios",
-                "flutter",
-                "web"
+                "backend"
             ],
             "core_skills": [
                 "react_expert",
-                "backend_core",
-                "backend_api",
-                "database_design",
+                "nextjs_specialist",
                 "frontend_design",
                 "typescript_advanced",
                 "python_pro"
@@ -264,32 +246,32 @@
                 "xlsx",
                 "zustand_state"
             ]
+        },
+        "QualityKit": {
+            "description": "Testing, Quality Assurance, TDD, Bug Fixing",
+            "auto_triggers": [
+                "test",
+                "testing",
+                "tdd",
+                "unit test",
+                "integration test",
+                "e2e",
+                "qa",
+                "quality",
+                "bug",
+                "fix",
+                "debug",
+                "jest",
+                "monitor",
+                "validate"
+            ],
+            "core_skills": [
+                "tdd_workflow",
+                "testing",
+                "quality_validator",
+                "debugging_methodology",
+                "refactoring_strategies"
+            ]
         }
-    },
-    "QualityKit": {
-        "description": "Testing, Quality Assurance, TDD, Bug Fixing",
-        "auto_triggers": [
-            "test",
-            "testing",
-            "tdd",
-            "unit test",
-            "integration test",
-            "e2e",
-            "qa",
-            "quality",
-            "bug",
-            "fix",
-            "debug",
-            "jest",
-            "monitor",
-            "validate"
-        ],
-        "core_skills": [
-            "tdd_workflow",
-            "testing",
-            "verification_before_completion",
-            "systematic_debugging",
-            "refactoring_strategies"
-        ]
     }
 }

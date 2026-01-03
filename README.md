@@ -1,195 +1,100 @@
-
-<div align="center">
-
 # 🌌 Antigravity Agentic Skills
-### The Cognitive Engine & Long-Term Memory for Autonomous Agents
+### The Operating System for Autonomous Agents (2025 Edition)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/Skills-137-blue)](./skills)
-[![Health Pass](https://img.shields.io/badge/Audit-100%25%20Passing-brightgreen)](./scripts)
-[![Protocol](https://img.shields.io/badge/Protocol-Super%20v2-purple)](./workflows/super_protokol_v2.md)
-
-[🇬🇧 English Documentation](#-english-documentation) | [🇹🇷 Türkçe Dokümantasyon](#-türkçe-dokümantasyon)
-
-</div>
+[![Agentic Discipline](https://img.shields.io/badge/Discipline-Zero--Tolerance-red.svg)]()
+[![Skills](https://img.shields.io/badge/Skills-137--Evidence--Based-blue.svg)]()
+[![Protocol](https://img.shields.io/badge/Protocol-Super--Protokol--v2-green.svg)]()
 
 ---
 
-# 🇬🇧 English Documentation
+## 🌍 Language Options / Dil Seçenekleri
+- [English Documentation](#-english-documentation)
+- [Türkçe Dokümantasyon](#-türkçe-dokümantasyon)
 
-## 🚀 Overview
+---
 
-**Antigravity Agentic Skills** is not just a code repository; it is a **dynamic cognitive architecture** designed to give AI agents (like Claude/Gemini) long-term memory, specialized expertise, and rigorous engineering discipline.
+## 🇬🇧 English Documentation
 
-Typical AI sessions are ephemeral (amnesic). This system bridges that gap by providing a persistent, audited, and self-healing library of **137 Expert Skills** that the agent can "download" into its context on demand.
+**Antigravity** is a **Cognitive Architecture** project designed to transform AI agents (Claude Code, Gemini, etc.) from amnesic chat bots into specialized agents with long-term memory, deep expertise, and engineering discipline.
 
-## 🧠 System Architecture
-
-This repository represents the **"Brain"** of the agent defined by the `Super Protokol v2`.
-
+### 🧠 System Architecture
 ```mermaid
 graph TD
-    User["User Prompt"] -->|Query| Protocol["Super Protokol v2"]
-    Protocol -->|Search Keywords| MCP["MCP Server (Skillport)"]
-    MCP -->|Scans| Manifest["skills_manifest.json"]
-    Manifest -->|Indexes| Library["Skill Library (.skillport/skills)"]
-    Library -->|Loads Context| Agent["AI Agent Context"]
-    Agent -->|Executes| Code["Perfect Code Generation"]
-    
-    subgraph "Quality Assurance"
-    Audit["master_audit.py"] -->|38-Test Suite| Library
-    Enrich["enrich_massive.py"] -->|Tag Enrichment| Library
+    User["👤 User Prompt"] -->|Trigger| Protocol["📡 Super Protokol v2"]
+    subgraph "The Cognitive Engine"
+        Protocol -->|1. Discovery| MCP["🛠️ MCP Server (SkillPort)"]
+        MCP -->|2. Search| Manifest["📋 Skill Manifest"]
+        Manifest -->|3. Load| Skills["🧠 Audited Skills (137+)"]
     end
+    Skills -->|4. Execute| Workspace["💻 Local Workspace"]
+    Workspace -->|5. Verify| Proof["✅ Proof of Work"]
+    Proof -->|Done| User
 ```
 
-## 📂 Repository Structure
-
-The file system is the agent's brain structure.
-
-```ascii
-root/
-├── .gemini/                    # The Agent's Configuration
-│   └── GEMINI.md               # The Constitution (Iron Laws & Rules)
-│
-├── workflows/                  # Operational Logic
-│   └── super_protokol_v2.md    # The "Engine" (How to think & execute)
-│
-├── docs/                       # Governance & Maintenance
-│   └── SKILL_MANAGEMENT.md     # Engineering standards for adding skills
-│
-├── scripts/                    # Automation & Quality Assurance
-│   ├── master_audit.py         # 38-Test Comprehensive Audit Suite
-│   └── enrich_massive.py       # Mass Tag Enrichment for Discoverability
-│
-├── skills_manifest.json        # The Central Nervous System (Router)
-│
-└── skills/                     # The Knowledge Base (137 Skills)
-    ├── react_expert/           # Specialized React 19 knowledge
-    ├── aws_architect/          # Cloud infrastructure patterns
-    ├── python_pro/             # Type-safe, async Python mastery
-    └── ... (135 more)
+### 📡 The Protocol: `@/super_protokol_v2`
+The agent follows this lifecycle to ensure engineering discipline in every message:
+```mermaid
+stateDiagram-v2
+    [*] --> Phase0: Skill Acquisition
+    Phase0 --> Phase1: Environment Check
+    Phase1 --> Phase2: Strategy Alignment
+    Phase2 --> Phase3: Atomic Planning
+    Phase3 --> Phase4: TDD Cycle (Execution)
+    Phase4 --> Phase5: Git & Documentation
+    Phase5 --> [*]
 ```
 
-## 🌟 Key Components
-
-### 1. The Skills (`skills/`)
-Each folder matches a specific domain. The `SKILL.md` inside is not just text; it contains:
-*   **Role Definition:** Who the agent becomes (e.g., "Senior DevOps Engineer").
-*   **Trigger Metadata:** Hidden tags ensuring the skill is found by the search engine.
-*   **Instructions:** "Iron Rules" specific to that technology (e.g., "Always use `chmod +x`").
-
-### 2. The Engine (`workflows/super_protokol_v2.md`)
-This is the operating system. It forces the agent to follow a strict loop:
-1.  **Phase 0 (Skill Acquisition):** Search & Load necessary skills.
-2.  **Phase 1 (Alignment):** Clarify ambiguity with the user.
-3.  **Phase 2 (Planning):** Break down tasks into micro-steps.
-4.  **Phase 3 (Engineering):** Test-Driven Development (Red -> Green -> Refactor).
-5.  **Phase 4 (Handoff):** Verify and report.
-
-### 3. The Quality Assurance Scripts (`scripts/`)
-We adhere to the **"100% Initiative"**.
-*   `master_audit.py`: Comprehensive 38-test audit suite covering file structure, metadata, content quality, manifest integrity, and security.
-*   `enrich_massive.py`: Mass tag enrichment to ensure all skills have 20+ searchable tags for maximum discoverability.
-
-## 🛠️ Installation & Usage
-
-### Prerequisites
-
-**Skillport MCP Server Required:** This skill library requires the Skillport MCP server to function.
-
-👉 **Install Skillport:** [https://github.com/xenitV1/skillport](https://github.com/xenitV1/skillport)
-
-### Setup Steps
-
-1.  **Install Skillport** following the instructions at the link above.
-2.  **Clone this repository** to your local `~/.skillport/skills` directory.
-3.  **Configure MCP:** Ensure your MCP settings point to the skills directory:
-   ```json
-   "library_root": "%USERPROFILE%/.skillport/skills"
-   ```
-4.  **Activate Protocol:**
-   Start a conversation with:
-   > `/super_protokol_v2`
+### 📂 Directory Structure
+```text
+antigravity-agentic-skills/
+├── 🧠 skills/               # Knowledge Base (137+ Expertises)
+│   ├── react_expert/        # Skill Folder
+│   │   ├── SKILL.md         # Strategy & Workflow (Evidence-Based)
+│   │   ├── scripts/         # Automation Scripts (Execution)
+│   │   └── references/      # Deep Knowledge Docs (Knowledge)
+│   └── [136 other skills...]
+├── 📡 workflows/            # OS Layer (Protocols)
+├── 📜 GEMINI.md             # Global Rules & Memory
+└── 📋 skills_manifest.json  # Central Routing & Metadata
+```
 
 ---
 
-# 🇹🇷 Türkçe Dokümantasyon
+## 🇹🇷 Türkçe Dokümantasyon
 
-## 🚀 Genel Bakış
+**Antigravity**, AI ajanlarını (Claude Code, Gemini vb.) amnezik birer sohbet botundan öteye taşıyan, onlara uzun vadeli hafıza, uzmanlık ve mühendislik disiplini kazandıran bir **Bilişsel Mimari (Cognitive Architecture)** projesidir.
 
-**Antigravity Agentic Skills**, sıradan bir kod deposu değildir. Bu, AI ajanlarına (Claude/Gemini gibi) uzun süreli hafıza, profesyonel uzmanlık ve sıkı mühendislik disiplini kazandırmak için tasarlanmış **dinamik bir bilişsel mimaridir**.
+### 🧠 Sistem Mimarisi
+(Yukarıdaki şema ile aynı mimariyi izler: Kullanıcı -> Protokol -> SkillPort -> 137+ Denetlenmiş Yetenek)
 
-Standart AI oturumları unutkandır (her sohbet sıfırdan başlar). Bu sistem, ajanın ihtiyaç duyduğunda bağlamına yükleyebileceği, sürekli denetlenen ve kendi kendini onaran **137 Uzman Yetenek** kütüphanesi ile bu sorunu çözer.
+### 📡 Protokol: `@/super_protokol_v2`
+Ajanın her mesajda izlediği, mühendislik disiplinini garantiye alan yaşam döngüsü yukarıdaki Mermaid şemasında (Phase 0 - Phase 5) belirtilmiştir. Özellikle **Phase 4 (TDD)**, "Test yoksa kod yazma" kuralını dayatır.
 
-## 🧠 Sistem Mimarisi
-
-Bu repo, `Super Protokol v2` tarafından yönetilen **"Dijital Beyni"** temsil eder.
-
-*   **Kullanıcı İsteği:** Ajan önce isteği analiz eder.
-*   **Arama (Discovery):** Ajanın "kör" kalmaması için anlamsal arama yapar (örn: "AWS" derseniz "aws_architect" yeteneğini bulur).
-*   **Yükleme (Loading):** Sadece ilgili bilgi belleğe yüklenir (Context optimization).
-*   **İcra (Execution):** Yüklenen uzmanlıkla "TDD" (Test-Driven Development) kurallarına göre kod yazılır.
-
-## 📂 Klasör Yapısı ve Anlamları
-
-```ascii
-root/
-├── .gemini/                    # Ajan Konfigürasyonu
-│   └── GEMINI.md               # Anayasa (Değiştirilemez Kurallar)
-│
-├── workflows/                  # İşleyiş Mantığı
-│   └── super_protokol_v2.md    # "Motor" (Ajanın nasıl düşüneceğini belirler)
-│
-├── scripts/                    # Otomasyon & Kalite Güvence
-│   ├── master_audit.py         # 38-Test Kapsamlı Audit Suite
-│   └── enrich_massive.py       # Toplu Etiket Zenginleştirme
-│
-├── skills_manifest.json        # Merkezi Sinir Sistemi (Yönlendirici)
-│
-└── skills/                     # Bilgi Bankası (137 Yetenek)
-    ├── react_expert/           # React 19 ve Modern UI uzmanlığı
-    ├── secops_core/            # Güvenlik ve Pentest prosedürleri
-    └── ... (135 diğer yetenek)
+### 📂 Dosya Yapısı ve Hiyerarşi
+```text
+antigravity-agentic-skills/
+├── 🧠 skills/               # Bilgi Bankası (137+ Uzmanlık)
+│   ├── react_expert/        # Skill Klasörü
+│   │   ├── SKILL.md         # Strateji ve Workflow (Kanıta Dayalı)
+│   │   ├── scripts/         # Otomasyon Betikleri (Eylem)
+│   │   └── references/      # Derin Uzmanlık Dökümanları (Bilgi)
+├── 📡 workflows/            # İşletim Sistemi Katmanı
+├── 📜 GEMINI.md             # Global Kurallar ve Hafıza
+└── 📋 skills_manifest.json  # Merkezi Yönlendirme
 ```
 
-## 🌟 Temel Bileşenler
+---
 
-### 1. Yetenekler (`skills/`)
-Her klasör bir uzmanlık alanıdır. İçindeki `SKILL.md` dosyası şunları barındırır:
-*   **Rol Tanımı:** Ajan o an kime dönüşmeli? (Örn: "Kıdemli Sistem Mimarı").
-*   **Gizli Metadata:** Arama motorunun bu yeteneği %100 isabetle bulmasını sağlayan etiketler.
-*   **Talimatlar:** O teknolojiye özel katı kurallar.
-
-### 2. Motor (`workflows/super_protokol_v2.md`)
-Bu sistemin işletim sistemidir. Ajanı şu döngüye zorlar:
-1.  **Faz 0 (Edinim):** İşe başlamadan önce gereken yetenekleri "indir".
-2.  **Faz 1 (Hizalanma):** Kullanıcı ile hedefler konusunda anlaş.
-3.  **Faz 2 (Planlama):** İşi atomik parçalara böl (`task.md`).
-4.  **Faz 3 (Mühendislik):** Önce test yaz, sonra kod yaz (Red -> Green).
-5.  **Faz 4 (Teslim):** Kanıtla ve raporla.
-
-### 3. Kalite Güvence Scriptleri (`scripts/`)
-**"%100 İnisiyatifi"** gereği sistem asla hata kabul etmez.
-*   `master_audit.py`: Dosya yapısı, metadata, içerik kalitesi, manifest bütünlüğü ve güvenliği kapsayan 38-test audit suite.
-*   `enrich_massive.py`: Maksimum keşfedilebilirlik için tüm skill'lerin 20+ aranabilir etikete sahip olmasını sağlar.
-
-## 🛠️ Kurulum ve Kullanım
-
-### Ön Koşullar
-
-**Skillport MCP Sunucusu Gerekli:** Bu yetenek kütüphanesi, Skillport MCP sunucusunun kurulu olmasını gerektirir.
-
-👉 **Skillport'u Kurun:** [https://github.com/xenitV1/skillport](https://github.com/xenitV1/skillport)
-
-### Kurulum Adımları
-
-1.  **Skillport'u** yukarıdaki linkteki talimatlara göre kurun.
-2.  **Bu repoyu** lokal `~/.skillport/skills` dizinine klonlayın.
-3.  **Protokolü Başlatın:**
-   AI ile konuşurken sihirli sözcüğü söyleyin:
-   > `/super_protokol_v2`
+## 🛡️ Privacy & Security (Security First)
+The system is fully anonymized. All paths and commands rely on generic structures (e.g., `<USER>`, `~/.skillport/`). No personal data is stored.
+*Sistem tamamen anonimleştirilmiştir. Tüm yollar ve komutlar jenerik yapılara dayanır. Kişisel veri barındırmaz.*
 
 ---
-<div align="center">
-  <i>Designed for the future of Agentic Coding. Built with Discipline.</i>
-</div>
+
+## 🛠️ Installation / Kurulum
+1. Install **SkillPort MCP**: [SkillPort Repo](https://github.com/xenitV1/skillport)
+2. Clone this repo: `git clone https://github.com/vuralserhat86/antigravity-agentic-skills.git ~/.skillport/skills`
+3. Whisper to your Agent / Ajanınıza fısıldayın: `@/super_protokol_v2`
+
+---
+Built with **Zero-Tolerance Discipline** for the future of **Autonomous Engineering**.

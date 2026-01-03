@@ -1,104 +1,215 @@
 ---
-description: The Unified Super-Workflow. Combines dynamic skill retrieval with rigorous engineering discipline. Run this for ANY complex coding request.
+description: Unified Super-Workflow. Skill yükleme + mühendislik disiplini. Her karmaşık istek için çalıştır.
 ---
 
-# Super Protokol v2: The Intelligent Engine
+# Super Protokol v2: Zeki Motor
 
-This workflow acts as a "Super-Agent," fusing the user's dynamic skill archive with high-discipline engineering methodologies.
-
-## Phase 0: Dynamic Skill Acquisition (The "Protokol" Layer)
-
-**Goal:** Equip the agent with domain-specific knowledge before starting work.
-
-1.  **Analyze Prompt:** Extract key technologies (e.g., "React", "Python", "AWS") and intent.
-2.  **Search Skills:**
-    // turbo
-    ```javascript
-    // Search for relevant specialized skills
-    mcp_skillport_search_skills({ query: "<extracted_keywords>" })
-    ```
-3.  **Load Skills:**
-    *   Review search results.
-    *   **Filter:** Select up to 3 high-relevance skills (Score > 0.8 is a good baseline).
-    *   **Load:**
-        // turbo
-        ```javascript
-        mcp_skillport_load_skill({ skill_id: "<selected_skill_id>" })
-        ```
-    *   *Note: If no highly relevant skills are found, proceed with general knowledge.*
+> [!CAUTION]
+> ## 🇹🇷 DİL KURALI - MUTLAK VE DEĞİŞMEZ
+> 
+> | Alan | Dil | Örnek |
+> |------|-----|-------|
+> | Konuşma, açıklama, plan | **TÜRKÇE** | "Şimdi API oluşturacağız" |
+> | Kod, değişken, fonksiyon | İngilizce | `getUserById()` |
+> | Yorum satırları | Türkçe | `// Kullanıcıyı getir` |
+> | Commit mesajları | İngilizce | `feat: add login` |
+> 
+> **⚠️ HER MESAJDA BU KURALI KONTROL ET! İNGİLİZCEYE GEÇİŞ YASAKTIR!**
 
 ---
 
-## Phase 1: Strategic Alignment (The "Architect" Layer)
+# PHASE 0: SKILL YÜKLEME (ZORUNLU)
 
-**Goal:** Resolve ambiguity and align on the "What" and "Why" before the "How".
-
-1.  **Check Ambiguity:**
-    *   Is the request fully specified (e.g., "Change button color to blue")? -> **SKIP to Phase 2.**
-    *   Is the request vague (e.g., "Make the homepage better")? -> **PROCEED.**
-
-2.  **The "One Question" Rule:**
-    *   Do NOT dump a list of questions.
-    *   Ask **ONE** clarifying question at a time.
-    *   Wait for the user's answer.
-    *   Refine the mental model.
-    *   Repeat until the scope is clear.
-
-3.  **Output:** A clear, mutually agreed-upon "Goal Statement".
+> [!CAUTION]
+> **⛔ BU PHASE ATLANAMAZ! ⛔**
+> 
+> - Skill yüklemeden Phase 1'e geçmek **YASAKTIR**
+> - Bu kuralı ihlal etmek = Workflow'u bozmak
+> - **Hiçbir istisna yok!**
 
 ---
 
-## Phase 2: Implementation Planning (The "Manager" Layer)
+## Adım 0.1: MCP Sağlık Kontrolü
 
-**Goal:** Break the "Goal Statement" into executable, atomic micro-tasks.
+// turbo
+```javascript
+mcp_skillport_search_skills({ query: "*" })
+```
 
-1.  **Create/Update Task Artifact:**
-    *   Use `task_boundary` to initialize the task.
-    *   Create or update `task.md`.
-
-2.  **Micro-Task Granularity:**
-    *   Break work into tasks that take **2-5 minutes** each.
-    *   **Bad:** "Implement Authentication"
-    *   **Good:** "Create login form UI structure", "Add form validation logic", "Connect submit handler to API".
-
-3.  **User Review (Checkpoint):**
-    *   **STOP:** Before executing, show the plan to the user.
-    *   Use `notify_user` to request approval for the plan.
-    *   *Exception:* If the user explicitly gave "Auto-Run" authority or the task is trivial, you may proceed.
+**Sonuç Kontrolü:**
+- ✅ Başarılı → Adım 0.2'ye geç
+- ❌ Hata/Timeout → **DURDUR**, kullanıcıya bildir, devam etme
 
 ---
 
-## Phase 3: Engineering Loop (The "Engineer" Layer)
+## Adım 0.2: Prompt Analizi ve Skill Arama
 
-**Goal:** Execute the plan with "Iron Law" discipline.
+1. Kullanıcının isteğinden **anahtar teknolojiler** çıkar (React, Python, API, vb.)
+2. Skill ara:
 
-**The Loop:** For each item in the plan:
-
-### A. The Iron Law of TDD
-> **"No Production Code Without A Failing Test First"**
-
-1.  **RED:** Write a minimal test case that fails.
-    *   *Verify:* Run the test. It MUST fail.
-2.  **GREEN:** Write the minimal code to make the test pass.
-    *   *Verify:* Run the test. It MUST pass.
-3.  **REFACTOR:** Clean up the code without changing behavior.
-    *   *Verify:* Tests must stay green.
-
-*Exceptions:* Scripts, config files, or UI visuals where automated testing is impossible. In these cases, define a **Manual Verification Step**.
-
-### B. Verification Before Completion "Gate"
-
-**Never** claim a task is "Done" or "Fixed" without fresh evidence.
-
-1.  **Identify:** What command proves it works?
-2.  **Run:** Execute the command.
-3.  **Read:** Check the output carefully.
-4.  **Claim:** Only report success if the output confirms it.
+// turbo
+```javascript
+mcp_skillport_search_skills({ query: "<anahtar_kelimeler>" })
+```
 
 ---
 
-## Phase 4: Final Handoff
+## Adım 0.3: Skill Yükleme
 
-1.  **Self-Correction:** Did I learn something new about this codebase? (e.g., "Tests are in `specs/` folder, not `tests/`").
-2.  **Memory:** If yes, update the memory bank.
-3.  **Notify:** Inform the user the task is complete, citing the specific verification evidence.
+**Seçim Kuralları:**
+- Puan **≥ 1.0** olan skill'lerden **en yüksek 3 tanesini** seç
+- Her birini yükle:
+
+// turbo
+```javascript
+mcp_skillport_load_skill({ skill_id: "<skill_id>" })
+```
+
+**Fallback Kuralı:**
+- Hiç uygun skill yoksa (tüm puanlar < 1.0) → `code_review` skill'ini yükle
+- **Hiçbir prompt skill'siz kalmamalı!**
+
+---
+
+## ✅ CHECKPOINT: Phase 0 Tamamlandı mı?
+
+Aşağıdaki koşullar sağlanmadan **ASLA** Phase 1'e geçme:
+
+| # | Koşul | Durum |
+|---|-------|-------|
+| 1 | MCP sağlık kontrolü başarılı | ☐ |
+| 2 | En az 1 skill yüklendi | ☐ |
+| 3 | Yüklenen skill'ler kullanıcıya gösterildi | ☐ |
+
+**⛔ Tüm kutular işaretli değilse → DURDUR!**
+
+---
+
+# PHASE 1: Proje Ortamı Kontrolü
+
+## Adım 1.1: Workspace Kontrolü
+
+- Aktif workspace var mı?
+- Yoksa → Kullanıcıya "Hangi klasörde çalışıyoruz?" sor
+
+## Adım 1.2: Proje Config Kontrolü
+
+`.agent/GEMINI.md` dosyası var mı?
+
+**Yoksa** → Oluştur:
+```markdown
+# Proje: [PROJE_ADI]
+
+## Teknolojiler
+- [package.json, requirements.txt vb. analiz et]
+
+## Son Güncellemeler
+- [Tarih]: Proje config oluşturuldu
+```
+
+**Varsa** → Oku ve bağlamı yükle
+
+---
+
+# PHASE 2: Strateji Belirleme
+
+## Adım 2.1: Belirsizlik Kontrolü
+
+- İstek net mi? (örn: "Buton rengini maviye çevir") → Phase 3'e geç
+- İstek belirsiz mi? (örn: "Sayfayı iyileştir") → Adım 2.2'ye geç
+
+## Adım 2.2: Tek Soru Kuralı
+
+- Birden fazla soru **SORMA**
+- **TEK** soru sor, cevabı bekle
+- Kapsam netleşene kadar tekrarla
+
+---
+
+# PHASE 3: Planlama
+
+## Adım 3.1: Görev Listesi Oluştur
+
+- `task_boundary` ile görevi başlat
+- `task.md` oluştur/güncelle
+
+## Adım 3.2: Mikro Görevler
+
+Her görev **2-5 dakika** sürmeli:
+
+| ❌ Kötü | ✅ İyi |
+|--------|-------|
+| "Authentication yap" | "Login formu oluştur" |
+| "API kur" | "GET endpoint yaz" |
+| "Test ekle" | "UserService unit test" |
+
+## Adım 3.3: Kullanıcı Onayı
+
+- Planı kullanıcıya göster
+- `notify_user` ile onay iste
+- İstisna: Basit ve net görevlerde doğrudan devam et
+
+---
+
+# PHASE 4: Mühendislik Döngüsü
+
+## TDD Kuralı (Demir Kanun)
+
+> **"Test yazmadan kod yazma!"**
+
+| Adım | Eylem | Doğrulama |
+|------|-------|-----------|
+| 🔴 KIRMIZI | Başarısız test yaz | Test başarısız olmalı |
+| 🟢 YEŞİL | Testi geçecek minimal kod yaz | Test başarılı olmalı |
+| 🔵 REFACTOR | Kodu temizle | Testler hala yeşil |
+
+**İstisnalar:** Config dosyaları, UI görselleri → Manuel doğrulama tanımla
+
+## Doğrulama Kapısı
+
+"Bitti" demeden önce **MUTLAKA**:
+
+1. 🎯 Hangi komut kanıt olur?
+2. ▶️ Komutu çalıştır
+3. 👀 Çıktıyı kontrol et
+4. ✅ Sadece başarılıysa "bitti" de
+
+---
+
+# PHASE 5: Git & Son Adımlar
+
+## Adım 5.1: Commit Conventions
+
+| Type | Açıklama | Örnek |
+|------|----------|-------|
+| `feat` | Yeni özellik | `feat: add login page` |
+| `fix` | Hata düzeltme | `fix: resolve null error` |
+| `docs` | Dokümantasyon | `docs: update README` |
+| `style` | Formatting | `style: fix indentation` |
+| `refactor` | Kod yeniden yapılandırma | `refactor: extract utils` |
+| `test` | Test ekleme/düzeltme | `test: add unit tests` |
+| `chore` | Build, CI, deps | `chore: update deps` |
+
+**Format:** `<type>(<scope>): <description>`
+
+## Adım 5.2: Proje Config Güncelle
+
+`.agent/GEMINI.md` → "Son Güncellemeler" bölümüne ekle:
+```markdown
+- [TARİH]: [Yapılan işin özeti]
+```
+
+## Adım 5.3: Kullanıcıya Bildir
+
+Görevi tamamla, **kanıtları göster**.
+
+---
+
+# 🔄 HER MESAJDA HATIRLA
+
+> [!IMPORTANT]
+> ## Üç Demir Kural
+> 
+> 1. **🇹🇷 TÜRKÇE KONUŞ** - Kod hariç her şey Türkçe
+> 2. **📦 SKİLL YÜKLE** - En az 1 skill zorunlu (puan ≥ 1.0)
+> 3. **✅ KANITLA** - "Bitti" demeden kanıt göster

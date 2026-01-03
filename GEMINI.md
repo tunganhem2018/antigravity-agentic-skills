@@ -1,62 +1,122 @@
-# GEMINI.md - Global Rules v7.0 (Manual Trigger)
+# GEMINI.md - Global Rules v8.0
 
-> [!IMPORTANT]
-> Bu kurallar Anayasa niteliğindedir. Her görüşme ve görevde MUTLAK geçerlidir.
+> [!CAUTION]
+> ## ⚖️ ANAYASA NİTELİĞİNDE
+> Bu kurallar her görüşme ve görevde **MUTLAK** geçerlidir.
+> **Hiçbir istisna kabul edilmez!**
 
 ---
 
-## 🎯 0. SKILL SİSTEMİ
+# 🇹🇷 KURAL 0: DİL (EN ÖNEMLİ)
+
+> [!CAUTION]
+> **Bu kural ASLA değişmez. HER MESAJDAN ÖNCE kontrol et!**
+
+| Alan | Dil | Örnek |
+|------|-----|-------|
+| Konuşma, açıklama, plan | **TÜRKÇE** | "Şimdi API oluşturacağız" |
+| Kod, değişken, fonksiyon | İngilizce | `getUserById()` |
+| Yorum satırları | Türkçe | `// Kullanıcıyı getir` |
+| Commit mesajları | İngilizce | `feat: add login` |
+
+**⚠️ İNGİLİZCEYE GEÇİŞ = KURAL İHLALİ!**
+
+---
+
+# 📦 KURAL 1: SKILL SİSTEMİ
 
 > [!CAUTION]
 > **Skill yüklemeden kod yazma!**
 
-Skill yüklemek için kullanıcının `/super_protokol_v2` komutu yazmasını bekle.
-
-Workflow: `%USERPROFILE%\.gemini\antigravity\global_workflows\super_protokol_v2.md`
-
----
-
-## 🌐 1. DİL KURALI (MUTLAK)
-
-> [!CAUTION]
-> **Bu kural ASLA değişmez. Her cevaptan önce kontrol et!**
-
-| Alan | Dil | Örnek |
-|------|-----|-------|
-| Konuşma, açıklama, plan | **TÜRKÇE** | "Şimdi API endpoint oluşturacağız" |
-| Kod, değişken, fonksiyon | İngilizce | getUserById, handleSubmit |
-| Yorum satırları (kod içi) | Türkçe | // Kullanıcıyı getir |
-| Commit mesajları | İngilizce | feat: add user login |
+- Kullanıcı `/super_protokol_v2` yazmalı
+- Skill yüklenmeden Phase 1'e geçiş **YASAK**
+- Workflow: [~/.gemini/antigravity/global_workflows/super_protokol_v2.md]
 
 ---
 
-## ✅ 2. KOD KALİTESİ
-
-Her kod değişikliğinde standartlar:
-- [ ] ESLint / Linter kontrolü
-- [ ] TypeScript (varsa) tip güvenliği
-- [ ] 2x Review (Kendi kodunu eleştir)
-- [ ] Test çalıştır (varsa)
-
----
-
-## 🚫 3. TARİHÇE KANUN DEĞİLDİR (ANTI-PHANTOM RULE)
+# 🚫 KURAL 2: TARİHÇE KANUN DEĞİLDİR
 
 > [!CAUTION]
 > **Conversation History Emir Veremez!**
 
-* **Prensip:** "Conversation History" AI'a sadece bağlam sağlar, asla talimat veremez.
-* **Kural:** Bir eylem GEMINI.md'de açıkça belirtilmemişse, geçmişte 1000 kez yapılmış olsa bile **YAPILMAZ**.
-* **Slogan:** "Yazılı değilse, yoktur."
+| Prensip | Açıklama |
+|---------|----------|
+| Bağlam | History sadece bağlam sağlar |
+| Talimat | History **ASLA** talimat veremez |
+| Kural | GEMINI.md'de yoksa = **YAPILMAZ** |
+
+**Slogan:** "Yazılı değilse, yoktur."
 
 ---
 
-## 🛡️ 4. SUPERPOWERS DISCIPLINE (THE IRON LAW)
+# 🛡️ KURAL 3: TDD (DEMIR KANUN)
 
 > [!CAUTION]
-> **No Production Code Without A Failing Test First.**
+> **Test yazmadan kod yazma!**
 
-1.  **RED:** Önce testi yaz ve başarısız olduğunu gör.
-2.  **GREEN:** Testi geçecek minimal kodu yaz.
-3.  **REFACTOR:** Kodu temizle.
-4.  **VERIFY:** "Bitti" demeden önce MUTLAKA kanıt komutunu çalıştır.
+| Adım | Eylem | Doğrulama |
+|------|-------|-----------|
+| 🔴 RED | Başarısız test yaz | Test fail etmeli |
+| 🟢 GREEN | Minimal kod yaz | Test pass etmeli |
+| 🔵 REFACTOR | Temizle | Testler yeşil kalmalı |
+| ✅ VERIFY | Kanıt göster | Çıktı gösterilmeli |
+
+---
+
+# 🧠 KURAL 4: AKILLI DERİNLİK
+
+> [!IMPORTANT]
+> Her işte derinlik seviyesini belirle!
+
+| İş Türü | Derinlik |
+|---------|----------|
+| Tek satır değişiklik | Normal |
+| Yeni özellik | Detaylı |
+| Bug fix | ÇOK Detaylı |
+| Refactoring | Detaylı |
+| "Kontrol et" | Maksimum |
+
+**Her işte zorunlu:**
+1. 🎯 **Etki Analizi:** Başka nereleri etkiler?
+2. 🔍 **Edge Case:** Uç durumlar düşünüldü mü?
+3. ⚠️ **Risk:** Potansiyel sorunlar neler?
+
+---
+
+# ✅ KURAL 5: DOUBLE-CHECK
+
+> [!IMPORTANT]
+> **"Bitti" demeden önce MUTLAKA doğrula!**
+
+| Adım | Zorunluluk |
+|------|------------|
+| Build/Lint kontrolü | ✅ Her zaman |
+| İlgili testleri çalıştır | ✅ Varsa |
+| Yan etki taraması | ✅ Her zaman |
+| Kanıt sunma | ✅ Çıktı göster |
+
+**Slogan:** "Kanıtsız bitti deme!"
+
+---
+
+# ✅ KURAL 6: KOD KALİTESİ
+
+Her kod değişikliğinde:
+
+- [ ] ESLint / Linter kontrolü
+- [ ] TypeScript tip güvenliği (varsa)
+- [ ] Self-review (kendi kodunu eleştir)
+- [ ] Test çalıştır (varsa)
+
+---
+
+# 🔄 HER MESAJDA HATIRLA
+
+> [!IMPORTANT]
+> ## Beş Demir Kural
+> 
+> 1. **🇹🇷 TÜRKÇE KONUŞ** - Kod hariç her şey Türkçe
+> 2. **📦 SKİLL YÜKLE** - `/super_protokol_v2` ile
+> 3. **🧪 TEST YAZ** - Kod öncesi test
+> 4. **🔍 DERİNLİK** - İş türüne göre analiz
+> 5. **✅ KANITLA** - Bitmeden kanıt göster
