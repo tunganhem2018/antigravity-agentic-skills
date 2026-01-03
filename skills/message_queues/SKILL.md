@@ -1,48 +1,16 @@
 ---
 name: message_queues
 router_kit: FullStackKit
-description: RabbitMQ, Redis Pub/Sub ve Kafka ile asenkron message processing ve event-driven mimariler.
+description: RabbitMQ, SQS ve Redis ile mesaj kuyruğu yönetimi ve arka plan işleri.
 metadata:
   skillport:
-    category: architectural-pattern
-    tags: [architecture, asynchronous, automation, backend, best practices, cloud computing, debugging, decoupling, design patterns, development, distributed systems, documentation, efficiency, event-driven, git, kakfa, message queues, optimization, productivity, quality assurance, rabbitmq, redis, refactoring, scalability, software engineering, standards, testing, utilities, workflow]      - event-driven
+    category: development
+    tags: [accessibility, api integration, backend, browser apis, client-side, components, css3, debugging, deployment, frameworks, frontend, fullstack, html5, javascript, libraries, message queues, node.js, npm, performance optimization, responsive design, seo, state management, testing, typescript, ui/ux, web development]      - background-jobs
 ---
 
-# 📨 Message Queues
+# 📥 Message Queues
 
-> RabbitMQ, Redis ve Kafka ile asenkron mesaj kuyruğu yönetimi.
-
----
-
-## 🏗️ Core Concepts
-
-### 1. Producer
-Mesajı kuyruğa gönderen servis.
-
-### 2. Queue (Broker)
-Mesajın işlenene kadar tutulduğu geçici depo (RabbitMQ, Redis vb.).
-
-### 3. Consumer
-Kuyruktaki mesajı çekip işleyen (worker) servis.
-
----
-
-## 🛠️ Comparison
-
-| Özellik | Redis Pub/Sub | RabbitMQ | Kafka |
-|---------|---------------|----------|-------|
-| **Kalıcılık** | Yok (Hafızada) | Var | Çok Yüksek |
-| **Hız** | Çok Hızlı | Hızlı | Orta/Hızlı |
-| **Kayıp Riski** | Var | Düşük | Çok Düşük |
-| **Kullanım** | Basit sinyaller | Task queue | Büyük veri/Log |
-
----
-
-## 🛡️ Reliability Patterns
-
-- **Ack (Acknowledgement)**: Mesajın başarıyla işlendiğinin onaylanması.
-- **DLQ (Dead Letter Queue)**: İşlenemeyen hatalı mesajların toplandığı ayrı kuyruk.
-- **Retry Logic**: Hata anında belirli aralıklarla (exponential backoff) tekrar deneme.
+> Güvenilir asenkron işleme ve mesaj kuyruğu sistemleri.
 
 ---
 
@@ -50,25 +18,25 @@ Kuyruktaki mesajı çekip işleyen (worker) servis.
 
 ## 🔄 Workflow
 
-> **Kaynak:** [RabbitMQ Tutorials](https://www.rabbitmq.com/getstarted.html) & [CloudAMQP Best Practices](https://www.cloudamqp.com/blog/part1-rabbitmq-best-practice.html)
+> **Kaynak:** [Messaging Patterns (Enterprise Integration Patterns)](https://www.enterpriseintegrationpatterns.com/patterns/messaging/)
 
-### Aşama 1: Message Design
-- [ ] **Payload**: Mesaj içeriğini (JSON) minimal tut, büyük veri yerine ID gönder.
-- [ ] **Idempotency**: Aynı mesaj iki kere işlendiğinde sistem bozulmamalı (Unique ID kontrolü).
-- [ ] **TTL**: Mesajın kuyrukta ne kadar kalacağını (Time To Live) belirle.
+### Aşama 1: Queue Design & Strategy
+- [ ] **Task Selection**: Hangileri arka planda çalışmalı? (Email, Image resize, Report gen).
+- [ ] **Message Schema**: Mesaj formatını (JSON) ve version bilgisini tanımla.
+- [ ] **Persistence**: Kuyruğun bellek içi mi yoksa disk tabanlı mı olacağını seç.
 
-### Aşama 2: Infrastructure Setup
-- [ ] **Connection**: Broker bağlantısını (connection pool) yönet, her mesajda yeni bağlantı açma.
-- [ ] **Exchanges**: (RabbitMQ için) Mesajı doğru kuyruğa yönlendirmek için `direct`, `topic` veya `fanout` seç.
-- [ ] **Prefetch**: Bir worker'ın aynı anda kaç mesaj alacağını (`prefetch_count`) belirle.
+### Aşama 2: Producer & Consumer Implementation
+- [ ] **Producer**: İşlemi kuyruğa atan koda hata yönetimi (Retry on push) ekle.
+- [ ] **Consumer**: Mesajı işleyen "Worker"ları yaz ve paralel çalışma sayısını (Concurrency) ayarla.
+- [ ] **ACK**: Mesaj başarıyla işlenince onay (Acknowledgment) mekanizmasını kur.
 
-### Aşama 3: Monitoring & Ops
-- [ ] **Metric**: Kuyruk derinliğini (Queue length) ve worker cpu kullanımını izle.
-- [ ] **Alarms**: Kuyruk dolduğunda veya workerlar çöktüğünde alarm kur.
+### Aşama 3: Error Handling & DLQ
+- [ ] **Dead Letter Queue**: Defalarca hata veren mesajları özel bir kuyruğa (DLQ) ayır.
+- [ ] **Retries**: Hatalar için "Exponential Backoff" stratejisini uygula.
 
 ### Kontrol Noktaları
 | Aşama | Doğrulama |
 |-------|-----------|
-| 1 | Worker çöktüğünde kuyruktaki mesajlar kayboluyor mu? (Ack kontrolü) |
-| 2 | Mesaj sırası (Ordering) kritik mi? (Kritikse partitioning ayarları yapıldı mı?) |
-| 3 | DLQ'ya düşen mesajlar için bir bildirim mekanizması var mı? |
+| 1 | Kuyruk dolarsa sistem kilitleniyor mu (Backpressure)? |
+| 2 | Mesaj iki kere gelirse sistem bozuluyor mu (Idempotency)? |
+| 3 | Mesaj işleme süreleri izleniyor mu (Monitoring)? |

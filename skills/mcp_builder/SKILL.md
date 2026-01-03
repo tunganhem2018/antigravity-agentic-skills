@@ -1,56 +1,16 @@
 ---
 name: mcp_builder
-router_kit: ManagementKit
-description: Model Context Protocol (MCP) server inşa etme, resource ve tool tanımlama rehberi.
+router_kit: AIKit
+description: Model Context Protocol (MCP) server ve client yapılandırma rehberi.
 metadata:
   skillport:
-    category: operations
-    tags: [api integration, automation, backend, best practices, development, frameworks, javascript, mcp builder, mcp server, model context protocol, node.js, npm, optimization, software engineering, standards, typescript, utilities, workflow]      - mcp-server-developer
+    category: protocol
+    tags: [agents, algorithms, artificial intelligence, automation, chatbots, cognitive services, deep learning, embeddings, frameworks, generative ai, inference, large language models, llm, machine learning, mcp builder, model fine-tuning, natural language processing, neural networks, nlp, openai, prompt engineering, rag, retrieval augmented generation, tools, vector databases, workflow automation]      - server-setup
 ---
 
 # 🛠️ MCP Builder
 
-> Model Context Protocol (MCP) server oluşturma ve araç (tool) geliştirme.
-
----
-
-## 🏗️ MCP Core Concepts
-
-- **Resources**: LLM'in okuyabileceği statik veriler (örn: dosyalar, DB kayıtları).
-- **Tools**: LLM'in çalıştırabileceği aksiyonlar (örn: API call, dosya yazma).
-- **Prompts**: LLM'e sunulan özel talimat şablonları.
-
----
-
-## 🚀 Creating a Tool
-
-```typescript
-server.tool(
-  "calculate_sum",
-  "Calculates the sum of two numbers",
-  {
-    a: z.number(),
-    b: z.number()
-  },
-  async ({ a, b }) => {
-    return {
-      content: [{ type: "text", text: (a + b).toString() }]
-    };
-  }
-);
-```
-
----
-
-## 📦 Implementation Details
-
-| Adım | İşlem |
-|------|-------|
-| **Setup** | `npx @modelcontextprotocol/create-server` |
-| **Define** | Resource ve tool'ları tanımla. |
-| **Logic** | Tool içerisindeki iş mantığını (Business logic) yaz. |
-| **Build** | `npm run build` ile derle. |
-| **Config** | Claude / IDE config dosyasına server'ı ekle. |
+> Model Context Protocol (MCP) server ve araç entegrasyonu.
 
 ---
 
@@ -58,25 +18,24 @@ server.tool(
 
 ## 🔄 Workflow
 
-> **Kaynak:** [Model Context Protocol (MCP) Documentation](https://modelcontextprotocol.io/)
+> **Kaynak:** [Model Context Protocol Specification](https://modelcontextprotocol.io/)
 
-### Aşama 1: Scope & Definition
-- [ ] **Identify**: LLM'in hangi yeteneğe/veriye ihtiyacı var? (Dosya okuma? API erişimi?).
-- [ ] **Capabilities**: Resource mu (Read-only) yoksa Tool mu (Action) olacağına karar ver.
-- [ ] **Schema**: Girdi parametrelerini `zod` ile sıkı şekilde tanımla.
+### Aşama 1: Environment Setup
+- [ ] **Install**: MCP SDK (Node.js/Python) kurulumunu yap.
+- [ ] **Inspector**: MCP Inspector aracını debug için hazırla.
 
-### Aşama 2: Development & Testing
-- [ ] **Server Setup**: `StdioServerTransport` veya `HttpServerTransport` seç.
-- [ ] **Error Handling**: Beklenmedik durumlarda LLM'e anlamlı hata mesajları dön.
-- [ ] **Inspector**: `mcp-inspector` kullanarak server'ı LLM dışında test et.
+### Aşama 2: Capability Definition
+- [ ] **Resources**: Paylaşılacak veri kaynaklarını (File, DB, API) tanımla.
+- [ ] **Tools**: AI'ın çağırabileceği fonksiyonları (Action) belirle.
+- [ ] **Prompts**: Hazır prompt şablonlarını sisteme ekle.
 
-### Aşama 3: Deployment & Config
-- [ ] **Binary**: Server'ı global bir paket veya executable haline getir.
-- [ ] **Integration**: `claude_desktop_config.json` içine server yolunu ve environment variable'ları ekle.
+### Aşama 3: Configuration & Launch
+- [ ] **Config**: `mcp-config.json` dosyasını oluştur.
+- [ ] **Connection**: Stdio veya HTTP transport katmanını seç.
 
 ### Kontrol Noktaları
 | Aşama | Doğrulama |
 |-------|-----------|
-| 1 | Tool açıklamaları (description) LLM için yeterince açıklayıcı mı? |
-| 2 | Hassas veriler (API Key) loglara sızıyor mu? |
-| 3 | Tool, uzun süren işlemlerde timeout'a düşüyor mu? |
+| 1 | `mcp-inspector` tüm tool ve resourceları görüyor mu? |
+| 2 | AI "schema mismatch" hatası alıyor mu? |
+| 3 | Yetkilendirme (Auth) katmanı çalışıyor mu? |
