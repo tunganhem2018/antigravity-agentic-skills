@@ -1,53 +1,16 @@
 ---
 name: mobile_react_native
 router_kit: FullStackKit
-description: React Native ile cross-platform mobile app development, Native Modules ve Expo workflow.
+description: React Native/Expo best practices, Reanimated ve performance optimization.
 metadata:
   skillport:
-    category: frontend
-    tags: [android, architecture, automation, best practices, clean code, coding, collaboration, compliance, cross-platform, debugging, development, documentation, efficiency, expo, frameworks, git, ios, javascript, mobile development, mobile react native, native modules, optimization, productivity, programming, project management, quality assurance, react native, refactoring, software engineering, standards, testing, typescript, ui/ux, utilities, version control, workflow]      - mobile-flutter
+    category: development
+    tags: [accessibility, api integration, backend, browser apis, client-side, components, css3, debugging, deployment, frameworks, frontend, fullstack, html5, javascript, libraries, mobile react native, node.js, npm, performance optimization, responsive design, seo, state management, testing, typescript, ui/ux, web development]      - mobile-flutter
 ---
 
-# ⚛️ Mobile React Native
+# 📱 Mobile React Native
 
-> React ile native mobil uygulama geliştirme.
-
----
-
-## 🚀 Workflow Options
-
-### 1. Expo (Önerilen)
-Hızlı başlangıç, managed infrastructure, EAS (Expo Application Services).
-```bash
-npx create-expo-app MyProject
-```
-
-### 2. React Native CLI
-Native kod (Java/Swift) üzerinde tam kontrol gerektiğinde.
-```bash
-npx react-native init MyProject
-```
-
----
-
-## 🏗️ UI & components
-
-| React Native | HTML Karşılığı |
-|--------------|----------------|
-| `<View>` | `<div>` |
-| `<Text>` | `<span>` / `<p>` |
-| `<Image>` | `<img>` |
-| `<ScrollView>`| `overflow: scroll` |
-| `<FlatList>` | List rendering (optimize) |
-
----
-
-## 🔧 Key Libraries
-
-- **Navigation**: `react-navigation`
-- **Styling**: `StyleSheet.create` or `Tailwind (NativeWind)`
-- **State**: `Zustand` or `Redux Toolkit`
-- **Animations**: `react-native-reanimated`
+> React Native/Expo best practices ve performance optimization.
 
 ---
 
@@ -55,25 +18,26 @@ npx react-native init MyProject
 
 ## 🔄 Workflow
 
-> **Kaynak:** [React Native Documentation](https://reactnative.dev/docs/getting-started) & [Expo Documentation](https://docs.expo.dev/)
+> **Kaynak:** [React Native Performance Guide](https://reactnative.dev/docs/performance) & [Expo Best Practices](https://docs.expo.dev/guides/best-practices/)
 
-### Aşama 1: Environment & Setup
-- [ ] **Expo Workflow**: EAS (Expo Application Services) konfigürasyonunu yap.
-- [ ] **TypeScript**: Tüm projeyi tip güvenli (Strict mode) kur.
-- [ ] **Assets**: Splash screen ve uygulama ikonlarını tüm çözünürlükler için hazırla.
+### Aşama 1: Environment & Architecture
+- [ ] **Setup**: Expo (Managed) veya CLI (Bare) seçimini ihtiyaca göre yap.
+- [ ] **Structure**: Klasör yapısını (Feature-based) kur ve `src/` klasöründe topla.
+- [ ] **Navigation**: `React Navigation` veya `Expo Router` ile yapılandır.
 
-### Aşama 2: Development Patterns
-- [ ] **Styling**: `StyleSheet` kullanırken `Flexbox` kurallarına sadık kal.
-- [ ] **Navigation**: `Stack` ve `Tab` navigasyon yapısını kurgula.
-- [ ] **Interactions**: Kullanıcı geri bildirimi için `Pressable` veya `Touchable` kullan.
+### Aşama 2: UI & Animations
+- [ ] **Animations**: 60 FPS akıcılık için `React Native Reanimated` (UI thread) kullan.
+- [ ] **Components**: `FlashList` (Shopify) gibi yüksek performanslı liste bileşenlerini seç.
+- [ ] **Styling**: `StyleSheet.create` kullanarak bellek kullanımını optimize et.
 
-### Aşama 3: Performance & Native
-- [ ] **Optimization**: `FlashList` kullanarak uzun listeleri akıcı hale getir.
-- [ ] **Native Modules**: Gerekliyse JSI (JavaScript Interface) üzerinden native köprüler kur.
+### Aşama 3: Performance & Offline
+- [ ] **Bridge**: Bridge trafiğini azaltmak için JSI (JavaScript Interface) kullanan modülleri tercih et.
+- [ ] **Storage**: `MMKV` gibi hızlı veri depolama çözümlerini kullan.
+- [ ] **Profiles**: `Hermes` engine ve `Flipper` ile performans profillemesi yap.
 
 ### Kontrol Noktaları
 | Aşama | Doğrulama |
 |-------|-----------|
-| 1 | Uygulama Android ve iOS simülatörlerinde aynı görünüyor mu? |
-| 2 | Deep Linking düzgün çalışıyor mu? |
-| 3 | Bundle boyutu (Release build) optimize mi? |
+| 1 | Görseller `FastImage` vb. ile cache'leniyor mu? |
+| 2 | Gereksiz re-render'lar `memo` ile engellendi mi? |
+| 3 | Uygulama boyutu (Bundle size) optimize edildi mi? |

@@ -1,145 +1,40 @@
 ---
 name: multi_agent_patterns
 router_kit: AIKit
-description: Çoklu agent mimarisi tasarımı, orchestration patterns ve agent collaboration rehberi.
+description: Çoklu agent sistemleri tasarımı, görev bölüşümü ve ekip işbirliği (LangGraph, CrewAI).
 metadata:
   skillport:
-    category: architecture
-    tags: [agents, algorithms, artificial intelligence, automation, chatbots, cognitive services, deep learning, embeddings, frameworks, generative ai, inference, large language models, llm, machine learning, model fine-tuning, multi agent patterns, natural language processing, neural networks, nlp, openai, prompt engineering, rag, retrieval augmented generation, tools, vector databases, workflow automation]      - patterns
+    category: ai
+    tags: [agents, algorithms, artificial intelligence, automation, chatbots, cognitive services, deep learning, embeddings, frameworks, generative ai, inference, large language models, llm, machine learning, model fine-tuning, multi agent patterns, natural language processing, neural networks, nlp, openai, prompt engineering, rag, retrieval augmented generation, tools, vector databases, workflow automation]      - swarm-ai
 ---
 
 # 🤖 Multi-Agent Patterns
 
-> Çoklu agent mimarisi ve orchestration rehberi.
+> Birden fazla uzman AI agent'ın işbirliği yaptığı sistemler.
 
 ---
 
-## 📋 Ne Zaman Multi-Agent?
+*Multi Agent Patterns v1.1 - Enhanced*
 
-| Durum | Single Agent | Multi-Agent |
-|-------|--------------|-------------|
-| Basit görev | ✅ | ❌ |
-| Context limit aşılıyor | ❌ | ✅ |
-| Farklı uzmanlıklar | ❌ | ✅ |
-| Paralel işlem | ❌ | ✅ |
-| Complex workflow | ❌ | ✅ |
+## 🔄 Workflow
 
----
+> **Kaynak:** [LangGraph Documentation](https://python.langchain.com/docs/langgraph/) & [CrewAI Best Practices](https://docs.crewai.com/)
 
-## 🏗️ Mimari Patterns
+### Aşama 1: Role Definition (Specialists)
+- [ ] **Breakdown**: Karmaşık görevi alt uzmanlık alanlarına (Örn: Researcher, Coder, Reviewer) böl.
+- [ ] **Personas**: Her agent'a net bir görev (Task) ve yetki (Tools) tanımla.
 
-### 1. Orchestrator Pattern
-```
-        ┌─────────────┐
-        │ Orchestrator│
-        └──────┬──────┘
-               │
-    ┌──────────┼──────────┐
-    ▼          ▼          ▼
-┌───────┐  ┌───────┐  ┌───────┐
-│Agent 1│  │Agent 2│  │Agent 3│
-│Coder  │  │Tester │  │Reviewer│
-└───────┘  └───────┘  └───────┘
-```
+### Aşama 2: Orchestration (Hierarchy vs Choreography)
+- [ ] **Manager**: Bir "Yönetici Agent" üzerinden mi yoksa dairesel bir sıra (Peer-to-peer) ile mi çalışacaklarını seç.
+- [ ] **State**: Agent'lar arası paylaşılan bir hafıza (Shared State) kur.
 
-**Kullanım:** Complex workflows, task delegation
+### Aşama 3: Control & Feedback
+- [ ] **Cycles**: Sonsuz döngüleri engellemek için maksimum adım (Recursion limit) koy.
+- [ ] **Human-in-the-loop**: Kritik kararlarda insan onayı adımı ekle.
 
-### 2. Pipeline Pattern
-```
-┌───────┐    ┌───────┐    ┌───────┐
-│ Parse │ -> │Process│ -> │ Output│
-└───────┘    └───────┘    └───────┘
-```
-
-**Kullanım:** Sequential processing, data transformation
-
-### 3. Specialist Pattern
-```
-        ┌─────────────┐
-        │   Router    │
-        └──────┬──────┘
-               │ (task type)
-    ┌──────────┼──────────┐
-    ▼          ▼          ▼
-┌───────┐  ┌───────┐  ┌───────┐
-│  SQL  │  │  API  │  │  UI   │
-│Expert │  │Expert │  │Expert │
-└───────┘  └───────┘  └───────┘
-```
-
-**Kullanım:** Domain-specific expertise
-
-### 4. Debate Pattern
-```
-┌───────┐         ┌───────┐
-│Agent A│ <-----> │Agent B│
-│(Pro)  │ debate  │(Con)  │
-└───────┘         └───────┘
-         \       /
-          \     /
-           \   /
-        ┌───────┐
-        │ Judge │
-        └───────┘
-```
-
-**Kullanım:** Decision making, option evaluation
-
----
-
-## 🔧 Implementation
-
-### Agent Definition
-```python
-class Agent:
-    def __init__(self, name, role, skills):
-        self.name = name
-        self.role = role
-        self.skills = skills
-    
-    def process(self, task):
-        # Agent logic
-        pass
-```
-
-### Orchestrator
-```python
-class Orchestrator:
-    def __init__(self, agents):
-        self.agents = agents
-    
-    def route(self, task):
-        # Determine which agent handles task
-        agent = self.select_agent(task)
-        return agent.process(task)
-    
-    def select_agent(self, task):
-        # Routing logic
-        pass
-```
-
----
-
-## 📊 Communication Patterns
-
-| Pattern | Açıklama |
-|---------|----------|
-| **Direct** | Agent → Agent |
-| **Broadcast** | Orchestrator → All Agents |
-| **Pub/Sub** | Topic-based messaging |
-| **Request/Response** | Sync communication |
-| **Event-driven** | Async, event queue |
-
----
-
-## ⚠️ Best Practices
-
-1. **Clear Roles**: Her agent'ın net görevi olsun
-2. **Minimal Overlap**: Görev çakışması olmasın
-3. **Fallback**: Agent fail olursa plan B
-4. **Monitoring**: Her agent'ı izle
-5. **Context Sharing**: Gerekli bilgiyi paylaş
-
----
-
-*Multi-Agent Patterns v1.0 - Divide and Conquer*
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1 | Agent'lar birbirinin görevini gasp ediyor mu? |
+| 2 | Hatalı çıktı durumunda "Self-correction" (Kendi kendini düzeltme) mekanizması var mı? |
+| 3 | Token tüketimi kontrol altında mı? |
