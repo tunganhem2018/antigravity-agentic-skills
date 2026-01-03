@@ -1,75 +1,41 @@
 ---
 name: refactoring_strategies
 router_kit: FullStackKit
-description: Safe refactoring süreci - test-first, incremental changes ve güvenlik ağı.
+description: Büyük ölçekli refactoring projeleri için stratejiler, boy scouts kuralı ve teknik borç yönetimi.
 metadata:
   skillport:
-    category: quality
-    tags: [architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, refactoring strategies, software engineering, standards, testing, utilities, version control, workflow]      - refactoring-patterns
+    category: strategy
+    tags: [architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring strategies, refactoring, software engineering, standards, testing, utilities, version control, workflow]      - tech-debt
 ---
 
-# 🛡️ Refactoring Strategies
+# 📈 Refactoring Strategies
 
-> Safe refactoring süreci ve incremental değişiklikler.
-
----
-
-## ⏰ Ne Zaman Refactor?
-
-| Sinyal | Aksiyon |
-|--------|---------|
-| Code Smell | Refactor et |
-| Before feature | Zemin hazırla |
-| After bug fix | Kodu iyileştir |
-
-### ❌ Ne Zaman YAPMA
-- Deadline çok yakın
-- Test coverage düşük
-- Sistemi anlamadan
+> Planlı ve risksiz büyük ölçekli kod iyileştirme stratejileri.
 
 ---
 
-## 🔒 Güvenlik Ağı
+*Refactoring Strategies v1.1 - Enhanced*
 
-```typescript
-// Önce mevcut davranışı test et
-describe('calculateTotal', () => {
-  test('single item', () => {
-    expect(calculateTotal([{ price: 100, qty: 1 }])).toBe(100);
-  });
-  
-  test('multiple items', () => {
-    expect(calculateTotal([
-      { price: 100, qty: 2 },
-      { price: 50, qty: 1 }
-    ])).toBe(250);
-  });
-  
-  test('empty array', () => {
-    expect(calculateTotal([])).toBe(0);
-  });
-});
-```
+## 🔄 Workflow
 
----
+> **Kaynak:** [Working Effectively with Legacy Code (Michael Feathers)](https://www.oreilly.com/library/view/working-effectively-with/0131177052/)
 
-## 📊 Incremental Strategy
+### Aşama 1: Assessment & Prioritization
+- [ ] **Technical Debt**: En çok sorun çıkaran ve sık değişen alanları (High churn / High complexity) belirle.
+- [ ] **Strategy Selection**: "Boy Scout Rule" (geldiğinden daha temiz bırak) mı yoksa "Dedicated Refactoring" mi?
 
-1. **Test yaz** → Mevcut davranışı belgele
-2. **Küçük değişiklik** → Tek bir şeyi değiştir
-3. **Test çalıştır** → Hala geçiyor mu?
-4. **Commit** → Küçük, atomik commit
-5. **Tekrarla**
+### Aşama 2: Incremental Changes
+- [ ] **Strangler Fig Pattern**: Eski sistemi parça parça yeni bir yapı arkasına alarak sarmala (Strangle).
+- [ ] **Interface Adaptation**: Eski kodun arayüzünü (Interface) bozmadan iç mantığı değiştir.
+- [ ] **Feature Flags**: Değişikliği canlıda kontrollü olarak aç/kapat yapabilecek şekilde kurgula.
 
----
+### Aşama 3: Verification & Monitoring
+- [ ] **Regression**: Refactor edilen alanın aynı girdiye aynı çıktıyı verdiğini (Characterization tests) doğrula.
+- [ ] **Metrics**: Kod kalitesindeki artışı (Cyclomatic complexity azalması vb.) ölç.
 
-## ✅ Checklist
-
-- [ ] Testler geçiyor
-- [ ] Davranış değişmedi
-- [ ] Küçük commit'ler
-- [ ] Feature ile karıştırma
-
----
-
-*Refactoring Strategies v1.0*
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1 | Değişiklik "Breaking Change" içeriyor mu? |
+| 2 | Refactoring sırasında "Yazılım Teslimatı" (Delivery) durdu mu? |
+| 3 | Ekip yapılan değişiklikten haberdar mı? |

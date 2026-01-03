@@ -1,140 +1,40 @@
 ---
 name: roadmap_planner
 router_kit: ManagementKit
-description: Implementation roadmap, timeline oluşturma, risk yönetimi ve kaynak planlaması rehberi.
+description: Ürün yol haritası (Roadmap) oluşturma, zamanlama ve milestone yönetimi.
 metadata:
   skillport:
-    category: planning
-    tags: [architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, roadmap planner, software engineering, standards, testing, utilities, version control, workflow]      - risk
+    category: management
+    tags: [architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, roadmap planner, software engineering, standards, testing, utilities, version control, workflow]      - planning
 ---
 
 # 🗺️ Roadmap Planner
 
-> Implementation roadmap ve proje planlama rehberi.
+> Uzun vadeli vizyonu ve kilometre taşlarını (Milestones) yönetme süreci.
 
 ---
 
-## 📋 Roadmap Template
+*Roadmap Planner v1.1 - Enhanced*
 
-```markdown
-# [Proje Adı] Roadmap
+## 🔄 Workflow
 
-## Vision
-[Uzun vadeli hedef]
+> **Kaynak:** [Product Roadmap Guide (ProductPlan)](https://www.productplan.com/learn/what-is-a-product-roadmap/)
 
-## Milestones
+### Aşama 1: Vision & Strategic Themes
+- [ ] **Objective**: Projenin veya ürünün "Nereye gitmek istediğini" (Vision) tanımla.
+- [ ] **Themes**: Görevleri büyük stratejik temalar (Örn: Performance, Expansion, Security) altında grupla.
 
-### Phase 1: Foundation (Q1)
-- [ ] Milestone 1.1
-- [ ] Milestone 1.2
+### Aşama 2: Prioritization & Milestones
+- [ ] **Clustering**: İşleri "Now", "Next", "Later" (Hemen, Sonra, Gelecek) sepetlerine ayır.
+- [ ] **Milestones**: Kritik teslim tarihlerini ve başarı göstergelerini belirle.
 
-### Phase 2: Core Features (Q2)
-- [ ] Milestone 2.1
-- [ ] Milestone 2.2
+### Aşama 3: Communication & Alignment
+- [ ] **Visualization**: Yol haritasını görsel bir zaman çizelgesi (Gantt veya Swimlanes) haline getir.
+- [ ] **Adjustment**: Değişen önceliklere göre yol haritasını her sprint sonunda güncelle.
 
-### Phase 3: Polish & Launch (Q3)
-- [ ] Milestone 3.1
-- [ ] Milestone 3.2
-```
-
----
-
-## ⏱️ Timeline Oluşturma
-
-### Gantt Chart Formatı
-```
-Task              | W1 | W2 | W3 | W4 | W5 | W6 |
-------------------|----|----|----|----|----|----|
-Research          | ██ | ██ |    |    |    |    |
-Design            |    | ██ | ██ |    |    |    |
-Development       |    |    | ██ | ██ | ██ |    |
-Testing           |    |    |    |    | ██ | ██ |
-Launch            |    |    |    |    |    | ██ |
-```
-
-### Estimation Guideline
-| Complexity | Duration | Buffer |
-|------------|----------|--------|
-| Simple | 1-2 gün | +20% |
-| Medium | 3-5 gün | +30% |
-| Complex | 1-2 hafta | +40% |
-| Unknown | 2+ hafta | +50% |
-
----
-
-## ⚠️ Risk Yönetimi
-
-### Risk Matrix
-```
-           IMPACT
-         Low  Med  High
-    Low   🟢   🟢   🟡
-L
-I  Med   🟢   🟡   🔴
-K
-E  High  🟡   🔴   🔴
-L
-I
-H
-O
-O
-D
-```
-
-### Risk Register Template
-| ID | Risk | Likelihood | Impact | Mitigation | Owner |
-|----|------|------------|--------|------------|-------|
-| R1 | API rate limits | Med | High | Caching, retry | Dev |
-| R2 | Scope creep | High | Med | Strict PR | PM |
-
----
-
-## 👥 Kaynak Planlaması
-
-### Team Allocation
-| Role | Phase 1 | Phase 2 | Phase 3 |
-|------|---------|---------|---------|
-| Frontend | 1 | 2 | 1 |
-| Backend | 2 | 2 | 1 |
-| QA | 0 | 1 | 2 |
-| DevOps | 0.5 | 0.5 | 1 |
-
-### Capacity Planning
-```
-Haftalık saat = Kişi sayısı × 40 × Verimlilik(0.7)
-Örnek: 3 dev × 40 × 0.7 = 84 saat/hafta
-```
-
----
-
-## 📊 Progress Tracking
-
-### Status Indicators
-- 🟢 On track
-- 🟡 At risk
-- 🔴 Blocked
-- ✅ Completed
-
-### Weekly Status Template
-```markdown
-## Week [N] Status
-
-### Completed
-- [x] Task A
-- [x] Task B
-
-### In Progress
-- [ ] Task C (60%)
-- [ ] Task D (30%)
-
-### Blocked
-- Task E - Waiting for API access
-
-### Next Week
-- Task F
-- Task G
-```
-
----
-
-*Roadmap Planner v1.0*
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1 | Hedefler SMART (Specific, Measurable, Achievable, Relevant, Time-bound) mı? |
+| 2 | Kritik yol (Critical Path) üzerinde darboğaz var mı? |
+| 3 | Ekip kapasitesi gerçekçi hesaplandı mı? (Tatiller, toplantılar düştü meli?). |

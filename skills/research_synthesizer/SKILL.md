@@ -1,99 +1,41 @@
 ---
 name: research_synthesizer
-router_kit: ManagementKit
-description: Araştırma bulgularını özetleme, insight çıkarma ve actionable recommendations oluşturma rehberi.
+router_kit: FullStackKit
+description: Çoklu bilgi kaynaklarını analiz etme, özetleme ve aksiyon alınabilir içgörüler üretme.
 metadata:
   skillport:
     category: research
-    tags: [architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, research synthesizer, software engineering, standards, testing, utilities, version control, workflow]      - summary
+    tags: [architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, research synthesizer, software engineering, standards, testing, utilities, version control, workflow]      - insights
 ---
 
-# 📝 Research Synthesizer
+# 🧠 Research Synthesizer
 
-> Araştırma özetleme ve insight çıkarma rehberi.
-
----
-
-## 📋 Synthesis Süreci
-
-```
-Raw Data → Themes → Insights → Recommendations
-```
-
-### Adımlar
-1. **Collect** - Tüm kaynakları topla
-2. **Organize** - Temalara göre grupla
-3. **Analyze** - Pattern'leri bul
-4. **Synthesize** - Insight'ları çıkar
-5. **Recommend** - Aksiyon öner
+> Farklı kaynaklardan gelen verileri birleştirme ve stratejik içgörü üretme.
 
 ---
 
-## 🔧 Synthesis Template
+*Research Synthesizer v1.1 - Enhanced*
 
-```markdown
-# Research Synthesis: [Konu]
+## 🔄 Workflow
 
-## Executive Summary
-[1-2 paragraf özet]
+> **Kaynak:** [The Synthesis Effect](https://www.emerald.com/insight/content/doi/10.1108/01435121111112921/full/html)
 
-## Key Findings
+### Aşama 1: Information Gathering & Triangulation
+- [ ] **Diversity**: En az 3 farklı kaynaktan (Web, Academic, Expert) veri topla.
+- [ ] **Verification**: Çelişen bilgileri (Conflicting info) tespit et ve güvenilirliğini sorgula.
 
-### Theme 1: [Tema Adı]
-- Finding 1.1
-- Finding 1.2
-> Supporting quote or data
+### Aşama 2: Synthesis (The "So What?")
+- [ ] **Theming**: Ortak kalıpları ve "Hot Topics"i belirle.
+- [ ] **Connecting Dots**: Ayrı gibi görünen bilgiler arasındaki nedensellik bağını kur.
+- [ ] **Simplification**: Karmaşık veriyi "Herkesin anlayabileceği" basit bir modele indirge.
 
-### Theme 2: [Tema Adı]
-- Finding 2.1
-- Finding 2.2
+### Aşama 3: Strategic Output
+- [ ] **Executive Summary**: En kritik 3 bulguyu öne çıkar.
+- [ ] **Action Items**: Bulgulardan yola çıkarak somut "Ne yapılmalı?" önerileri üret.
 
-## Insights
-1. **Insight 1**: [Açıklama]
-2. **Insight 2**: [Açıklama]
-
-## Recommendations
-| Priority | Action | Impact | Effort |
-|----------|--------|--------|--------|
-| High | [Action 1] | High | Med |
-| Med | [Action 2] | Med | Low |
-
-## Sources
-1. [Source 1]
-2. [Source 2]
-```
-
----
-
-## 🎯 Pattern Recognition
-
-### Affinity Mapping
-```
-┌─────────────────────────────────────┐
-│           Theme A                    │
-│  ┌──────┐ ┌──────┐ ┌──────┐        │
-│  │Note 1│ │Note 2│ │Note 3│        │
-│  └──────┘ └──────┘ └──────┘        │
-└─────────────────────────────────────┘
-```
-
-### Cross-Reference Matrix
-| Source | Theme A | Theme B | Theme C |
-|--------|---------|---------|---------|
-| Study 1 | ✓ | ✓ | |
-| Study 2 | ✓ | | ✓ |
-| Interview | | ✓ | ✓ |
-
----
-
-## 📊 Insight Framework
-
-### Good Insight Özellikleri
-- **Non-obvious**: Yüzeysel değil
-- **Actionable**: Aksiyon alınabilir
-- **Evidence-based**: Kanıta dayalı
-- **Relevant**: İş hedefine uygun
-
----
-
-*Research Synthesizer v1.0*
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1 | Sentez sadece "özet" mi yoksa yeni bir "bakış açısı" sunuyor mu? |
+| 2 | "Confirmation Bias" (sadece kendi fikrini destekleyenleri seçme) yapıldı mı? |
+| 3 | İçgörüler uygulanabilir (Actionable) mi? |
