@@ -1,44 +1,44 @@
 ---
 name: cold_email
-router_kit: UniversalKit
-description: Yanıt oranını artıran, ikna edici ve kişiselleştirilmiş soğuk e-posta (cold email) stratejileri.
+router_kit: FullStackKit
+description: High-converting cold email drafting, sequencing, and technical deliverability optimization.
 metadata:
   skillport:
-    category: communication
-    tags: [marketing, sales, outreach, copywriting, personalization]
+    category: marketing
+    tags: [accessibility, api integration, backend, browser apis, client-side, cold email, components, css3, debugging, deployment, frameworks, frontend, fullstack, html5, javascript, libraries, node.js, npm, performance optimization, responsive design, seo, state management, testing, typescript, ui/ux, web development]      - copywriting
 ---
 
-# 📧 Cold Email Strategies
+# ✉️ Cold Email Mastery
 
-Tanımayan kişilere yönelik etkili ve profesyonel erişim metinleri hazırlama.
+> Soğuk e-posta (cold email) stratejisi ve yazımı.
 
 ---
+
+*Cold Email Mastery v1.1 - Enhanced*
 
 ## 🔄 Workflow
 
-> **Kaynak:** [Close.io - Cold Email Guide](https://www.close.com/cold-email) & [Woodpecker - Cold Email Academy](https://woodpecker.co/academy/)
+> **Kaynak:** [Cold Emailing for Beginners (HubSpot)](https://blog.hubspot.com/sales/cold-email-tips-for-next-level-success)
 
-### Aşama 1: Araştırma ve Kişiselleştirme (Prospecting)
-- [ ] **Research:** Alıcının son yazılarını, başarılarnı veya paylaşımlarını incele (LinkedIn/Twitter).
-- [ ] **Pain Point Mapping:** Alıcının yaşadığı muhtemel bir sorunu belirle.
-- [ ] **First Line:** İlk cümleyi tamamen alıcıya özel bir övgü veya gözlemle başlat (No generic intros).
+### Aşama 1: Targeting & Research
+- [ ] **Research**: Alıcının son çalışmalarını veya başarılarını bul.
+- [ ] **Value Prop**: Sunacağın değeri netleştir (Ne kazandıracaksın?).
 
-### Aşama 2: Metin Yazımı (Copywriting)
-- [ ] **Subject Line:** Merak uyandıran, kısa ve spam filtresine takılmayan başlıklar seç (3-5 kelime).
-- [ ] **Value Prop:** Sağlayacağınız faydayı 2 cümlede özetle (Neden seni dinlemeli?).
-- [ ] **The Ask (CTA):** Net ve düşük baskılı bir çağrı yap (Örn: "15 dk konuşabilir miyiz?" yerine "Bunun ilginizi çekip çekmeyeceğini sormak istedim").
+### Aşama 2: Drafting (Subject Line & Opening)
+- [ ] **Subject**: <7 kelime, merak uyandıran veya doğrudan fayda odaklı başlık.
+- [ ] **Opening**: İlk cümlede "Neden sen?" sorusuna yanıt ver (Kişiselleştirme).
+- [ ] **Body**: Kısa tut (<150 kelime), "Ben" yerine "Sen" odaklı ol.
 
-### Aşama 3: Teknik Kurulum ve Follow-up (Ops & Follow-up)
-- [ ] **Deliverability:** Alan adınızın SPF, DKIM ve DMARC ayarlarını kontrol et.
-- [ ] **Automation:** E-postaları toplu ama zamanlanmış (Drip campaign) şekilde ayarla.
-- [ ] **Multi-touch:** Yanıt gelmezse 2-3 gün arayla 3 farklı tonda takip e-postası planla.
+### Aşama 3: Call to Action (CTA)
+- [ ] **CTA**: Düşük bariyerli bir istek yap (Örn: "15 dakikalık bir görüşme?", "Dosyayı göndermemi ister misiniz?").
+
+### Aşama 4: Optimization & Sending
+- [ ] **A/B Test**: Başlıkları ve CTA'ları test et.
+- [ ] **Deliverability**: Spam kelimelerden kaçın, SPF/DKIM/DMARC ayarlarını kontrol et.
 
 ### Kontrol Noktaları
 | Aşama | Doğrulama |
 |-------|-----------|
-| 1     | E-posta mobil ekranlarda 1 dakikadan kısa sürede okunabiliyor mu? |
-| 2     | Metin "ben" odaklı mı yoksa "sen/siz" odaklı mı? (Siz odaklı olmalı) |
-| 3     | Alıcıya e-postadan çıkma (Unsubscribe/Opt-out) imkanı tanındı mı? |
-
----
-*Cold Email v1.1 - Evidence-Based Update*
+| 1 | E-posta alıcıya özel hissettiriyor mu? (Generic değil) |
+| 2 | Teklif açık ve net mi? |
+| 3 | CTA net bir eylem içeriyor mu? |

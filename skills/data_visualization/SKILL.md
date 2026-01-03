@@ -1,67 +1,43 @@
 ---
 name: data_visualization
 router_kit: FullStackKit
-description: Veri görselleştirme prensipleri, grafik türleri ve 2025 dashboard tasarım standartları.
+description: Chart.js, D3.js ve Recharts ile veri görselleştirme dashboard tasarımı.
 metadata:
   skillport:
     category: data
-    tags: [big data, charts, cleaning, csv, d3, dashboard, data analysis, data engineering, data science, data visualization, database, etl pipelines, export, import, json, machine learning basics, migration, nosql, numpy, pandas, python data stack, query optimization, recharts, reporting, schema design, sql, statistics, transformation, victory, visualization]
+    tags: [big data, cleaning, csv, data analysis, data engineering, data science, data visualization, database, etl pipelines, export, import, json, machine learning basics, migration, nosql, numpy, pandas, python data stack, query optimization, reporting, schema design, sql, statistics, transformation, visualization]      - charts
 ---
 
 # 📊 Data Visualization
 
-> Veri görselleştirme ve içgörü sunumu rehberi.
+> Veri görselleştirme ve dashboard tasarımı.
 
 ---
 
-## 🎨 Visualization Selection Matrix
+*Data Visualization v1.1 - Enhanced*
 
-| Goal | Best Chart | Why? |
-|------|------------|------|
-| **Comparison** | Bar Chart / Line | High precision |
-| **Trend** | Line / Area | Shows change over time |
-| **Distribution** | Histogram / Scatter | Shows density |
-| **Composition** | Stacked Bar / Pie | Parts of a whole |
+## 🔄 Workflow
 
----
+> **Kaynak:** [Data Visualization Principles (Tableau)](https://www.tableau.com/learn/articles/data-visualization-principles)
 
-## 📈 Dashboard Principles (2025)
+### Aşama 1: Objective & Data
+- [ ] **Question**: Hangi soruya cevap veriyoruz?
+- [ ] **Data Prep**: Görselleştirilecek veriyi filtrele ve hazırla.
 
-```markdown
-- [ ] Minimalist design (Data-to-ink ratio)
-- [ ] Accessible color palettes
-- [ ] Responsive layouts
-- [ ] Interactive filtering
-- [ ] Clear typography and labeling
-```
+### Aşama 2: Chart Selection
+- [ ] **Type**: Trendler için Line, Karşılaştırma için Bar, Oranlar için Pie seç.
+- [ ] **Tool**: `Chart.js`, `D3.js` veya `Recharts` arasından uygun olanı belirle.
 
----
+### Aşama 3: Design & UX
+- [ ] **Legibility**: Eksen etiketleri ve lejantlar okunabilir mi?
+- [ ] **Interactivity**: Mouse hover, zoom ve filtreleme özellikleri ekle.
 
-## 🔧 Workflow
-
-> **Kaynak:** [Financial Times Visual Vocabulary](https://ft.com/vocabulary)
-
-### Aşama 1: Data Profiling
-- [ ] **Type Check**: Veri kategorik mi, sayısal mı, zaman serisi mi?
-- [ ] **Volume**: Veri noktası sayısı (az ise Bar, çok ise Scatter/Line).
-- [ ] **Goal**: Amaç karşılaştırma (Bar), dağılım (Hist), ilişki (Scatter) veya kompozisyon (Pie/Stack) mu?
-
-### Aşama 2: Drafting
-- [ ] **Library**: Python için `matplotlib`/`seaborn`, Web için `D3.js`/`Recharts`.
-- [ ] **Mapping**: X/Y eksenlerini ve renk kodlarını (hue) ata.
-- [ ] **Scale**: Eksenleri sıfırdan başlat (Zorunlu olmayan durumlar hariç).
-
-### Aşama 3: Refinement (Design)
-- [ ] **Clutter**: Gereksiz çizgileri (gridlines) ve çerçeveleri kaldır.
-- [ ] **Labels**: Eksenleri ve başlığı net bir şekilde etiketle.
-- [ ] **Access**: Renk körleri için uygun palet kullan (ColorOracle ile test et).
+### Aşama 4: Testing
+- [ ] **Responsive**: Mobil ekranlarda düzgün görünüyor mu?
 
 ### Kontrol Noktaları
 | Aşama | Doğrulama |
 |-------|-----------|
-| 1 | Seçilen grafik türü veri tipine uygun mu? (Örn: Zaman serisi için Bar değil Line) |
-| 2 | Veri "ink-to-data ratio" yüksek mi? (Gereksiz süsleme yok) |
-| 3 | Eksenler manipülatif değil mi? (Truncated Y-axis uyarısı) |
-
----
-*Data Visualization v1.1 - Enhanced*
+| 1 | Görsel "yanıltıcı" mı? (Ölçeklendirme hataları) |
+| 2 | Renk paleti erişilebilir mi (Color-blind friendly)? |
+| 3 | Dashboard karmaşık mı (Data-ink ratio)? |

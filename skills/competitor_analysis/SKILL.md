@@ -1,44 +1,43 @@
 ---
 name: competitor_analysis
-router_kit: UniversalKit
-description: Rakip ürünlerin, özelliklerin ve pazar konumlandırmasının sistematik analizi.
+router_kit: FullStackKit
+description: Rakip analizi, pazar konumlama ve SWOT analizi rehberi.
 metadata:
   skillport:
     category: business
-    tags: [business, competitors, market-research, strategy, benchmarking]
+    tags: [accessibility, api integration, backend, browser apis, client-side, competitor analysis, components, css3, debugging, deployment, frameworks, frontend, fullstack, html5, javascript, libraries, node.js, npm, performance optimization, responsive design, seo, state management, testing, typescript, ui/ux, web development]      - strategy
 ---
 
-# 🏁 Competitor Analysis
+# 🕵️ Competitor Analysis
 
-Pazardaki rakiplerin zayıf ve güçlü yanlarını anlama ve strateji geliştirme.
+> Rakip analizi ve stratejik konumlama.
 
 ---
+
+*Competitor Analysis v1.1 - Enhanced*
 
 ## 🔄 Workflow
 
-> **Kaynak:** [Porter's Five Forces Framework](https://www.isc.hbs.edu/strategy/competitiveness-plus/Pages/porters-five-forces.aspx) & [G2 / Capterra Analysis](https://www.g2.com/categories/software)
+> **Kaynak:** [Competitor Analysis Framework (Harvard Business Review)](https://hbr.org/2021/11/how-to-keep-an-eye-on-your-competitors)
 
-### Aşama 1: Rakip Belirleme (Identification)
-- [ ] **Direct Competitors:** Aynı sorunu aynı yöntemle çözen ana rakipleri listele.
-- [ ] **Indirect Competitors:** Aynı sorunu farklı yöntemlerle çözen alternatifleri bul.
-- [ ] **Tiering:** Rakipleri pazar payına ve olgunluk seviyesine (Leader, Challenger, Niche) göre grupla.
+### Aşama 1: Identification
+- [ ] **Direct Competitors**: Aynı problemi aynı şekilde çözenleri listele.
+- [ ] **Indirect Competitors**: Aynı problemi farklı şekilde çözenleri listele.
 
-### Aşama 2: Veri Toplama ve Benchmarking (Data Gathering)
-- [ ] **Feature Matrix:** Ana özellikleri (Pricing, Integrations, UI/UX) rakiplerle kıyasla.
-- [ ] **Customer Sentiment:** G2, Trustpilot ve sosyal medya üzerinden rakip eksikliklerini (Pain points) not et.
-- [ ] **Tech Stack Audit:** Rakiplerin hangi altyapıyı kullandığını (BuiltWith) incele.
+### Aşama 2: Data Gathering
+- [ ] **Product**: Özellik seti, fiyatlandırma, kullanıcı yorumları.
+- [ ] **Marketing**: SEO anahtar kelimeleri, sosyal medya tonu, reklam stratejileri.
 
-### Aşama 3: SWOT ve Strateji (Strategic Synthesis)
-- [ ] **SWOT Analysis:** Her ana rakip için GZFT (SWOT) tablosu oluştur.
-- [ ] **Unique Value Prop (UVP):** Sizi rakiplerden ayıran "Neden biz?" sorusunun yanıtını netleştir.
-- [ ] **Action Plan:** Rakip boşluklarını (Gaps) dolduracak ürün geliştirme önerilerini hazırla.
+### Aşama 3: Comparison (SWOT)
+- [ ] **Matrix**: Rakibin güçleri (Strengths) ve zayıflıkları (Weaknesses).
+- [ ] **Gaps**: Rakiplerin yapmadığı ama senin yapabileceğin fırsatlar (Opportunities).
+
+### Aşama 4: Strategy
+- [ ] **USP**: Kendi "Unique Selling Proposition"ını (Eşsiz Satış Noktası) belirle.
 
 ### Kontrol Noktaları
 | Aşama | Doğrulama |
 |-------|-----------|
-| 1     | Rakiplerin fiyatlandırma (Pricing) stratejisi anlaşıldı mı? |
-| 2     | Pazarın doymuş (Saturated) mı yoksa bakir (Blue Ocean) mı olduğu saptandı mı? |
-| 3     | Rakiplerin pazarlama dili (Tone of voice) analiz edildi mi? |
-
----
-*Competitor Analysis v1.2 - Evidence-Based Update*
+| 1 | Rakipler güncel (en son çıkanlar dahil) mi? |
+| 2 | Analiz sadece "liste" mi yoksa "aksiyon alınabilir fikir" içeriyor mu? |
+| 3 | USP rakipler tarafından kolayca kopyalanabilir mi? |

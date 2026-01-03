@@ -1,44 +1,40 @@
 ---
 name: competitor_intelligence
-router_kit: UniversalKit
-description: Rakiplerin teknolojik değişimlerini, fiyatlandırma güncellemelerini ve pazar hareketlerini izleme.
+router_kit: FullStackKit
+description: Rakip veri toplama, trend analizi ve pazar istihbaratı.
 metadata:
   skillport:
     category: business
-    tags: [intelligence, competitors, market-watch, signals, strategic-data]
+    tags: [accessibility, api integration, backend, browser apis, client-side, competitor intelligence, components, css3, debugging, deployment, frameworks, frontend, fullstack, html5, javascript, libraries, node.js, npm, performance optimization, responsive design, seo, state management, testing, typescript, ui/ux, web development]      - intelligence
 ---
 
-# 🕵️ Competitor Intelligence
+# 🧠 Competitor Intelligence
 
-Rakiplerin hamlelerini gerçek zamanlıya yakın izleme ve sinyülleri yorumlama.
+> Rakip istihbaratı ve pazar takibi.
 
 ---
+
+*Competitor Intelligence v1.1 - Enhanced*
 
 ## 🔄 Workflow
 
-> **Kaynak:** [SCIP - Strategic & Competitive Intelligence Professionals](https://www.scip.org/) & [Product Hunt - Competitor Tracking](https://www.producthunt.com/)
+> **Kaynak:** [Strategic Intelligence (Gartner)](https://www.gartner.com/en/marketing/insights/competitor-intelligence)
 
-### Aşama 1: Sinyal Kaynaklarını Kurma (Signals Setup)
-- [ ] **Keyword Alerts:** Rakip isimleri ve ürünleri için Google Alerts veya Talkwalker kurulumunu yap.
-- [ ] **Social Listening:** Rakiplerin sosyal medya değişimlerini ve kullanıcı şikayetlerini izleme listesine al.
-- [ ] **Job Boards:** Rakiplerin hangi pozisyonlarda işe alım yaptığını (Linkedin Jobs) takip ederek teknolojik yönlerini anla.
+### Aşama 1: Monitoring Setup
+- [ ] **Alerts**: Google Alerts, Talkwalker veya Mention ile marka takibi kur.
+- [ ] **Tools**: SEMrush, Ahrefs (SEO) veya SimilarWeb (Traffic) araçlarını yapılandır.
 
-### Aşama 2: Teknik ve Fiyat Takibi (Technical Tracking)
-- [ ] **Pricing Monitoring:** Rakiplerin landing page ve fiyat tablolarındaki değişikliği (Wayback Machine/Visualping) tara.
-- [ ] **Feature Velocity:** Rakip bloglarını ve "Changelog" sayfalarını düzenli analiz et.
-- [ ] **Financial Reports:** (Varsa) Halka açık şirketlerin faaliyet raporlarını ve yatırım haberlerini incele.
+### Aşama 2: Data Analysis
+- [ ] **Sentiment**: Kullanıcıların rakipler hakkındaki şikayetlerini analiz et.
+- [ ] **Tech Stack**: BuiltWith veya Wappalyzer ile kullandıkları teknolojileri bul.
 
-### Aşama 3: İstihbarat Raporlama (Reporting & Intelligence)
-- [ ] **Signal Filtering:** Gürültüyü (noise) ayıkla, sadece kritik pazar değişimlerini (signals) raporla.
-- [ ] **Competitive Matrix Update:** Statik analiz dökümanlarını yeni verilerle canlı tut.
-- [ ] **Wargaming:** "Rakip X şu özelliği çıkarırsa biz ne yapmalıyız?" senaryoları (Scenario Planning) hazırlayın.
+### Aşama 3: Reporting
+- [ ] **Signals**: Rakibin yaptığı son feature launch veya fiyat değişikliği sinyalleri.
+- [ ] **Trend Map**: Sektörel kaymaları (Trend) görselleştir.
 
 ### Kontrol Noktaları
 | Aşama | Doğrulama |
 |-------|-----------|
-| 1     | Rakipteki bir fiyat değişikliği ilgili birimlere (Sales/Product) anında raporlanıyor mu? |
-| 2     | Veri kaynakları legal ve etik sınırlar içinde mi? |
-| 3     | Veriler sadece "bilgi" olarak mı kalıyor yoksa "aksiyona" dönüşüyor mu? |
-
----
-*Competitor Intelligence v1.1 - Evidence-Based Update*
+| 1 | Veriler anlık mı yoksa statik mi? |
+| 2 | "Zayıf sinyaller" (erkek uyarılar) fark edildi mi? |
+| 3 | Bulgular ürün roadmap'ini etkileyebilecek düzeyde mi? |

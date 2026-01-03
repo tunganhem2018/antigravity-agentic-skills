@@ -1,54 +1,20 @@
 ---
 name: database_migration
 router_kit: FullStackKit
-description: Database schema migrasyonları, rollback stratejileri ve zero-downtime yaklaşımları.
+description: Veritabanı şema değişimi, veri taşıma ve rollback stratejileri.
 metadata:
   skillport:
-    category: development
-    tags: [accessibility, api integration, backend, browser apis, client-side, components, css3, database migration, debugging, deployment, frameworks, frontend, fullstack, html5, javascript, libraries, node.js, npm, performance optimization, responsive design, seo, state management, testing, typescript, ui/ux, web development]      - database-design
+    category: database
+    tags: [big data, cleaning, csv, data analysis, data engineering, data science, database, database migration, etl pipelines, export, import, json, machine learning basics, migration, nosql, numpy, pandas, python data stack, query optimization, reporting, schema design, sql, statistics, transformation, visualization]      - schema-change
 ---
 
-# 🚀 Database Migration
+# 🚚 Database Migration
 
-> Veritabanı şema ve veri migrasyonu rehberi.
-
----
-
-## 📋 Migration Patterns
-
-### 1. Schema Migration (DDL)
-- **Tooling**: Prisma Migrate, Drizzle Kit, Liquibase, Flyway.
-- **Goal**: Version-controlled DB structure.
-
-### 2. Data Migration (DML)
-- **Tooling**: Custom scripts, dbt.
-- **Goal**: Transform data from old schema to new.
+> Şema değişimi ve veri taşıma yönetimi.
 
 ---
 
-## 🛡️ Best Practices
-
-- **Atomic Migrations**: Her migrasyon bağımsız ve geri alınabilir (Rollbackable) olmalı.
-- **Pre-deployment Testing**: Proda çıkmadan önce staging ortamında mutlaka test et.
-- **Idempotency**: Migrasyon scriptleri birden fazla kez çalıştırıldığında aynı sonucu vermeli.
-
----
-
-## ⏪ Rollback Strategy Example
-
-```javascript
-export const up = async (db) => {
-  await db.schema.alterTable('users', (t) => {
-    t.addColumn('phone', 'varchar(20)');
-  });
-};
-
-export const down = async (db) => {
-  await db.schema.alterTable('users', (t) => {
-    t.dropColumn('phone');
-  });
-};
-```
+*Database Migration v1.5 - With Workflow*
 
 ## 🔄 Workflow
 
@@ -75,6 +41,3 @@ export const down = async (db) => {
 | 1 | Migrasyon sırasında veritabanı kilitlendi mi? (Lock Analysis) |
 | 2 | Rollback testi yapıldı mı ve başarılı oldu mu? |
 | 3 | Migrasyon logları merkezi sistemde saklanıyor mu? |
-
----
-*Database Migration v1.5 - With Workflow*
