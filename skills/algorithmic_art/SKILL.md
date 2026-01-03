@@ -1,44 +1,49 @@
 ---
 name: algorithmic_art
-router_kit: UniversalKit
-description: Kod ve algoritmalar kullanarak sanatsal görseller ve desenler üretme teknikleri.
+router_kit: FullStackKit
+description: p5.js ile generative art, flow fields ve interactive visuals oluşturma rehberi.
 metadata:
   skillport:
-    category: creative
-    tags: [generative-art, p5js, canvas, algorithms, creative-coding]
+    category: design
+    tags: [algorithmic art, architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, utilities, version control, workflow]      - creative
 ---
 
 # 🎨 Algorithmic Art
 
-Matematiksel formüller ve algoritmalar ile görsel yaratım süreci.
+> p5.js ile generative art rehberi.
 
 ---
 
+*Algorithmic Art v1.1 - Enhanced*
+
 ## 🔄 Workflow
 
-> **Kaynak:** [The Book of Shaders](https://thebookofshaders.com/) & [p5.js Reference](https://p5js.org/reference/)
+> **Kaynak:** [Generative Design Process](https://www.illustration.app/blog/the-generative-design-process-from-ai-output-to-polished-visual)
 
-### Aşama 1: Matematiksel Temel (Mathematical Foundation)
-- [ ] **Algoritma Seçimi:** Perlin Noise, L-Systems, Particle Systems veya Fractals gibi temel tekniği belirle.
-- [ ] **Parametre Tanımlama:** Görselin değişkenlerini (Renk paleti, hız, yoğunluk, şans faktörü) tanımla.
-- [ ] **Kanvas Hazırlığı:** Çözünürlük ve render motoru (Canvas API, WebGL, SVG) seçimini yap.
+### Aşama 1: Concept & Rules
+- [ ] **Define Theme**: e.g., "Organic Decay", "Geometric Order".
+- [ ] **Set Constraints**: Color palette (max 3 colors), Aspect ratio.
+- [ ] **Choose Algorithm**: Flow fields, Cellular Automata, Recursion.
 
-### Aşama 2: Generatif Döngü (Generative Lifecycle)
-- [ ] **Render Loop:** `requestAnimationFrame` veya `draw()` döngüsünü kurarak dinamik değişimi sağla.
-- [ ] **Randomness vs Order:** Rastgelelik (Random) ve düzen (Noise) arasındaki dengeyi ayarla.
-- [ ] **User Interaction:** Kullanıcı hareketlerine (Mouse, Keyboard) göre sanatı etkileyen reaktif katmanları ekle.
+### Aşama 2: Implementation (Sketching)
+- [ ] **Setup**: Configure canvas and basic loop.
+- [ ] **Primitives**: Draw static shapes to test composition.
+- [ ] **Dynamics**: Add movement/change (using `draw()` loop).
 
-### Aşama 3: Optimizasyon ve Export (Polish & Export)
-- [ ] **Performance Audit:** Yüksek partikül sayılarında CPU/GPU yükünü optimize et (Instancing, Shaders).
-- [ ] **Post-Processing:** Görsele Bloom, Grain veya Blur gibi sanatsal filtreler ekle.
-- [ ] **High-Res Export:** Görseli PNG, MP4 veya SVG olarak yüksek kalitede kaydetme fonksiyonlarını yaz.
+### Aşama 3: Generative Logic
+- [ ] **Introduce Randomness**: Use `random()` inside controlled bounds.
+- [ ] **Apply Noise**: Replace random with `noise()` for natural flow.
+- [ ] **Interaction**: Couple variables with mouse/keyboard inputs.
+
+### Aşama 4: Tuning & Curation
+- [ ] **Parameterize**: Create variables for `scale`, `speed`, `density`.
+- [ ] **Seed Testing**: Test different `randomSeed()` values.
+- [ ] **Selection**: Curate the best outputs.
 
 ### Kontrol Noktaları
 | Aşama | Doğrulama |
 |-------|-----------|
-| 1     | Algoritma beklenmedik (Infinite) bir hesaplama döngüsüne giriyor mu? |
-| 2     | Renk paleti harmonik bir yapıda mı? |
-| 3     | Kanvas boyutu değiştiğinde (Responsive) sanat bozuluyor mu? |
-
----
-*Algorithmic Art v1.1 - Evidence-Based Update*
+| 1 | Konsept ve kısıtlamalar net |
+| 2 | Temel döngü hatasız çalışıyor |
+| 3 | Çıktı her çalıştırıldığında varyasyon gösteriyor |
+| 4 | Performans stabil (>30 FPS) |

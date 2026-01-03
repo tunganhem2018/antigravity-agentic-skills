@@ -1,44 +1,39 @@
 ---
 name: audience_intelligence
-router_kit: UniversalKit
-description: Hedef kitle analizi, segmentasyon ve veri tabanlı kullanıcı içgörüleri toplama.
+router_kit: FullStackKit
+description: Analyzes target audience demographics, psychographics, behaviors, and platform preferences to inform influencer selection and campaign strategy. Essential foundation for effective influencer marketing.
 metadata:
   skillport:
-    category: marketing
-    tags: [marketing, analytics, user-research, persona, data-driven]
+    category: auto-healed
+    tags: [agents, algorithms, analytics, artificial intelligence, audience intelligence, automation, behavior, chatbots, cognitive services, deep learning, demographics, embeddings, frameworks, generative ai, inference, large language models, llm, machine learning, market research, model fine-tuning, natural language processing, neural networks, nlp, openai, prompt engineering, rag, retrieval augmented generation, tools, user segments, vector databases, workflow automation]
 ---
 
-# 👥 Audience Intelligence
+# Audience Analyzer
 
-Veri ve davranış analizi ile hedef kitleyi derinlemesine tanıma süreci.
-
----
+This skill helps you deeply understand your target audience before selecting influencers. It analyzes demographics, behaviors, content preferences, and platform habits to ensure influencer partnerships reach the right people.
 
 ## 🔄 Workflow
 
-> **Kaynak:** [HubSpot - Buyer Personas Guide](https://blog.hubspot.com/marketing/buyer-persona-research) & [Google Analytics 4 Documentation](https://support.google.com/analytics/answer/9304153)
+> **Kaynak:** [Data-Driven Marketing Guide](https://hbr.org/topic/marketing)
 
-### Aşama 1: Veri Toplama ve Temizlik (Data Gathering)
-- [ ] **Veri Kaynakları:** Google Analytics, CRM verileri, Sosyal Medya Insights ve kullanıcı anketlerini topla.
-- [ ] **Demografik Analiz:** Yaş, lokasyon, cihaz kullanımı ve ilgi alanlarını belirle.
-- [ ] **Behavioral Tracking:** Kullanıcıların sitedeki/uygulamadaki en çok etkileşim kurduğu noktaları (Heatmaps) belirle.
+### Aşama 1: Data Gathering
+- [ ] **Quantitative**: Google Analytics, CRM data, Sales history.
+- [ ] **Qualitative**: Social listening, customer interviews.
+- [ ] **Competitor**: Analyze who interacts with rival brands.
 
-### Aşama 2: Segmentasyon ve Persona (Segmentation)
-- [ ] **Grouping:** Benzer davranış gösteren kullanıcıları segmentlere ayır.
-- [ ] **Persona Creation:** Her segment için detaylı bir "İdeal Kullanıcı" (Persona) dökümanı oluştur.
-- [ ] **Pain Points:** Kitlenin çözmek istediği ana problemleri (Frustrations) ve motivasyonlarını listele.
+### Aşama 2: Segmentation (AI/Manual)
+- [ ] **Demographic**: Yaş, Konum, Gelir (Geleneksel).
+- [ ] **Psychographic**: Değerler, İlgi alanları (Modern).
+- [ ] **Behavioral**: Satın alma sıklığı, Sadakat (Data-driven).
 
-### Aşama 3: Strateji ve Aktivasyon (Strategy & Insight)
-- [ ] **Content Alignment:** İçerik veya ürün özelliklerinin hedef kitlenin diliyle uyumunu sağla.
-- [ ] **A/B Testing:** Farklı segmentler için özelleştirilmiş mesajları test et.
-- [ ] **Feedback Loop:** Kullanıcı geri bildirimlerini düzenli olarak analiz ederek personayı güncelle.
+### Aşama 3: Persona Creation
+- [ ] **Draft Profile**: "Tech-Savvy Tina" gibi isimler ver.
+- [ ] **Empathy Map**: Ne görür, duyar, düşünür, hisseder?
+- [ ] **Influencer Match**: Bu persona kimi takip eder?
 
 ### Kontrol Noktaları
 | Aşama | Doğrulama |
 |-------|-----------|
-| 1     | Analiz edilen veriler güncel ve yeterli örneklem sayısına sahip mi? |
-| 2     | Personalar "farazi" mi yoksa gerçek verilere mi dayanıyor? |
-| 3     | Kitlenin ana motivasyonu (Value Proposition) netleşti mi? |
-
----
-*Audience Intelligence v1.1 - Evidence-Based Update*
+| 1 | Veri kaynağı güvenilir ve güncel |
+| 2 | Segmentler birbirinden net ayrışıyor (Distinct) |
+| 3 | Persona gerçekçi (hayali değil, veriye dayalı) |

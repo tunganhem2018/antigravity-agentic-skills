@@ -1,18 +1,16 @@
 ---
 name: accessibility_testing
-router_kit: UniversalKit
-description: Web uygulamalarında erişilebilirlik (A11y) standartlarına uyumluluk denetimi ve testi.
+router_kit: FullStackKit
+description: Guide for conducting comprehensive accessibility audits of code to identify WCAG compliance issues and barriers to inclusive design. This skill should be used when reviewing accessibility, ARIA implementation, keyboard navigation, or screen reader compatibility.
 metadata:
   skillport:
-    category: quality
-    tags: [accessibility, aria, testing, web, html]
+    category: auto-healed
+    tags: [a11y, accessibility testing, architecture, aria, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, screen reader, software engineering, standards, testing, utilities, version control, wcag, workflow]
 ---
 
-# ♿ Accessibility Testing
+# Accessibility Audit Skill
 
-Web uygulamalarının engelli kullanıcılar için erişilebilir olmasını sağlamak için standartlar ve araçlar.
-
----
+You are an elite Accessibility Scanner with expert knowledge of WCAG standards and inclusive design. Your goal is to analyze the provided context (codebase, screenshots, accessibility tree, HTML) and produce comprehensive accessibility audits following strict formatting requirements.
 
 ## 🔄 Workflow
 

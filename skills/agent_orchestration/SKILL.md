@@ -1,44 +1,45 @@
 ---
 name: agent_orchestration
 router_kit: AIKit
-description: Çoklu AI ajanlarının birlikte çalışması, görev dağılımı ve senkronizasyonu yönetimi.
+description: Transform clarified user requests into structured delegation prompts optimized for specialist agents (cto-architect, strategic-cto-mentor, cv-ml-architect). Use after clarification is complete, before routing to specialist agents. Ensures agents receive complete context for effective work.
 metadata:
   skillport:
-    category: ai
-    tags: [agents, orchestration, automation, multi-agent, ai-engineering]
+    category: auto-healed
+    tags: [agent orchestration, agents, algorithms, artificial intelligence, automation, chatbots, cognitive services, deep learning, embeddings, frameworks, generative ai, inference, large language models, llm, machine learning, model fine-tuning, natural language processing, neural networks, nlp, openai, prompt engineering, rag, retrieval augmented generation, tools, vector databases, workflow automation]      - agent_orchestration
 ---
 
-# 🤖 Agent Orchestration
+# Delegation Prompt Crafter
 
-Karmaşık görevleri alt parçalara bölen ve uzman ajanları koordine eden sistemler.
-
----
+Creates structured, context-rich prompts for specialist agents that maximize their effectiveness and minimize back-and-forth.
 
 ## 🔄 Workflow
 
-> **Kaynak:** [AutoGen Framework](https://github.com/microsoft/autogen) & [LangChain Multi-Agent Systems](https://python.langchain.com/docs/modules/agents/agent_types/multi_agent_systems)
+> **Kaynak:** [Multi-Agent Patterns (Microsoft)](https://microsoft.github.io/multi-agent-reference-architecture/docs/reference-architecture/Patterns.html)
 
-### Aşama 1: Tasarım ve Rol Tanımlama (Design & Persona)
-- [ ] **Rol Belirleme:** Ana görevi (Coordinator) ve alt uzmanlık alanlarını (Coder, Reviewer, Researcher) tanımla.
-- [ ] **İletişim Protokolü:** Ajanlar arası mesajlaşma formatını (JSON, Structured Text) ve sıra (Round-robin, Hierarchical) mantığını belirle.
-- [ ] **Context Injection:** Her ajanın kendi uzmanlık alanına dair başlangıç "System Prompt"larını hazırla.
+### Aşama 1: Orchestration Design
+- [ ] **Select Pattern**: Choose architecture (Hierarchical, Joint-Chat, Dynamic).
+- [ ] **Define Roles**: Map required skills to distinct agent personas.
+- [ ] **Boundary Check**: Ensure no overlap in agent responsibilities.
 
-### Aşama 2: Görev Dağılımı ve Yürütme (Tasking & Execution)
-- [ ] **Decomposition:** Büyük bir isteği küçük, yönetilebilir ve atomik alt görevlere (Micro-tasks) böl.
-- [ ] **Parallelization:** Birbirinden bağımsız görevleri aynı anda farklı ajanlara ata.
-- [ ] **Conflict Resolution:** Ajanlar arası çelişkili bilgiler oluştuğunda kimin (Boss Agent) son kararı vereceğini kurgula.
+### Aşama 2: Prompt Engineering (Delegation)
+- [ ] **Context Injection**: Prepare global context (Project, Constraints).
+- [ ] **Task Definition**: Draft clear "Primary Deliverable" for each agent.
+- [ ] **Guardrails**: Define "Out of scope" explicit boundaries.
 
-### Aşama 3: Doğrulama ve Feedback (Validation & Loop)
-- [ ] **Output Verification:** Ajanlardan gelen çıktıların format (JSON Schema) ve içerik doğruluğunu kontrol et.
-- [ ] **Self-Correction:** Hatalı çıktıları ilgili ajana geri göndererek (Reflection) düzeltmesini iste.
-- [ ] **Final Assembly:** Tüm alt sonuçları birleştirerek tek bir tutarlı çıktı oluştur.
+### Aşama 3: Routing Logic
+- [ ] **Router Config**: Define intent classification rules (Semantic/Keyword).
+- [ ] **Handoff Protocol**: Define how Agent A transfers context to Agent B.
+- [ ] **Fallback**: Define behavior when no agent matches intent.
+
+### Aşama 4: Validation & Simulation
+- [ ] **Dry Run**: Simulate conversation flow manually.
+- [ ] **Loop Detection**: Verify agents don't get stuck in "Asking clarification" loops.
+- [ ] **Token Audit**: Check context window usage per step.
 
 ### Kontrol Noktaları
 | Aşama | Doğrulama |
 |-------|-----------|
-| 1     | Her ajanın sorumluluk alanı net ve çakışmıyor mu? |
-| 2     | Sonsuz döngüleri (Infinite Loop) engelleyen timeout/iteration limitleri var mı? |
-| 3     | Ajanlar arası bilgi aktarımı (State Sharing) doğru yapılıyor mu? |
-
----
-*Agent Orchestration v1.2 - Evidence-Based Update*
+| 1 | Mimari diyagramı net, roller ayrışık |
+| 2 | Prompt'lar "Delegation Structure" formatında |
+| 3 | Router doğru ajana yönlendiriyor (>90% accuracy) |
+| 4 | Sonsuz döngü veya bağlam kaybı yok |

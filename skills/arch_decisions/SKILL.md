@@ -1,44 +1,43 @@
 ---
 name: arch_decisions
-router_kit: FullStackKit
-description: Yazılım mimarisi kararlarının (ADR) alınması, dökümante edilmesi ve gerekçelendirilmesi.
+router_kit: DevOpsKit
+description: ADR template, database selection, capacity planning ve scalability.
 metadata:
   skillport:
-    category: architecture
-    tags: [architecture, adr, documentation, decision-making, engineering-design]
+    category: thinking
+    tags: [arch decisions, architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, utilities, version control, workflow]      - arch-patterns
 ---
 
-# 🏛️ Architecture Decisions (ADR)
+# 📋 Architecture Decisions
 
-Mühendislik tercihlerinin nedenlerini ve sonuçlarını dökümante etme süreci.
+> ADR, database selection ve capacity planning.
 
 ---
+
+*Architecture Decisions v1.0*
 
 ## 🔄 Workflow
 
-> **Kaynak:** [Architectural Decision Records (ADR)](https://adr.github.io/) & [Joelonsoftware - Functional Specs](https://www.joelonsoftware.com/2000/10/02/pain-free-functional-specifications-part-1-why-bother/)
+> **Kaynak:** [AWS Architecture Blog](https://aws.amazon.com/blogs/architecture/master-architecture-decision-records-adrs-best-practices-for-effective-decision-making/)
 
-### Aşama 1: Problem ve Bağlam (Problem & Context)
-- [ ] **Problem Tanımı:** Çözülmek istenen teknik sorunu veya ihtiyacı net bir şekilde ifade et.
-- [ ] **Kısıtlar:** Bütçe, zaman, mevcut teknoloji yığını veya performans gibi kısıtları listele.
-- [ ] **Alternatifler:** Değerlendirilen diğer tüm yolları (Örn: RabbitMQ vs Redis) kısaca belirt.
+### Aşama 1: Problem Identification
+- [ ] **Context**: Problemi ve etkilerini net tanımla.
+- [ ] **Constraints**: Kısıtlamaları (Bütçe, Zaman, Teknoloji) belirle.
+- [ ] **Options**: En az 2 alternatif çözüm yolu belirle.
 
-### Aşama 2: Karar ve Gerekçe (Decision & Rationale)
-- [ ] **Seçilen Yol:** Hangi teknolojinin veya yöntemin seçildiğini yaz.
-- [ ] **Neden Seçildi?:** Seçimin arkasındaki güçlü nedenleri (Trade-offs) açıkla.
-- [ ] **Riskler:** Seçilen yolun beraberinde getirdiği teknik borçları veya riskleri dürüstçe belirt.
+### Aşama 2: Proposal (Status: Proposed)
+- [ ] **Draft**: ADR şablonunu doldur.
+- [ ] **RFC**: Takımdan yorum iste (Pull Request veya Toplantı).
+- [ ] **Evaluation**: Alternatifleri kriterlere göre puanla (Pros/Cons).
 
-### Aşama 3: Statü ve Takip (Status & Tracking)
-- [ ] **ADR Dosyası:** Kararı `docs/adr/0001-choosing-nextjs.md` formatında dökümante et.
-- [ ] **Status:** Kararın durumunu (Proposed, Accepted, Deprecated, Superceded) işaretle.
-- [ ] **Ekip Onayı:** Kararın paydaşlar (Stakeholders) tarafından gözden geçirilmesini sağla.
+### Aşama 3: Decision (Status: Accepted/Rejected)
+- [ ] **Consensus**: Kararı netleştir ve statüyü güncelle.
+- [ ] **Implications**: Kararın uzun vadeli etkilerini (Consequences) yaz.
+- [ ] **Commit**: ADR dosyasını repoya ekle.
 
 ### Kontrol Noktaları
 | Aşama | Doğrulama |
 |-------|-----------|
-| 1     | Karar dökümanı "Neden?" sorusuna 12 ay sonra bile cevap verebiliyor mu? |
-| 2     | Kararın maliyeti (Cost) ve bakım zorluğu (Maintenance) hesaba katıldı mı? |
-| 3     | ADR dosyası herkes için erişilebilir (Version Control) bir yerde mi? |
-
----
-*Arch Decisions v1.2 - Evidence-Based Update*
+| 1 | Problem ve alternatifler net mi? |
+| 2 | Takım görüşü alındı mı? |
+| 3 | Kararın "Consequences" bölümü dürüstçe yazıldı mı? |

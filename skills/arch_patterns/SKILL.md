@@ -1,44 +1,43 @@
 ---
 name: arch_patterns
 router_kit: FullStackKit
-description: Modern yazılım mimarisi desenleri (Microservices, Hexagonal, Clean Architecture) uygulama.
+description: Architecture patterns - monolith vs microservices, layered, event-driven, CQRS.
 metadata:
   skillport:
-    category: architecture
-    tags: [architecture, patterns, clean-architecture, hexagonal, ddd]
+    category: thinking
+    tags: [arch patterns, architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, utilities, version control, workflow]      - arch-decisions
 ---
 
 # 🏗️ Architecture Patterns
 
-Yazılımın temel iskeletini oluşturan yapısal desenler ve organizasyon.
+> Sistem mimarisi pattern'ları.
 
 ---
 
+*Architecture Patterns v1.1 - Enhanced*
+
 ## 🔄 Workflow
 
-> **Kaynak:** [Refactoring.Guru - Design Patterns](https://refactoring.guru/design-patterns) & [Clean Architecture by Robert C. Martin](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+> **Kaynak:** [Software Architecture Guide](https://martinfowler.com/architecture/)
 
-### Aşama 1: İhtiyaç Analizi (Needs Analysis)
-- [ ] **Karmaşıklık Değerlendirmesi:** Projenin boyutuna göre Monolith mi yoksa Microservices mi gerektiğini analiz et.
-- [ ] **Domain Discovery (DDD):** İş mantığının sınırlarını (Bounded Contexts) ve ana aktörleri belirle.
-- [ ] **Non-Functional Requirements:** Scalability, Reliability ve Maintainability önceliklerini sırala.
+### Aşama 1: Requirements Analysis
+- [ ] **Functional**: Ne yapacak? (E-ticaret, Blog, IoT)
+- [ ] **Non-Functional**: Scalability, Latency, Consistency ihtiyacı.
+- [ ] **Constraints**: Takım boyutu, bütçe, timeline.
 
-### Aşama 2: Pattern Seçimi ve Implementasyon (Pattern Selection)
-- [ ] **Layers:** Katmanlı mimari (UI, Business, Data) veya Clean Architecture (Entities, Use Cases, Web) yapısını kur.
-- [ ] **Dependency Rule:** Bağımlılıkların her zaman iç halkalara (İş mantığına) doğru olmasını sağla.
-- [ ] **Separation of Concerns:** Veritabanı kodunu iş mantığından, UI kodunu veriden tamamen izole et (Hexagonal/Ports & Adapters).
+### Aşama 2: Complexity Assesment
+- [ ] **Domain Complexity**: Karmaşıksa -> DDD + Layered/Hexagonal.
+- [ ] **Scale Complexity**: Yüksek trafik -> Event-Driven / Microservices.
+- [ ] **Data Complexity**: Raporlama ağırsa -> CQRS.
 
-### Aşama 3: Doğrulama ve Refactor (Validation & Refactor)
-- [ ] **Coupling Check:** Bileşenler arası sıkı bağ (Tight Coupling) var mı kontrol et.
-- [ ] **Unit Testing:** İş mantığının (Core Logic) dış dünyadan (DB, Web) bağımsız test edilebilirliğini doğrula.
-- [ ] **Code Review:** Mimari kuralların ihlal edilip edilmediğini (ArchUnit gibi araçlarla) denetle.
+### Aşama 3: Pattern Selection
+- [ ] **Default**: Modular Monolith ile başla.
+- [ ] **Scale-out**: Bağımsız scale gereken modülleri ayır (Microservices).
+- [ ] **Real-time**: Event-Driven ekle.
 
 ### Kontrol Noktaları
 | Aşama | Doğrulama |
 |-------|-----------|
-| 1     | Veritabanı değiştiğinde (Örn: MySQL -> MongoDB) iş mantığı kodunda değişiklik gerekiyor mu? |
-| 2     | Yeni bir özellik eklendiğinde mimari buna esneklik sağlıyor mu? |
-| 3     | Proje klasör yapısı seçilen mimari deseni yansıtıyor mu? |
-
----
-*Arch Patterns v1.3 - Evidence-Based Update*
+| 1 | Gereksinimler net (NFRs belirlendi) |
+| 2 | Seçilen pattern probleme uygun (Over-engineering değil) |
+| 3 | Takım bu mimariyi yönetebilir |

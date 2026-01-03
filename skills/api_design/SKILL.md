@@ -1,44 +1,49 @@
 ---
 name: api_design
 router_kit: FullStackKit
-description: RESTful, GraphQL ve modern API mimarileri tasarımı, dökümantasyonu ve standartları.
+description: API tasarımı, GraphQL schema, OpenAPI spec, versioning. ⚠️ Tasarım aşaması için kullan. Uygulama/security için → backend-api.
 metadata:
   skillport:
-    category: backend
-    tags: [api, rest, graphql, openapi, design-patterns]
+    category: development
+    tags: [accessibility, api design, api integration, backend, browser apis, client-side, components, css3, debugging, deployment, frameworks, frontend, fullstack, html5, javascript, libraries, node.js, npm, performance optimization, responsive design, seo, state management, testing, typescript, ui/ux, web development]      - openapi
 ---
 
 # 🔌 API Design
 
-Sürdürülebilir, ölçeklenebilir ve kullanıcı dostu arayüz tasarımı.
+> RESTful ve GraphQL API tasarımı rehberi.
 
 ---
 
+*API Design v2.0 - Compact*
+
 ## 🔄 Workflow
 
-> **Kaynak:** [Microsoft API Design Guidelines](https://github.com/microsoft/api-guidelines) & [Google API Design Guide](https://cloud.google.com/apis/design)
+> **Kaynak:** [Best Practices for API-First Development](https://timebusinesses.com/best-practices-for-api-first-development/)
 
-### Aşama 1: Sözleşme ve Modelleme (Contract & Modeling)
-- [ ] **Resource Modeling:** Kaynakları (Users, Posts, Orders) ve aralarındaki ilişkileri belirle.
-- [ ] **Protocol Selection:** İhtiyaca göre REST, GraphQL veya gRPC seçimini yap.
-- [ ] **Spec First:** Kod yazmadan önce OpenAPI (Swagger) veya GraphQL Schema dökümanını oluştur.
+### Aşama 1: Design Phase (Spec-First)
+- [ ] **Define Resources**: Identify nouns (Users, Orders) and relationships.
+- [ ] **Draft OpenAPI/Schema**: Write `openapi.yaml` or `schema.graphql` BEFORE coding.
+- [ ] **Mocking**: Use tools like Prism/Stoplight to generate mock servers from spec.
+- [ ] **Review**: Get stakeholder feedback on the mock API.
 
-### Aşama 2: Standartlar ve Güvenlik (Standards & Security)
-- [ ] **Naming Conventions:** Kebab-case, camelCase veya snake_case standartlarından birini seç ve tutarlı kal.
-- [ ] **Status Codes:** Doğru HTTP statü kodlarını (200, 201, 400, 401, 403, 404, 500) eşleştir.
-- [ ] **Security Layer:** Authentication (OAuth2, JWT) ve Rate Limiting politikalarını belirle.
+### Aşama 2: Implementation
+- [ ] **Codegen**: Generate TypeScript types/interfaces from the spec.
+- [ ] **Business Logic**: Implement controllers/resolvers connecting to services.
+- [ ] **Validation**: Ensure Zod/Joi schemas match the OpenAPI spec.
 
-### Aşama 3: Sürümleme ve Dökümantasyon (Versioning & Docs)
-- [ ] **Versioning Path:** API sürümünü (v1, v2) URL veya Header üzerinden yönetme stratejisini kur.
-- [ ] **Developer Experience:** Örnek istekler (Curl) ve hata mesajı formatlarını netleştir.
-- [ ] **Breaking Changes Strategy:** Geriye dönük uyumluluk ve "Deprecation" planını hazırla.
+### Aşama 3: Testing & Security
+- [ ] **Contract Testing**: Verify implementation matches spec (e.g., using Dredd/Pact).
+- [ ] **Security Audit**: Check Rate Limiting, AuthN/AuthZ scopes.
+- [ ] **Error Handling**: Verify standard error responses (RFC 7807).
+
+### Aşama 4: Documentation (Auto)
+- [ ] **Publish**: Deploy Swagger UI / Redoc.
+- [ ] **Changelog**: Document breaking changes if any (versioning strategy).
 
 ### Kontrol Noktaları
 | Aşama | Doğrulama |
 |-------|-----------|
-| 1     | API uç noktaları (Endpoints) "Noun-based" mi? (Örn: `/users` yerine `getUsers` değil) |
-| 2     | Hata mesajları son kullanıcıyı bilgilendirirken sistem sırlarını ifşa ediyor mu? |
-| 3     | Dökümantasyon canlı (Swagger/Redoc) ve güncel mi? |
-
----
-*API Design v1.4 - Evidence-Based Update*
+| 1 | OpenAPI spec onaylandı (lint geçerli) |
+| 2 | Kod ve Spec tipleri senkronize (codegen) |
+| 3 | Contract testleri geçiyor |
+| 4 | Dokümantasyon canlı ve güncel |

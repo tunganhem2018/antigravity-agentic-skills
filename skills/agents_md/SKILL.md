@@ -1,44 +1,54 @@
 ---
 name: agents_md
-router_kit: UniversalKit
-description: .agent klasörü ve .md dosyaları üzerinden ajan davranışlarını ve proje hafızasını yönetme.
+router_kit: AIKit
+description: AGENTS.md dosyaları oluşturma, monorepo yapılandırma ve agent instruction yönetimi rehberi.
 metadata:
   skillport:
-    category: meta
-    tags: [agents, documentation, memory, instruction-tuning, project-config]
+    category: development
+    tags: [agents, agents md, algorithms, artificial intelligence, automation, chatbots, cognitive services, deep learning, embeddings, frameworks, generative ai, inference, large language models, llm, machine learning, model fine-tuning, natural language processing, neural networks, nlp, openai, prompt engineering, rag, retrieval augmented generation, tools, vector databases, workflow automation]      - conventions
 ---
 
-# 📂 Agents.md / .agent Config
+# 🤖 AGENTS.md
 
-Ajanın bir proje içindeki davranışlarını, yasaklarını ve hafızasını yöneten konfigürasyon sistemi.
+> Agent instruction ve conventions dosyaları oluşturma rehberi.
 
 ---
+
+## 📋 AGENTS.md Nedir?
+
+AGENTS.md, AI coding assistant'ların proje özelinde kurallara uymasını sağlayan convention dosyasıdır.
+
+---
+
+*AGENTS.md v1.0 - Convention Over Configuration*
 
 ## 🔄 Workflow
 
-> **Kaynak:** [Cursor .cursorrules Standard](https://cursor.com/rules) & [Claude Code Instructions Best Practices](https://docs.anthropic.com/en/docs/agents-and-tools/claudecode)
+> **Kaynak:** [AGENTS.md Best Practices](https://agents.md)
 
-### Aşama 1: Hafıza Yapılandırması (Memory Setup)
-- [ ] **.agent Klasörü:** Proje kök dizininde `.agent/` klasörünün varlığını kontrol et/oluştur.
-- [ ] **GEMINI.md:** Proje teknolojilerini, son güncellemeleri ve ajan için "Kritik Kuralları" içeren ana dökümanı başlat.
-- [ ] **Hiyerarşi:** Global kurallar (user_global) ile projeye özel yerel kuralların (GEMINI.md) hiyerarşisini belirle.
+### Aşama 1: Context Extraction
+- [ ] **Read Project Config**: `package.json`, `tsconfig.json`, `.eslintrc`.
+- [ ] **Map Directory Structure**: Identify key folders (`src`, `app`, `lib`).
+- [ ] **Identify Unwritten Rules**: Look at existing code for naming patterns (PascalCase vs camelCase).
 
-### Aşama 2: Kural Tanımlama (Logic & Constraints)
-- [ ] **Dosya Yasakları:** Değiştirilmemesi gereken veya okunması yasak olan dosyaları (örn: `.lock`, `.env`) belirt.
-- [ ] **Coding Styles:** Projeye özel isimlendirme kurallarını (CamelCase, snake_case) ve tech-stack kısıtlarını yaz.
-- [ ] **Instruction Injection:** Ajan her başladığında bu kuralları otomatik bağlamına (Context) eklemesini sağla.
+### Aşama 2: Root Creation (`/AGENTS.md`)
+- [ ] **Project Overview**: One sentence goal description.
+- [ ] **Tech Stack**: List core frameworks and libraries.
+- [ ] **Architecture**: High-level map of the system.
+- [ ] **Conventions**: Explicit naming and coding rules.
 
-### Aşama 3: Dinamik Güncelleme (Sync & Update)
-- [ ] **Task Tracking:** Her büyük değişiklikten sonra `GEMINI.md` içindeki "Son Güncellemeler" (Recent Changes) bölümünü güncelle.
-- [ ] **Self-Correction:** Ajanın yaptığı hataları "Daha sonra yapma" şeklinde kurala (User Rules) dönüştür.
-- [ ] **Conflict Resolution:** Eskiyen veya çelişen kuralları ayıkla.
+### Aşama 3: Rule Definitions
+- [ ] **Must Haves**: "Always use TypeScript strict mode", "Always use Zod".
+- [ ] **Must Nots**: "No `any`", "No `console.log` in prod", "No class components".
+- [ ] **Preferred**: "Prefer functional components", "Prefer arrow functions".
+
+### Aşama 4: Nested & Maintenance
+- [ ] **Sub-modules**: Create specific `AGENTS.md` for `src/components`, `src/api` if complex.
+- [ ] **Sync**: Update `AGENTS.md` when adding new tech or changing patterns.
 
 ### Kontrol Noktaları
 | Aşama | Doğrulama |
 |-------|-----------|
-| 1     | `GEMINI.md` dosyası ajana her adımda rehberlik ediyor mu? |
-| 2     | Proje dışı (Global) kurallarla yerel kurallar çakışıyor mu? |
-| 3     | Kurallar yeterince öz (concise) ve net mi? |
-
----
-*Agents.md v1.3 - Evidence-Based Update*
+| 1 | Proje yapısı doğru anlaşılmış |
+| 2 | Root dosya mevcut ve okunabilir |
+| 3 | AI kuralları ihlal etmiyor (test et) |
