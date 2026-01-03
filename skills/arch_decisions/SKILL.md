@@ -1,63 +1,44 @@
 ---
 name: arch_decisions
-router_kit: DevOpsKit
-description: ADR template, database selection, capacity planning ve scalability.
+router_kit: FullStackKit
+description: Yazılım mimarisi kararlarının (ADR) alınması, dökümante edilmesi ve gerekçelendirilmesi.
 metadata:
   skillport:
-    category: thinking
-    tags: [arch decisions, architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, utilities, version control, workflow]      - arch-patterns
+    category: architecture
+    tags: [architecture, adr, documentation, decision-making, engineering-design]
 ---
 
-# 📋 Architecture Decisions
+# 🏛️ Architecture Decisions (ADR)
 
-> ADR, database selection ve capacity planning.
-
----
-
-## 📝 ADR Template
-
-```markdown
-# ADR-001: Database Selection
-
-## Status: Accepted
-
-## Context
-[Problem açıklaması]
-
-## Decision
-PostgreSQL kullanacağız.
-
-## Consequences
-### Positive
-- ACID compliance
-### Negative
-- Horizontal scaling zor
-
-## Alternatives
-- MongoDB: Rejected - JOINs için uygun değil
-```
+Mühendislik tercihlerinin nedenlerini ve sonuçlarını dökümante etme süreci.
 
 ---
 
-## 🗄️ Database Selection
+## 🔄 Workflow
 
-| SQL | NoSQL |
-|-----|-------|
-| Complex JOINs | Flexible schema |
-| ACID | High throughput |
-| Transactions | Horizontal scale |
+> **Kaynak:** [Architectural Decision Records (ADR)](https://adr.github.io/) & [Joelonsoftware - Functional Specs](https://www.joelonsoftware.com/2000/10/02/pain-free-functional-specifications-part-1-why-bother/)
+
+### Aşama 1: Problem ve Bağlam (Problem & Context)
+- [ ] **Problem Tanımı:** Çözülmek istenen teknik sorunu veya ihtiyacı net bir şekilde ifade et.
+- [ ] **Kısıtlar:** Bütçe, zaman, mevcut teknoloji yığını veya performans gibi kısıtları listele.
+- [ ] **Alternatifler:** Değerlendirilen diğer tüm yolları (Örn: RabbitMQ vs Redis) kısaca belirt.
+
+### Aşama 2: Karar ve Gerekçe (Decision & Rationale)
+- [ ] **Seçilen Yol:** Hangi teknolojinin veya yöntemin seçildiğini yaz.
+- [ ] **Neden Seçildi?:** Seçimin arkasındaki güçlü nedenleri (Trade-offs) açıkla.
+- [ ] **Riskler:** Seçilen yolun beraberinde getirdiği teknik borçları veya riskleri dürüstçe belirt.
+
+### Aşama 3: Statü ve Takip (Status & Tracking)
+- [ ] **ADR Dosyası:** Kararı `docs/adr/0001-choosing-nextjs.md` formatında dökümante et.
+- [ ] **Status:** Kararın durumunu (Proposed, Accepted, Deprecated, Superceded) işaretle.
+- [ ] **Ekip Onayı:** Kararın paydaşlar (Stakeholders) tarafından gözden geçirilmesini sağla.
+
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1     | Karar dökümanı "Neden?" sorusuna 12 ay sonra bile cevap verebiliyor mu? |
+| 2     | Kararın maliyeti (Cost) ve bakım zorluğu (Maintenance) hesaba katıldı mı? |
+| 3     | ADR dosyası herkes için erişilebilir (Version Control) bir yerde mi? |
 
 ---
-
-## 📊 Capacity Planning
-
-```markdown
-DAU: 1M users
-Requests: 20/user/day = 20M/day
-RPS: 20M / 86400 = ~230 RPS
-Peak: 230 × 3 = ~700 RPS
-```
-
----
-
-*Architecture Decisions v1.0*
+*Arch Decisions v1.2 - Evidence-Based Update*

@@ -1,124 +1,44 @@
 ---
 name: backend_database
 router_kit: FullStackKit
-description: Repository pattern, transactions, caching ve query optimization.
+description: Veritabanı şeması tasarımı, sorgu optimizasyonu ve veri yönetimi stratejileri.
 metadata:
   skillport:
-    category: development
-    tags: [accessibility, api integration, backend, backend database, browser apis, client-side, components, css3, debugging, deployment, frameworks, frontend, fullstack, html5, javascript, libraries, node.js, npm, performance optimization, responsive design, seo, state management, testing, typescript, ui/ux, web development]      - backend-api
+    category: backend
+    tags: [database, sql, nosql, optimization, modeling]
 ---
 
 # 🗄️ Backend Database
 
-> Database patterns, caching ve performance optimization.
+Veri saklama, modelleme ve hızlı erişim teknikleri.
 
 ---
 
-## 📋 1. Repository Pattern
+## 🔄 Workflow
 
-```typescript
-interface IUserRepository {
-  findById(id: string): Promise<User | null>;
-  findByEmail(email: string): Promise<User | null>;
-  create(data: CreateUserDto): Promise<User>;
-  update(id: string, data: UpdateUserDto): Promise<User>;
-  delete(id: string): Promise<void>;
-}
+> **Kaynak:** [PostgreSQL Performance Tuning Guide](https://wiki.postgresql.org/wiki/Performance_Optimization) & [MongoDB Data Modeling Best Practices](https://www.mongodb.com/developer/products/mongodb/data-modeling-best-practices/)
 
-class UserRepository implements IUserRepository {
-  constructor(private prisma: PrismaClient) {}
+### Aşama 1: Modelleme ve Şema (Modeling & Schema)
+- [ ] **Normalizasyon:** Gereksiz veri tekrarını önlemek için DB normalizasyon seviyelerini (1NF, 2NF, 3NF) uygula.
+- [ ] **Index Strategy:** Sık sorgulanan kolonlar için uygun index tiplerini (B-Tree, GIN, Hash) belirle.
+- [ ] **Constraints:** Veri bütünlüğü için `Foreign Key`, `Unique` ve `Check` kısıtlarını tanımla.
 
-  async findById(id: string) {
-    return this.prisma.user.findUnique({ where: { id } });
-  }
-}
-```
+### Aşama 2: Sorgu Optimizasyonu (Query Optimization)
+- [ ] **Explain Analyze:** Yavaş sorguları `EXPLAIN` ile analiz et ve "Sequential Scan"leri engelle.
+- [ ] **Connection Pooling:** Veritabanı bağlantılarını verimli kullanmak için pooler (Örn: Prisma Accelerate, PgBouncer) kur.
+- [ ] **Denormalization:** Çok yüksek performans gerektiren durumlarda veri tekrarına (Read-optimization) kontrollü izin ver.
 
----
+### Aşama 3: Yönetim ve Güvenlik (Admin & Security)
+- [ ] **Migration Policy:** Şema değişikliklerini sürüm kontrollü araçlarla (Prisma Migrate, Liquibase) yönet.
+- [ ] **Backup & Recovery:** Düzenli yedekleme ve felaket anında geri yükleme testlerini planla.
+- [ ] **Encryption:** Hassas verileri "At-rest" ve "In-transit" olarak şifrele.
 
-## 🔄 2. Transactions
-
-```typescript
-async function transferMoney(fromId, toId, amount) {
-  return prisma.$transaction(async (tx) => {
-    const from = await tx.account.update({
-      where: { id: fromId },
-      data: { balance: { decrement: amount } },
-    });
-    
-    if (from.balance < 0) throw new Error('Insufficient funds');
-    
-    await tx.account.update({
-      where: { id: toId },
-      data: { balance: { increment: amount } },
-    });
-  });
-}
-```
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1     | Sorgular büyük veri setlerinde (Big Data) hala hızla çalışıyor mu? |
+| 2     | Ölçeklenme için Okuma/Yazma ayrımı (Read Replicas) düşünüldü mü? |
+| 3     | SQL Injection saldırılarına karşı hazırlıklı (Prepared Statements) mısın? |
 
 ---
-
-## ⚡ 3. Caching (Redis)
-
-```typescript
-async function getCachedUser(id: string) {
-  const cacheKey = `user:${id}`;
-  
-  const cached = await redis.get(cacheKey);
-  if (cached) return JSON.parse(cached);
-  
-  const user = await userRepository.findById(id);
-  if (user) {
-    await redis.set(cacheKey, JSON.stringify(user), 'EX', 3600);
-  }
-  return user;
-}
-```
-
----
-
-## 🔍 4. Query Optimization
-
-```typescript
-// ❌ N+1 problem
-const users = await prisma.user.findMany();
-for (const user of users) {
-  await prisma.post.findMany({ where: { authorId: user.id } });
-}
-
-// ✅ Include ile tek sorgu
-const users = await prisma.user.findMany({
-  include: { posts: true },
-});
-
-// ✅ Select ile sadece gerekli alanlar
-const users = await prisma.user.findMany({
-  select: { id: true, name: true, email: true },
-});
-```
-
----
-
-## ⏱️ 5. Async Best Practices
-
-```typescript
-// ❌ Sequential
-const user = await getUser(id);
-const orders = await getOrders(id);
-
-// ✅ Parallel
-const [user, orders] = await Promise.all([
-  getUser(id),
-  getOrders(id),
-]);
-```
-
----
-
-## 🔗 İlgili Skill'ler
-- `backend-core` - Yapı, TypeScript
-- `backend-api` - Endpoints, response
-
----
-
-*Backend Database v1.0*
+*Backend Database v1.4 - Evidence-Based Update*

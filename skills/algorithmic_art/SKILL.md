@@ -1,141 +1,44 @@
 ---
 name: algorithmic_art
-router_kit: FullStackKit
-description: p5.js ile generative art, flow fields ve interactive visuals oluşturma rehberi.
+router_kit: UniversalKit
+description: Kod ve algoritmalar kullanarak sanatsal görseller ve desenler üretme teknikleri.
 metadata:
   skillport:
-    category: design
-    tags: [algorithmic art, architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, utilities, version control, workflow]      - creative
+    category: creative
+    tags: [generative-art, p5js, canvas, algorithms, creative-coding]
 ---
 
 # 🎨 Algorithmic Art
 
-> p5.js ile generative art rehberi.
+Matematiksel formüller ve algoritmalar ile görsel yaratım süreci.
 
 ---
 
-## 📋 Temel Yapı
+## 🔄 Workflow
 
-```javascript
-function setup() {
-  createCanvas(800, 600);
-  background(20);
-}
+> **Kaynak:** [The Book of Shaders](https://thebookofshaders.com/) & [p5.js Reference](https://p5js.org/reference/)
 
-function draw() {
-  // Animation loop
-}
-```
+### Aşama 1: Matematiksel Temel (Mathematical Foundation)
+- [ ] **Algoritma Seçimi:** Perlin Noise, L-Systems, Particle Systems veya Fractals gibi temel tekniği belirle.
+- [ ] **Parametre Tanımlama:** Görselin değişkenlerini (Renk paleti, hız, yoğunluk, şans faktörü) tanımla.
+- [ ] **Kanvas Hazırlığı:** Çözünürlük ve render motoru (Canvas API, WebGL, SVG) seçimini yap.
 
----
+### Aşama 2: Generatif Döngü (Generative Lifecycle)
+- [ ] **Render Loop:** `requestAnimationFrame` veya `draw()` döngüsünü kurarak dinamik değişimi sağla.
+- [ ] **Randomness vs Order:** Rastgelelik (Random) ve düzen (Noise) arasındaki dengeyi ayarla.
+- [ ] **User Interaction:** Kullanıcı hareketlerine (Mouse, Keyboard) göre sanatı etkileyen reaktif katmanları ekle.
 
-## 🔧 Temel Şekiller
+### Aşama 3: Optimizasyon ve Export (Polish & Export)
+- [ ] **Performance Audit:** Yüksek partikül sayılarında CPU/GPU yükünü optimize et (Instancing, Shaders).
+- [ ] **Post-Processing:** Görsele Bloom, Grain veya Blur gibi sanatsal filtreler ekle.
+- [ ] **High-Res Export:** Görseli PNG, MP4 veya SVG olarak yüksek kalitede kaydetme fonksiyonlarını yaz.
 
-```javascript
-// Çizgi
-line(x1, y1, x2, y2);
-
-// Dikdörtgen
-rect(x, y, width, height);
-
-// Elips
-ellipse(x, y, width, height);
-
-// Nokta
-point(x, y);
-
-// Renkler
-fill(r, g, b, alpha);
-stroke(r, g, b);
-noFill();
-noStroke();
-```
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1     | Algoritma beklenmedik (Infinite) bir hesaplama döngüsüne giriyor mu? |
+| 2     | Renk paleti harmonik bir yapıda mı? |
+| 3     | Kanvas boyutu değiştiğinde (Responsive) sanat bozuluyor mu? |
 
 ---
-
-## 🌀 Flow Fields
-
-```javascript
-let flowField = [];
-let cols, rows;
-let scale = 20;
-
-function setup() {
-  createCanvas(800, 600);
-  cols = floor(width / scale);
-  rows = floor(height / scale);
-  
-  // Create flow field
-  for (let y = 0; y < rows; y++) {
-    for (let x = 0; x < cols; x++) {
-      let angle = noise(x * 0.1, y * 0.1) * TWO_PI;
-      flowField.push(p5.Vector.fromAngle(angle));
-    }
-  }
-}
-```
-
----
-
-## ✨ Particle Systems
-
-```javascript
-class Particle {
-  constructor() {
-    this.pos = createVector(random(width), random(height));
-    this.vel = createVector(0, 0);
-    this.acc = createVector(0, 0);
-  }
-  
-  update() {
-    this.vel.add(this.acc);
-    this.vel.limit(4);
-    this.pos.add(this.vel);
-    this.acc.mult(0);
-  }
-  
-  show() {
-    point(this.pos.x, this.pos.y);
-  }
-}
-```
-
----
-
-## 🎲 Seeded Randomness
-
-```javascript
-// Reproducible randomness
-randomSeed(42);
-noiseSeed(42);
-
-// Perlin noise
-let n = noise(x, y);
-
-// Random range
-let r = random(0, 100);
-```
-
----
-
-## 🖱️ Interactivity
-
-```javascript
-function mouseMoved() {
-  // Mouse position: mouseX, mouseY
-}
-
-function mousePressed() {
-  // Click handler
-}
-
-function keyPressed() {
-  if (key === 's') {
-    saveCanvas('artwork', 'png');
-  }
-}
-```
-
----
-
-*Algorithmic Art v1.0*
+*Algorithmic Art v1.1 - Evidence-Based Update*

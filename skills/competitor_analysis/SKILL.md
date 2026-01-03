@@ -1,104 +1,44 @@
 ---
 name: competitor_analysis
-router_kit: FullStackKit
-description: Rakip analizi, SEO/strateji karşılaştırma ve pazar pozisyonlama rehberi.
+router_kit: UniversalKit
+description: Rakip ürünlerin, özelliklerin ve pazar konumlandırmasının sistematik analizi.
 metadata:
   skillport:
-    category: research
-    tags: [architecture, automation, best practices, clean code, coding, collaboration, competitor analysis, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, utilities, version control, workflow]      - strategy
+    category: business
+    tags: [business, competitors, market-research, strategy, benchmarking]
 ---
 
-# 🔍 Competitor Analysis
+# 🏁 Competitor Analysis
 
-> Rakip analizi ve strateji karşılaştırma rehberi.
-
----
-
-## 📋 Analiz Framework
-
-### 5 Forces Analysis
-```
-                 New Entrants
-                      ↓
-Suppliers → [Industry Rivalry] ← Buyers
-                      ↑
-                 Substitutes
-```
-
-### Analiz Alanları
-| Alan | Sorular |
-|------|---------|
-| **Product** | Özellikler, kalite, fiyat |
-| **Marketing** | Mesaj, kanal, positioning |
-| **Sales** | Model, süreç, fiyatlandırma |
-| **Tech** | Stack, UX, performans |
-| **Team** | Büyüklük, expertise, kültür |
+Pazardaki rakiplerin zayıf ve güçlü yanlarını anlama ve strateji geliştirme.
 
 ---
 
-## 🔧 SEO Analizi
+## 🔄 Workflow
 
-### Kontrol Listesi
-```checklist
-- [ ] Organic traffic tahmini
-- [ ] Top ranking keywords
-- [ ] Backlink profili
-- [ ] Domain authority
-- [ ] Content stratejisi
-- [ ] Technical SEO durumu
-```
+> **Kaynak:** [Porter's Five Forces Framework](https://www.isc.hbs.edu/strategy/competitiveness-plus/Pages/porters-five-forces.aspx) & [G2 / Capterra Analysis](https://www.g2.com/categories/software)
 
-### Araçlar
-- Ahrefs / SEMrush
-- SimilarWeb
-- BuiltWith
-- Google Trends
+### Aşama 1: Rakip Belirleme (Identification)
+- [ ] **Direct Competitors:** Aynı sorunu aynı yöntemle çözen ana rakipleri listele.
+- [ ] **Indirect Competitors:** Aynı sorunu farklı yöntemlerle çözen alternatifleri bul.
+- [ ] **Tiering:** Rakipleri pazar payına ve olgunluk seviyesine (Leader, Challenger, Niche) göre grupla.
 
----
+### Aşama 2: Veri Toplama ve Benchmarking (Data Gathering)
+- [ ] **Feature Matrix:** Ana özellikleri (Pricing, Integrations, UI/UX) rakiplerle kıyasla.
+- [ ] **Customer Sentiment:** G2, Trustpilot ve sosyal medya üzerinden rakip eksikliklerini (Pain points) not et.
+- [ ] **Tech Stack Audit:** Rakiplerin hangi altyapıyı kullandığını (BuiltWith) incele.
 
-## 📊 Comparison Matrix
+### Aşama 3: SWOT ve Strateji (Strategic Synthesis)
+- [ ] **SWOT Analysis:** Her ana rakip için GZFT (SWOT) tablosu oluştur.
+- [ ] **Unique Value Prop (UVP):** Sizi rakiplerden ayıran "Neden biz?" sorusunun yanıtını netleştir.
+- [ ] **Action Plan:** Rakip boşluklarını (Gaps) dolduracak ürün geliştirme önerilerini hazırla.
 
-```markdown
-| Kriter | Biz | Rakip A | Rakip B | Rakip C |
-|--------|-----|---------|---------|---------|
-| Fiyat | ⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
-| Özellik | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ |
-| UX | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
-| Support | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ |
-| **TOPLAM** | **16** | **14** | **13** | **13** |
-```
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1     | Rakiplerin fiyatlandırma (Pricing) stratejisi anlaşıldı mı? |
+| 2     | Pazarın doymuş (Saturated) mı yoksa bakir (Blue Ocean) mı olduğu saptandı mı? |
+| 3     | Rakiplerin pazarlama dili (Tone of voice) analiz edildi mi? |
 
 ---
-
-## 📝 Competitor Profile Template
-
-```markdown
-## [Competitor Name]
-
-### Overview
-- Website: [URL]
-- Founded: [Yıl]
-- HQ: [Lokasyon]
-- Employees: [Sayı]
-- Funding: [Miktar]
-
-### Product
-- Core offering: [...]
-- Key features: [...]
-- Pricing: [...]
-
-### Strengths
-1. ...
-2. ...
-
-### Weaknesses
-1. ...
-2. ...
-
-### Our Advantage
-[Bizim farkımız]
-```
-
----
-
-*Competitor Analysis v1.0*
+*Competitor Analysis v1.2 - Evidence-Based Update*

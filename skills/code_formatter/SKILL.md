@@ -1,127 +1,44 @@
 ---
 name: code_formatter
-router_kit: FullStackKit
-description: Otomatik kod formatlama, Prettier/ESLint entegrasyonu ve kod stil tutarlılığı rehberi.
+router_kit: UniversalKit
+description: Prettier, ESLint ve dile özgü formatterlar ile kod standardizasyonu.
 metadata:
   skillport:
     category: development
-    tags: [big data, cleaning, code formatter, csv, data analysis, data engineering, data science, database, etl pipelines, export, import, json, machine learning basics, migration, nosql, numpy, pandas, python data stack, query optimization, reporting, schema design, sql, statistics, transformation, visualization]      - code-style
+    tags: [formatting, linting, prettier, eslint, standards]
 ---
 
-# 🎨 Code Formatter
+# 📏 Code Formatter
 
-> Otomatik kod formatlama ve stil tutarlılığı rehberi.
-
----
-
-## 📋 Prettier Yapılandırması
-
-### .prettierrc
-```json
-{
-  "semi": true,
-  "singleQuote": true,
-  "tabWidth": 2,
-  "trailingComma": "es5",
-  "printWidth": 80,
-  "bracketSpacing": true,
-  "arrowParens": "avoid",
-  "endOfLine": "lf"
-}
-```
-
-### Komutlar
-```bash
-# Format single file
-npx prettier --write src/file.ts
-
-# Format all files
-npx prettier --write "src/**/*.{ts,tsx,js,jsx,json,css,md}"
-
-# Check without writing
-npx prettier --check "src/**/*"
-```
+Ekip içindeki kod stilini eşitleyen ve hataları oto-fix eden sistemler.
 
 ---
 
-## 🔧 ESLint Entegrasyonu
+## 🔄 Workflow
 
-### .eslintrc.js
-```javascript
-module.exports = {
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'prettier', // Prettier çakışmalarını devre dışı bırakır
-  ],
-  plugins: ['@typescript-eslint', 'react'],
-  rules: {
-    'no-console': 'warn',
-    'no-unused-vars': 'error',
-  },
-};
-```
+> **Kaynak:** [Prettier Docs](https://prettier.io/docs/en/) & [ESLint Configuration Guide](https://eslint.org/docs/latest/use/configure/)
 
-### Komutlar
-```bash
-# Lint
-npx eslint src/
+### Aşama 1: Konfigürasyon ve Kurallar (Project Standards)
+- [ ] **Formatter Choice:** Prettier, Biome veya dile özgü (gofmt, black) araçları seç.
+- [ ] **ConfigFile:** `.prettierrc` ve `.eslintrc.json` dosyalarını oluştur, ekip standartlarını (tab-width, semi, singleQuote) gir.
+- [ ] **Conflict Resolution:** Formatter ile Linter'ın çakışmaması için `eslint-config-prettier` gibi eklentileri ayarla.
 
-# Lint and fix
-npx eslint src/ --fix
+### Aşama 2: IDE ve Local Entegrasyon (Local Enforcement)
+- [ ] **Format on Save:** VS Code veya Cursor üzerinde her kayıtta otomatik formatlamayı aktif et.
+- [ ] **Git Hooks:** `husky` ve `lint-staged` ile sadece değiştirilen dosyaların commit öncesi formatlanmasını sağla.
+- [ ] **Ignore Files:** `.prettierignore` ile build klasörlerini ve bağımlılıkları hariç tut.
 
-# Specific files
-npx eslint "src/**/*.{ts,tsx}"
-```
+### Aşama 3: CI/CD Pipeline Denetimi (Pipeline Check)
+- [ ] **Lint Step:** CI sürecine `lint` komutunu ekleyerek standart dışı kodun merge edilmesini engelle.
+- [ ] **Check Mode:** Formatta düzeltme yapmak yerine sadece kontrol eden `prettier --check` komutunu çalıştır.
+- [ ] **Custom Rules:** Projeye özel isimlendirme veya yapı kuralları ekle.
+
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1     | Farklı geliştiriciler aynı dosyayı kaydettiğinde "diff" oluşuyor mu? |
+| 2     | Linter hataları (Errors vs Warnings) anlamlı bir şekilde ayrılmış mı? |
+| 3     | Otomatik düzeltilemeyen (Unfixable) hatalar için döküman linki veriliyor mu? |
 
 ---
-
-## 🔄 Git Hooks (Husky + lint-staged)
-
-### package.json
-```json
-{
-  "lint-staged": {
-    "*.{ts,tsx,js,jsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,css,md}": [
-      "prettier --write"
-    ]
-  }
-}
-```
-
-### Setup
-```bash
-npx husky-init && npm install
-npx husky add .husky/pre-commit "npx lint-staged"
-```
-
----
-
-## 📁 Ignore Files
-
-### .prettierignore
-```
-node_modules/
-dist/
-build/
-.next/
-coverage/
-*.min.js
-```
-
-### .eslintignore
-```
-node_modules/
-dist/
-build/
-*.config.js
-```
-
----
-
-*Code Formatter v1.0*
+*Code Formatter v1.1 - Evidence-Based Update*

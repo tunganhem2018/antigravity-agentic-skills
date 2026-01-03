@@ -1,102 +1,44 @@
 ---
 name: clerk_auth
-router_kit: SecurityKit
-description: Clerk modern authentication, WebAuthn, passkeys ve social auth entegrasyonu rehberi.
+router_kit: FullStackKit
+description: Clerk Authentication ile kullanıcı yönetimi, oturumlar ve korumalı rotalar.
 metadata:
   skillport:
-    category: authentication
-    tags: [accessibility, api integration, backend, browser apis, clerk auth, client-side, components, css3, debugging, deployment, frameworks, frontend, fullstack, html5, javascript, libraries, node.js, npm, performance optimization, responsive design, seo, state management, testing, typescript, ui/ux, web development]      - webauthn
+    category: security
+    tags: [auth, clerk, nextjs, react, security]
 ---
 
-# 🔐 Clerk Auth
+# 👤 Clerk Auth
 
-> Clerk modern authentication rehberi.
-
----
-
-## 📋 Kurulum
-
-```bash
-npm install @clerk/nextjs
-```
-
-### middleware.ts
-```typescript
-import { clerkMiddleware } from '@clerk/nextjs/server';
-
-export default clerkMiddleware();
-
-export const config = {
-  matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
-};
-```
+Modern, hazır UI bileşenli ve güvenli kimlik doğrulama servisi kullanımı.
 
 ---
 
-## 🔧 Provider Setup
+## 🔄 Workflow
 
-```typescript
-// app/layout.tsx
-import { ClerkProvider } from '@clerk/nextjs';
+> **Kaynak:** [Clerk Documentation](https://clerk.com/docs) & [Clerk Next.js Guide](https://clerk.com/docs/references/nextjs/overview)
 
-export default function Layout({ children }) {
-  return (
-    <ClerkProvider>
-      <html>
-        <body>{children}</body>
-      </html>
-    </ClerkProvider>
-  );
-}
-```
+### Aşama 1: Entegrasyon ve Middleware (Integration)
+- [ ] **Project Setup:** Clerk Dashboard'dan API anahtarlarını al ve `.env.local` dosyasına ekle.
+- [ ] **Provider Setup:** Uygulamayı `<ClerkProvider>` ile sar.
+- [ ] **Middleware Guard:** `clerkMiddleware()` kullanarak public ve private rotaları tanımla.
 
----
+### Aşama 2: UI ve Kullanıcı Akışları (UI Components)
+- [ ] **Auth Pages:** `<SignIn />`, `<SignUp />` ve `<UserButton />` bileşenlerini yerleştir.
+- [ ] **Customization:** Clerk Appearance API kullanarak markanızın renklerini ve tipografisini uyarla.
+- [ ] **User Metadata:** Kullanıcı profiline özel roller veya metadata ekle.
 
-## 👤 Components
+### Aşama 3: Server Side ve Webhooks (Server & Webhooks)
+- [ ] **Server Session:** `auth()` fonksiyonu ile Server Componentlarda oturum durumunu kontrol et.
+- [ ] **Webhooks:** Veritabanını Clerk ile senkronize tutmak için Svix ile webhook dinleyicileri (user.created, user.updated) kur.
+- [ ] **Organization Management:** İhtiyaç varsa Clerk Organizations özelliğini aktif ederek ekip yönetimini sağla.
 
-```typescript
-import { 
-  SignInButton, 
-  SignUpButton, 
-  UserButton,
-  SignedIn,
-  SignedOut 
-} from '@clerk/nextjs';
-
-function Header() {
-  return (
-    <header>
-      <SignedOut>
-        <SignInButton />
-        <SignUpButton />
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
-    </header>
-  );
-}
-```
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1     | Korumalı sayfalara giriş yapmadan erişilebiliyor mu? (Middleware testi) |
+| 2     | Webhook'lar güvenli (Signature verification) şekilde doğrulanıyor mu? |
+| 3     | Kullanıcı çıkış yaptığında tokenlar ve sessionlar tamamen temizleniyor mu? |
 
 ---
-
-## 🔒 Server-side Auth
-
-```typescript
-import { auth, currentUser } from '@clerk/nextjs/server';
-
-export async function GET() {
-  const { userId } = await auth();
-  
-  if (!userId) {
-    return new Response('Unauthorized', { status: 401 });
-  }
-  
-  const user = await currentUser();
-  return Response.json({ user });
-}
-```
-
----
-
-*Clerk Auth v1.0*
+*Clerk Auth v1.3 - Evidence-Based Update*

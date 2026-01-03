@@ -1,102 +1,44 @@
 ---
 name: api_design
 router_kit: FullStackKit
-description: API tasarımı, GraphQL schema, OpenAPI spec, versioning. ⚠️ Tasarım aşaması için kullan. Uygulama/security için → backend-api.
+description: RESTful, GraphQL ve modern API mimarileri tasarımı, dökümantasyonu ve standartları.
 metadata:
   skillport:
-    category: development
-    tags: [accessibility, api design, api integration, backend, browser apis, client-side, components, css3, debugging, deployment, frameworks, frontend, fullstack, html5, javascript, libraries, node.js, npm, performance optimization, responsive design, seo, state management, testing, typescript, ui/ux, web development]      - openapi
+    category: backend
+    tags: [api, rest, graphql, openapi, design-patterns]
 ---
 
 # 🔌 API Design
 
-> RESTful ve GraphQL API tasarımı rehberi.
+Sürdürülebilir, ölçeklenebilir ve kullanıcı dostu arayüz tasarımı.
 
 ---
 
-## ⚡ Quick Reference
+## 🔄 Workflow
 
-### HTTP Methods
-`GET`(read) · `POST`(create) · `PUT`(full-update) · `PATCH`(partial) · `DELETE`
+> **Kaynak:** [Microsoft API Design Guidelines](https://github.com/microsoft/api-guidelines) & [Google API Design Guide](https://cloud.google.com/apis/design)
 
-### Status Codes
-`2xx` Success · `4xx` Client Error · `5xx` Server Error
+### Aşama 1: Sözleşme ve Modelleme (Contract & Modeling)
+- [ ] **Resource Modeling:** Kaynakları (Users, Posts, Orders) ve aralarındaki ilişkileri belirle.
+- [ ] **Protocol Selection:** İhtiyaca göre REST, GraphQL veya gRPC seçimini yap.
+- [ ] **Spec First:** Kod yazmadan önce OpenAPI (Swagger) veya GraphQL Schema dökümanını oluştur.
 
-| Code | Kullanım |
-|------|----------|
-| 200/201/204 | OK/Created/No Content |
-| 400/401/403/404/422 | Bad/Unauth/Forbidden/NotFound/Validation |
-| 500/503 | Server Error/Unavailable |
+### Aşama 2: Standartlar ve Güvenlik (Standards & Security)
+- [ ] **Naming Conventions:** Kebab-case, camelCase veya snake_case standartlarından birini seç ve tutarlı kal.
+- [ ] **Status Codes:** Doğru HTTP statü kodlarını (200, 201, 400, 401, 403, 404, 500) eşleştir.
+- [ ] **Security Layer:** Authentication (OAuth2, JWT) ve Rate Limiting politikalarını belirle.
 
----
+### Aşama 3: Sürümleme ve Dökümantasyon (Versioning & Docs)
+- [ ] **Versioning Path:** API sürümünü (v1, v2) URL veya Header üzerinden yönetme stratejisini kur.
+- [ ] **Developer Experience:** Örnek istekler (Curl) ve hata mesajı formatlarını netleştir.
+- [ ] **Breaking Changes Strategy:** Geriye dönük uyumluluk ve "Deprecation" planını hazırla.
 
-## 📐 Endpoint Design
-
-```
-Pattern: /api/v{n}/{resource}/{id?}/{sub-resource?}
-
-✅ GET  /api/v1/users
-✅ GET  /api/v1/users/{id}
-✅ POST /api/v1/users
-❌ GET  /api/v1/getUsers (verb kullanma!)
-```
-
-### Query Params
-`?page=1&limit=20` · `?status=active` · `?sort=createdAt&order=desc` · `?fields=id,name`
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1     | API uç noktaları (Endpoints) "Noun-based" mi? (Örn: `/users` yerine `getUsers` değil) |
+| 2     | Hata mesajları son kullanıcıyı bilgilendirirken sistem sırlarını ifşa ediyor mu? |
+| 3     | Dökümantasyon canlı (Swagger/Redoc) ve güncel mi? |
 
 ---
-
-## 📦 Response Format
-
-```typescript
-// Success
-{ success: true, data: T, meta?: { page, total } }
-
-// Error  
-{ success: false, error: { code: string, message: string, details?: [] } }
-```
-
----
-
-## 🔄 Versioning
-
-| Yöntem | Örnek | Öneri |
-|--------|-------|-------|
-| URL (önerilen) | `/api/v1/users` | ✅ En yaygın |
-| Header | `Accept: ...version=1` | Opsiyonel |
-| Query | `?version=1` | Kaçın |
-
----
-
-## 📊 GraphQL Essentials
-
-```graphql
-type Query {
-  user(id: ID!): User
-  users(filter: Filter, pagination: Pagination): UserConnection!
-}
-
-type Mutation {
-  createUser(input: CreateUserInput!): UserPayload!
-}
-```
-
-**N+1 Çözümü:** DataLoader, Batch loading, Query complexity limiting
-
----
-
-## 📝 OpenAPI Temel
-
-```yaml
-openapi: 3.0.3
-info: { title: API, version: 1.0.0 }
-paths:
-  /users:
-    get:
-      responses:
-        '200': { $ref: '#/components/schemas/UserList' }
-```
-
----
-
-*API Design v2.0 - Compact*
+*API Design v1.4 - Evidence-Based Update*

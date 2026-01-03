@@ -1,108 +1,44 @@
 ---
 name: backend_api
 router_kit: FullStackKit
-description: REST uygulama, validation, security headers, auth patterns. ⚠️ Kod yazarken kullan. API tasarımı/GraphQL için → api-design.
+description: Sağlam, hızlı ve dökümante edilmiş backend API'leri geliştirme süreçleri.
 metadata:
   skillport:
-    category: development
-    tags: [accessibility, api integration, backend, backend api, browser apis, client-side, components, css3, debugging, deployment, frameworks, frontend, fullstack, html5, javascript, libraries, node.js, npm, performance optimization, responsive design, seo, state management, testing, typescript, ui/ux, web development]      - backend-database
+    category: backend
+    tags: [backend, api, nodejs, express, fastify]
 ---
 
-# 🌐 Backend API
+# 🏗️ Backend API
 
-> REST API tasarımı ve güvenlik best practices.
-
----
-
-## 📋 1. RESTful Endpoints
-
-```
-GET    /api/v1/users           # List
-GET    /api/v1/users/:id       # Get one
-POST   /api/v1/users           # Create
-PATCH  /api/v1/users/:id       # Partial update
-DELETE /api/v1/users/:id       # Delete
-```
-
-### HTTP Status Codes
-| Kod | Kullanım |
-|-----|----------|
-| 200 | GET, PATCH, PUT başarılı |
-| 201 | POST Created |
-| 204 | DELETE No Content |
-| 400 | Validation hatası |
-| 401 | Authentication gerekli |
-| 403 | Yetki yok |
-| 404 | Bulunamadı |
-| 429 | Rate limit |
+Verimli veri işleme ve sunum sağlayan backend servisleri.
 
 ---
 
-## ✅ 2. Input Validation (Zod)
+## 🔄 Workflow
 
-```typescript
-import { z } from 'zod';
+> **Kaynak:** [Express.js Best Practices](https://expressjs.com/en/advanced/best-practice-performance.html) & [NestJS Standards](https://docs.nestjs.com/)
 
-const CreateUserSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(8),
-  name: z.string().min(2).max(100),
-});
+### Aşama 1: İskelet ve Middleware (Setup & Middleware)
+- [ ] **Router Yapısı:** Modüler route yönetimini kur (Örn: `routes/user.js`).
+- [ ] **Global Middleware:** CORS, Helmet (Güvenlik), Compression (Bant genişliği) ve JSON parsers ekle.
+- [ ] **Error Handler:** Tüm uygulama genelinde hataları yakalayan merkezi bir middleware yaz.
 
-type CreateUserDto = z.infer<typeof CreateUserSchema>;
-```
+### Aşama 2: Business Logic ve DTO (Logic & Validation)
+- [ ] **Request Validation:** Zod veya Joi kullanarak gelen verileri (Body, Params, Query) doğrula.
+- [ ] **Service Layer:** Veritabanı işlemlerini controller'dan ayırarak servis sınıflarına taşı.
+- [ ] **Business Rules:** İş mantığını saf fonksiyonlar ile (Pure Functions) izole et.
 
----
+### Aşama 3: Performance ve Test (Optimization & Test)
+- [ ] **Caching:** Sık sorgulanan verileri Redis veya bellek içi cache ile hızlandır.
+- [ ] **Unit/Integration Tests:** API uç noktalarını (Endpoints) Supertest veya benzeri araçlarla test et.
+- [ ] **Documentation:** OpenAPI (Swagger) dökümantasyonunu otomatik olarak üret.
 
-## 🔐 3. Güvenlik
-
-### Security Headers
-```typescript
-import helmet from 'helmet';
-import rateLimit from 'express-rate-limit';
-
-app.use(helmet());
-app.use(rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
-}));
-```
-
-### JWT Authentication
-```typescript
-function authMiddleware(req, res, next) {
-  const token = req.headers.authorization?.replace('Bearer ', '');
-  if (!token) return res.status(401).json({ error: 'Token required' });
-  
-  const decoded = jwt.verify(token, env.JWT_SECRET);
-  req.user = decoded;
-  next();
-}
-```
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1     | Controller'lar "Thin" (ince), servisler "Thick" (kalın) mı? |
+| 2     | Hatalar 4xx/5xx standartlarına uygun dönüyor mu? |
+| 3     | Veritabanı sorguları (Queries) N+1 problemi içeriyor mu? |
 
 ---
-
-## 📦 4. Response Format
-
-```typescript
-interface SuccessResponse<T> {
-  success: true;
-  data: T;
-  meta?: { page, limit, total };
-}
-
-interface ErrorResponse {
-  success: false;
-  error: { code: string; message: string };
-}
-```
-
----
-
-## 🔗 İlgili Skill'ler
-- `backend-core` - TypeScript, yapı
-- `backend-database` - Repository, caching
-
----
-
-*Backend API v1.0*
+*Backend API v1.3 - Evidence-Based Update*

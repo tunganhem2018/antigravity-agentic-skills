@@ -1,150 +1,44 @@
 ---
 name: code_review
-router_kit: FullStackKit
-description: PR review, code smell detection, best practice kontrolü. ⚠️ Kod incelerken kullan. Deliverable kontrolü için → quality-validator, doküman review için → peer-review.
+router_kit: UniversalKit
+description: Kod kalitesi, güvenlik ve performans odaklı profesyonel code review süreçleri.
 metadata:
   skillport:
     category: quality
-    tags: [architecture, automation, best practices, clean code, code review, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, utilities, version control, workflow]      - code-smell
+    tags: [code-review, quality-assurance, peer-review, standards]
 ---
 
 # 🔍 Code Review
 
-> Etkili kod inceleme ve kalite kontrol rehberi.
+Yazılım kalitesini artırmak için meslektaş denetimi ve geri bildirim süreci.
 
 ---
 
-## 📋 İçindekiler
+## 🔄 Workflow
 
-1. [Review Checklist](#1-review-checklist)
-2. [Code Smell Detection](#2-code-smell-detection)
-3. [PR Best Practices](#3-pr-best-practices)
-4. [Review Comments](#4-review-comments)
+> **Kaynak:** [Google's Engineering Practices - Code Review](https://google.github.io/eng-practices/review/) & [GitHub - Best Practices for Code Review](https://github.com/features/code-review)
 
----
+### Aşama 1: Ön Kontrol ve Bağlam (Context & Self-Review)
+- [ ] **PR Description:** Değişikliğin nedenini, neyi düzelttiğini ve nasıl test edileceğini net yaz.
+- [ ] **Self-Audit:** Reviewer'a göndermeden önce formatter ve linter hatalarını temizle.
+- [ ] **Minimal Size:** PR'ları küçük tut (Atomic PR), devasa değişikliklerden kaçın.
 
-## 1. Review Checklist
+### Aşama 2: Teknik Denetim (Technical Review)
+- [ ] **Logic & Correctness:** Kodlanan algoritma gerçekten istendiği gibi çalışıyor mu? (Edge cases).
+- [ ] **Complexity:** Kod daha basit yazılabilir miydi? (DRY, KISS prensipleri).
+- [ ] **Security:** SQL Injection, XSS veya hassas veri sızıntısı riski var mı?
 
-### Fonksiyonellik
-```checklist
-- [ ] Kod istenen işi yapıyor mu?
-- [ ] Edge case'ler handle ediliyor mu?
-- [ ] Error handling yeterli mi?
-- [ ] Input validation var mı?
-```
+### Aşama 3: İletişim ve Onay (Communication & Approval)
+- [ ] **Constructive Feedback:** "Bu yanlış" demek yerine "Şu nedenle şuna çevirmek daha iyi olabilir" şeklinde yapıcı ol.
+- [ ] **Actionable Comments:** Yorumları havada bırakma, net bir aksiyon öner.
+- [ ] **Resolution:** Tüm yorumlar çözüldüğünde (Resolved) ve CI testleri yeşil olduğunda onayla (Approve).
 
-### Kod Kalitesi
-```checklist
-- [ ] DRY prensibi uygulanmış mı?
-- [ ] Single Responsibility takip ediliyor mu?
-- [ ] Naming conventions tutarlı mı?
-- [ ] Magic numbers/strings yok mu?
-```
-
-### Güvenlik
-```checklist
-- [ ] SQL injection riski var mı?
-- [ ] XSS riski var mı?
-- [ ] Sensitive data expose edilmiş mi?
-- [ ] Authentication/authorization doğru mu?
-```
-
-### Performans
-```checklist
-- [ ] N+1 query problemi var mı?
-- [ ] Gereksiz re-render var mı?
-- [ ] Memory leak riski var mı?
-- [ ] Büyük dosya/data handling doğru mu?
-```
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1     | PR dökümantasyonu okuyan biri değişikliğin amacını hemen anlayabiliyor mu? |
+| 2     | Reviewer, kodun performans etkisini (Complexity) değerlendirdi mi? |
+| 3     | Test kapsamı (Test Coverage) bu değişiklik için yeterli mi? |
 
 ---
-
-## 2. Code Smell Detection
-
-### Yaygın Code Smell'ler
-
-| Smell | Açıklama | Çözüm |
-|-------|----------|-------|
-| **Long Method** | >20 satır fonksiyon | Extract Method |
-| **Large Class** | >300 satır class | Extract Class |
-| **Long Parameter List** | >3 parametre | Parameter Object |
-| **Duplicate Code** | Tekrarlayan bloklar | Extract Method/Class |
-| **Dead Code** | Kullanılmayan kod | Sil |
-| **Magic Numbers** | Açıklamasız değerler | Constants |
-| **Deep Nesting** | >3 seviye if/loop | Early return, Extract |
-| **God Class** | Her şeyi yapan class | Single Responsibility |
-
-### Algılama Komutları
-```bash
-# ESLint complexity check
-npx eslint . --rule 'complexity: ["error", 10]'
-
-# SonarQube
-sonar-scanner
-
-# Code coverage
-npm run test:coverage
-```
-
----
-
-## 3. PR Best Practices
-
-### İdeal PR Boyutu
-- **Küçük**: <200 satır (ideal)
-- **Orta**: 200-400 satır
-- **Büyük**: >400 satır (bölünmeli)
-
-### PR Açıklama Template
-```markdown
-## Özet
-Kısa açıklama
-
-## Değişiklik Tipi
-- [ ] Bug fix
-- [ ] Yeni özellik
-- [ ] Refactoring
-- [ ] Breaking change
-
-## Test
-- Test X yapıldı
-- Test Y sonucu: başarılı
-
-## Screenshots (UI değişikliği varsa)
-```
-
-### Commit Messages
-```
-feat: Add user authentication
-fix: Resolve memory leak in cache
-refactor: Extract validation logic
-docs: Update API documentation
-test: Add unit tests for user service
-chore: Update dependencies
-```
-
----
-
-## 4. Review Comments
-
-### Etkili Yorum Yazma
-```
-❌ Kötü: "Bu yanlış"
-✅ İyi: "Bu yaklaşım X durumunda hata verebilir. Y alternatifini düşünebilir misin?"
-
-❌ Kötü: "Bunu değiştir"
-✅ İyi: "suggestion: Bu fonksiyon extract edilse okunabilirlik artar"
-```
-
-### Yorum Prefixleri
-| Prefix | Anlam |
-|--------|-------|
-| `blocking:` | Merge edilemez, düzeltilmeli |
-| `suggestion:` | Öneri, isteğe bağlı |
-| `question:` | Açıklama gerekiyor |
-| `nitpick:` | Minor, önemsiz |
-| `praise:` | İyi iş! |
-
----
-
-*Code Review v1.0 - 2025 Best Practices*
+*Code Review v1.4 - Evidence-Based Update*

@@ -1,102 +1,44 @@
 ---
 name: backend_core
 router_kit: FullStackKit
-description: Node.js/TypeScript temel prensipler, proje yapısı ve TypeScript strict mode kuralları.
+description: Dil ve framework bağımsız backend mühendisliği prensipleri ve temel yapılar.
 metadata:
   skillport:
-    category: development
-    tags: [accessibility, api integration, backend, backend core, browser apis, client-side, components, css3, debugging, deployment, frameworks, frontend, fullstack, html5, javascript, libraries, node.js, npm, performance optimization, responsive design, seo, state management, testing, typescript, ui/ux, web development]      - backend-database
+    category: backend
+    tags: [backend, computer-science, engineering, foundations]
 ---
 
-# 🔧 Backend Core
+# ⚙️ Backend Core
 
-> Node.js/TypeScript temel prensipler ve proje yapısı.
-
----
-
-## 📋 1. Kapsam
-
-| Alan | Teknoloji |
-|------|-----------|
-| Runtime | Node.js 20+ (LTS) |
-| Dil | TypeScript (Strict) |
-| Framework | NestJS, Fastify, Express |
+Backend sistemlerinin kalbindeki temel prensipler ve yapılar.
 
 ---
 
-## ⚙️ 2. TypeScript Strict Mode
+## 🔄 Workflow
 
-```json
-{
-  "compilerOptions": {
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "noImplicitReturns": true
-  }
-}
-```
+> **Kaynak:** [The Twelve-Factor App](https://12factor.net/) & [Clean Code by Robert C. Martin](https://www.oreilly.com/library/view/clean-code-a/9780136083238/)
 
-### `any` Yasak
-```typescript
-// ❌ YANLIŞ
-function process(data: any) { }
+### Aşama 1: Yapılandırma ve Bağımlılıklar (Config & Deps)
+- [ ] **Environment Variables:** Konfigürasyonu koddan ayır (.env dosyaları kullan).
+- [ ] **Dependency Management:** Bağımlılıkları açıkça tanımlayın ve versiyonları sabitleyin.
+- [ ] **Bootstrapping:** Uygulamanın başlatılma (Start-up) sürecini hatasız kurgula.
 
-// ✅ DOĞRU
-function process(data: DataPayload) { }
+### Aşama 2: Sistem Tasarımı (System Design)
+- [ ] **Concurrency:** Kaynakların güvenli kullanımını (Locks, Mutexes) sağla.
+- [ ] **Logging & Telemetry:** Uygulamanın durumunu (Health) dış dünyaya raporlayan araçları kur.
+- [ ] **Persistence:** Verinin nasıl saklanacağı ve erişileceği stratejisini (Repository Pattern) belirle.
 
-// Bilinmeyen için unknown kullan
-function parse(input: unknown) { }
-```
+### Aşama 3: Sürdürülebilirlik (Maintainability)
+- [ ] **Refactoring:** Karmaşık metotları ve "Spaghetti" yapıları temizle.
+- [ ] **Observability:** Metric, Trace ve Log üçlüsünü aktif et.
+- [ ] **Scalability:** Uygulamanın yatayda (Horizontal) ölçeklenebilir olduğunu doğrula.
 
----
-
-## 📁 3. Proje Yapısı (Feature-First)
-
-```
-src/
-├── modules/
-│   ├── auth/
-│   │   ├── auth.controller.ts
-│   │   ├── auth.service.ts
-│   │   ├── auth.repository.ts
-│   │   └── auth.dto.ts
-│   └── users/
-├── shared/
-│   ├── middleware/
-│   ├── guards/
-│   └── utils/
-├── infrastructure/
-│   ├── database/
-│   ├── cache/
-│   └── logger/
-├── config/
-└── main.ts
-```
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1     | Uygulama "Stateless" (durumsuz) olarak tasarlanmış mı? |
+| 2     | Hassas veriler (Secret Keys) asla kod içinde (Hardcoded) durmuyor değil mi? |
+| 3     | Uygulama sonlandırılırken (Shutdown) yarım kalan işleri tamamlıyor mu? |
 
 ---
-
-## 🔐 4. Environment Variables
-
-```typescript
-import { z } from 'zod';
-
-const envSchema = z.object({
-  NODE_ENV: z.enum(['development', 'production', 'test']),
-  PORT: z.string().transform(Number),
-  DATABASE_URL: z.string().url(),
-  JWT_SECRET: z.string().min(32),
-});
-
-export const env = envSchema.parse(process.env);
-```
-
----
-
-## 🔗 İlgili Skill'ler
-- `backend-api` - REST/GraphQL tasarımı
-- `backend-database` - DB patterns, caching
-
----
-
-*Backend Core v1.0*
+*Backend Core v1.1 - Evidence-Based Update*
