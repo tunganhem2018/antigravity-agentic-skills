@@ -1,104 +1,43 @@
 ---
 name: ultrathink_core
-router_kit: FullStackKit
-description: Derin analiz protokolü - meta-planlama, hipotez üretimi ve kritik değerlendirme.
+router_kit: ManagementKit
+description: Karmaşık problemleri analiz etme, kritik düşünme ve karar verme çerçevesi.
 metadata:
   skillport:
     category: thinking
-    tags: [architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, ultrathink core, utilities, version control, workflow]      - ultrathink-templates
+    tags: [architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, ultrathink core, utilities, version control, workflow]      - critical-thinking
 ---
 
 # 🧠 UltraThink Core
 
-> Maksimum düşünme kapasitesi protokolü.
+> Karmaşık problemleri çözmek ve mantıksal kararlar almak için derinlemesine analiz çerçevesi.
 
 ---
 
-## ⏰ Ne Zaman Kullanılmalı?
+*UltraThink Core v1.1 - Enhanced*
 
-| Senaryo | Örnek |
-|---------|-------|
-| Mimari kararlar | Monolith vs microservices |
-| Performans | Yavaş sorgu analizi |
-| Karmaşık bug | Race condition |
-| Sistem tasarımı | Auth sistemi |
-| Risk analizi | Değişiklik etkileri |
+## 🔄 Workflow
 
----
+> **Kaynak:** [The Art of Thinking Clearly (Rolf Dobelli)](https://www.dobelli.com/en/books/the-art-of-thinking-clearly/) & [Principles (Ray Dalio)](https://www.principles.com/)
 
-## 🚫 Ne Zaman KULLANMA!
+### Aşama 1: Problem Decomposition (The "What")
+- [ ] **Isolation**: Sorunu dış etkenlerden izole et ve kök nedeni (Root Cause) tanımla.
+- [ ] **Breaking Down**: Büyük problemi 3-4 temel alt bileşene ayır.
+- [ ] **Assumptions**: Mevcut varsayımları listele ve hangilerinin "Gerçek" hangilerinin "Tahmin" olduğunu belirle.
 
-| Durum | Neden? |
-|-------|--------|
-| Basit bug fix | Overthink - zaman kaybı |
-| Tek dosya değişikliği | Gereksiz analiz |
-| Açık gereksinim | Düşünme değil uygulama zamanı |
-| Rutin görevler | Standart skill'ler yeterli |
+### Aşama 2: Synthetical Analysis (The "How")
+- [ ] **Multi-perspective**: Problemi farklı açılardan (Kullanıcı, Yazılımcı, İş Sahibi) değerlendir.
+- [ ] **Trade-offs**: Olası çözümlerin artılarını ve eksilerini (Pros/Cons) tarafsızca tart.
+- [ ] **Impact Analysis**: Seçilen çözümün orta ve uzun vadeli yan etkilerini (Second-order effects) analiz et.
 
-> **Kural:** 5 dakikada çözülebilecek işler için UltraThink KULLANMA!
+### Aşama 3: Logical Conclusion (The "Decision")
+- [ ] **Selection**: Verilere dayalı en rasyonel çözümü seç.
+- [ ] **Roadmap**: Kararın uygulanması için somut bir adım listesi oluştur.
+- [ ] **Post-Mortem Plan**: Karar yanlış çıkarsa "Geri dönüş stratejisi"ni (Exit Plan) belirle.
 
----
-
-## 📊 Derinlik Seviyeleri
-
-| Seviye | Adım | Ne Zaman? |
-|--------|------|-----------|
-| Hafif | 3-5 | Basit karar |
-| Orta | 8-15 | Çoklu bağımlılık |
-| Derin | 20-40 | Sistem geneli |
-| Ultra | 50+ | Kritik mimari |
-
----
-
-## 🔍 5-Step Reality Check
-
-Her işlemden önce:
-
-1. **Intent:** Kullanıcı ne istiyor?
-2. **Context:** Doğru yerde miyim?
-3. **Action:** Ne yapıyorum?
-4. **Rationale:** Neden böyle?
-5. **Ripple Effect:** Ne bozulabilir?
-
----
-
-## 📋 Bilgi Haritası
-
-```markdown
-### ✅ Bilinenler
-- [Bilgi] - Kaynak: [nereden?]
-
-### ❓ Bilinmeyenler
-- [Soru] - Nasıl öğrenebiliriz?
-
-### ⚠️ Varsayımlar
-- [Varsayım] - Yanlışsa ne olur?
-```
-
----
-
-## 🏷️ AoT Etiket Yapısı
-
-Karmaşık analizlerde bu XML yapısını kullan:
-
-```xml
-<thinking>
-  Problemi analiz et. Hipotezleri listele.
-  Hiçbir kod yazma, sadece düşün.
-</thinking>
-
-<plan>
-  1. Adım 1
-  2. Adım 2
-  3. Adım 3
-</plan>
-
-<reflection>
-  Bu plan doğru mu? Alternatifler var mı?
-  Risk analizi yap.
-</reflection>
-```
-
----
-
-*UltraThink Core v2.0 - With AoT Tags*
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1 | Acele karar verildi mi? (Sistem 2 düşüncesine geçildi mi?). |
+| 2 | "Confirmation Bias" için karşıt görüşler dinlendi mi? |
+| 3 | Plan, geri dönülebilir (Reversible) adımlar içeriyor mu? |

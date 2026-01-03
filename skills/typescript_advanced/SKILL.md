@@ -1,101 +1,43 @@
 ---
 name: typescript_advanced
 router_kit: FullStackKit
-description: TypeScript 5+ advanced patterns, type utilities ve best practices rehberi.
+description: Advanced types, Generics, Utility Types ve TS config optimizasyonu.
 metadata:
   skillport:
     category: development
-    tags: [architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, typescript advanced, utilities, version control, workflow]      - patterns
+    tags: [accessibility, api integration, backend, browser apis, client-side, components, css3, debugging, deployment, frameworks, frontend, fullstack, html5, javascript, libraries, node.js, npm, performance optimization, responsive design, seo, state management, testing, typescript advanced, typescript, ui/ux, web development]      - type-safety
 ---
 
-# 📘 TypeScript Advanced
+# 🟦 TypeScript Advanced
 
-> TypeScript 5+ advanced patterns rehberi.
-
----
-
-## 📋 Utility Types
-
-```typescript
-// Partial - tüm prop'lar optional
-type PartialUser = Partial<User>;
-
-// Required - tüm prop'lar required
-type RequiredUser = Required<User>;
-
-// Pick - seçili prop'lar
-type UserName = Pick<User, 'id' | 'name'>;
-
-// Omit - prop'ları çıkar
-type UserWithoutPassword = Omit<User, 'password'>;
-
-// Record - key-value map
-type UserMap = Record<string, User>;
-
-// ReturnType - fonksiyon return tipi
-type Result = ReturnType<typeof fetchUser>;
-```
+> Tip güvenliği ile hatasız ve ölçeklenebilir JavaScript geliştirme.
 
 ---
 
-## 🔧 Advanced Patterns
+*TypeScript Advanced v1.1 - Enhanced*
 
-### Discriminated Unions
-```typescript
-type Result<T> = 
-  | { success: true; data: T }
-  | { success: false; error: string };
+## 🔄 Workflow
 
-function handle(result: Result<User>) {
-  if (result.success) {
-    console.log(result.data); // User
-  } else {
-    console.log(result.error); // string
-  }
-}
-```
+> **Kaynak:** [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/) & [Advanced TypeScript Exercises](https://typescript-exercises.github.io/)
 
-### Template Literal Types
-```typescript
-type EventName = `on${Capitalize<string>}`;
-// "onClick", "onHover", etc.
+### Aşama 1: Type Design & Safety
+- [ ] **Generics**: Yeniden kullanılabilir ve esnek tip yapıları (`T`, `K`, `V`) oluştur.
+- [ ] **Utility Types**: `Pick`, `Omit`, `Partial` ve `ReturnType` gibi dahili yardımcıları etkin kullan.
+- [ ] **Discriminated Unions**: Birbirinden farklı objeleri tip güvenli şekilde ayırt etmek için "type" tagleri kullan.
 
-type Route = `/${string}`;
-```
+### Aşama 2: Advanced patterns
+- [ ] **Conditional Types**: Tip seviyesinde mantıksal kontroller (`T extends U ? X : Y`) yap.
+- [ ] **Mapped Types**: Mevcut tipleri manipüle ederek yeni tipler üret (`{ [K in keyof T]: ... }`).
+- [ ] **Type Guards**: `is` anahtar kelimesiyle çalışma zamanında (Runtime) tip daraltma (Narrowing) yap.
 
-### Conditional Types
-```typescript
-type NonNullable<T> = T extends null | undefined ? never : T;
+### Aşama 3: Config & Performance
+- [ ] **Strict Mode**: `tsconfig.json` içinde `strict: true` ayarının açık olduğunu doğrula.
+- [ ] **Compilation**: `@ts-ignore` yerine tip tanımlarını düzelt. Proje içi `declaration` dosyalarını yönet.
+- [ ] **Declarations**: Harici kütüphaneler için eksik `@types` paketlerini yükle veya d.ts dosyası yaz.
 
-type Flatten<T> = T extends Array<infer U> ? U : T;
-```
-
----
-
-## 🎯 Zod Integration
-
-```typescript
-import { z } from 'zod';
-
-const UserSchema = z.object({
-  id: z.string().uuid(),
-  email: z.string().email(),
-  age: z.number().min(0).max(120),
-});
-
-type User = z.infer<typeof UserSchema>;
-```
-
----
-
-## ⚡ Best Practices
-
-1. **Strict mode** always on
-2. **Avoid `any`** - use `unknown` instead
-3. **Prefer interfaces** for objects
-4. **Use const assertions** for literals
-5. **Type narrowing** over type assertions
-
----
-
-*TypeScript Advanced v1.0*
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1 | `any` tipi kullanımı %0'a yakın mı? |
+| 2 | Kompleks tipler (Mapped/Conditional) kodun okunabilirliğini bozuyor mu? |
+| 3 | "Type inference" (Otomatik tip tahmini) yeterince kullanılıyor mu? |
