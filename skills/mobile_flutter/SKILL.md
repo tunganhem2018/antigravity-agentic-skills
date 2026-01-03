@@ -1,122 +1,80 @@
 ---
 name: mobile_flutter
 router_kit: FullStackKit
-description: Flutter/Dart best practices, Riverpod state management ve performance optimization.
+description: Flutter ile cross-platform mobile app development, UI architecture ve state management.
 metadata:
   skillport:
-    category: development
-    tags: [architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, mobile flutter, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, utilities, version control, workflow]      - mobile-react-native
+    category: frontend
+    tags: [android, architecture, automation, best practices, clean code, coding, collaboration, compliance, cross-platform, dart, debugging, development, documentation, efficiency, flutter, framework, git, ios, mobile development, mobile flutter, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, ui/ux, utilities, version control, workflow]      - mobile-react-native
 ---
 
-# 🐦 Mobile Flutter
+# 💙 Mobile Flutter
 
-> Flutter/Dart best practices ve performance optimization.
-
----
-
-## 📁 1. Proje Yapısı (Feature-First)
-
-```
-lib/
-├── core/
-│   ├── theme/
-│   └── widgets/
-├── features/
-│   ├── auth/
-│   │   ├── data/
-│   │   ├── domain/
-│   │   └── presentation/
-│   └── home/
-├── services/
-└── main.dart
-```
+> Google'ın UI toolkit'i Flutter ile yüksek performanslı, native uygulamalar.
 
 ---
 
-## 🧩 2. Widget Best Practices
+## 🏗️ Core Architecture
 
-```dart
-// ✅ const constructor kullan
-class MyButton extends StatelessWidget {
-  const MyButton({super.key, required this.onPressed});
-  final VoidCallback onPressed;
+### 1. Everything is a Widget
+Flutter'da UI'ın her parçası bir Widget'tır (Stateless veya Stateful).
 
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: onPressed, child: Text('Click'));
-  }
-}
-
-// ✅ const widget'ları işaretle
-const SizedBox(height: 16),
-```
+### 2. State Management Options
+- **Provider**: Basit ve standart.
+- **Riverpod**: Daha güvenli ve esnek (Önerilen).
+- **Bloc**: Büyük ve kurumsal projeler için event-driven yaklaşım.
 
 ---
 
-## 📦 3. State (Riverpod)
+## 🎨 UI & Design (Material / Cupertino)
 
-```dart
-final authProvider = StateNotifierProvider<AuthNotifier, AuthState>((ref) {
-  return AuthNotifier(ref.watch(authRepositoryProvider));
-});
+| Özellik | Flutter Yaklaşımı |
+|---------|-------------------|
+| **Layout** | Row, Column, Stack, Container |
+| **Styling** | BoxDecoration, TextStyle |
+| **Animation** | AnimationController, Hero, Lottie |
+| **Navigation** | GoRouter, Navigator 2.0 |
 
-class AuthNotifier extends StateNotifier<AuthState> {
-  AuthNotifier(this._repo) : super(const AuthState());
-  
-  Future<void> login(String email, String password) async {
-    state = state.copyWith(isLoading: true);
-    final user = await _repo.login(email, password);
-    state = state.copyWith(user: user, isLoading: false);
-  }
-}
+---
+
+## 🔧 Workflow Tools
+
+```bash
+# Bağımlılıkları yükle
+flutter pub get
+
+# Uygulamayı çalıştır
+flutter run
+
+# Build (Release)
+flutter build apk --release
+flutter build ios --release
 ```
 
 ---
 
-## ⚡ 4. Performance
+*Mobile Flutter v1.1 - Enhanced*
 
-```dart
-// ✅ ListView.builder (lazy loading)
-ListView.builder(
-  itemCount: items.length,
-  itemBuilder: (context, index) => ItemCard(item: items[index]),
-)
+## 🔄 Workflow
 
-// ✅ RepaintBoundary
-RepaintBoundary(child: ExpensiveWidget())
+> **Kaynak:** [Flutter Documentation - Best Practices](https://docs.flutter.dev/perf/best-practices)
 
-// ✅ Isolate for CPU-heavy
-final result = await compute(parseUsers, jsonString);
-```
+### Aşama 1: Project Structure
+- [ ] **Clean Architecture**: `data`, `domain` ve `presentation` katmanlarını ayır.
+- [ ] **Dependencies**: `pubspec.yaml` dosyasını düzenli tut, versiyon çakışmalarını önle.
 
----
+### Aşama 2: UI Development
+- [ ] **Responsive**: `LayoutBuilder` veya `ScreenUtil` kullanarak farklı ekran boyutlarına uyum sağla.
+- [ ] **Theming**: Uygulama çapında `ThemeData` (Dark/Light) kullan, hardcoded renk yazma.
+- [ ] **Performance**: Gereksiz `setState`'lerden kaçın, `const` constructor kullan.
 
-## 🔐 5. Secure Storage
+### Aşama 3: Native Integration & Test
+- [ ] **Platforms**: Android (Java/Kotlin) ve iOS (Swift) için gerekli izinleri (Camera, Location) konfigüre et.
+- [ ] **Testing**: Unit, Widget ve Golden (Visual) testleri yaz.
 
-```dart
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-
-final storage = FlutterSecureStorage();
-await storage.write(key: 'token', value: token);
-final token = await storage.read(key: 'token');
-```
-
----
-
-## 📱 6. Responsive
-
-```dart
-// MediaQuery
-final isTablet = MediaQuery.of(context).size.width > 600;
-
-// LayoutBuilder
-LayoutBuilder(
-  builder: (context, constraints) {
-    return constraints.maxWidth > 600 ? WideLayout() : NarrowLayout();
-  },
-)
-```
-
----
-
-*Mobile Flutter v1.0*
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1 | Uygulama 60 FPS (veya 120 FPS) akıcılığında mı? |
+| 2 | Resimler ve Assetler optimize edildi mi? |
+| 3 | Hata yönetimi (Global error handling) yapıldı mı? |

@@ -1,117 +1,70 @@
 ---
 name: market_analyst
-router_kit: FullStackKit
-description: Pazar analizi, TAM/SAM/SOM hesaplama, rekabet analizi ve müşteri segmentasyonu rehberi.
+router_kit: MarketingKit
+description: Pazar araştırması, trend analizi, SWOT ve pazar payı hesaplama teknikleri.
 metadata:
   skillport:
-    category: research
-    tags: [architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, market analyst, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, utilities, version control, workflow]      - competition
+    category: business
+    tags: [analysis, business intelligence, competitor analysis, data visualization, digital marketing, market analyst, market segmentation, marketing research, marketing strategy, marketshare, mktg, opportunity scoring, research, spreadsheet, swot analysis, trend analysis]      - competitor-analysis
 ---
 
-# 📊 Market Analyst
+# 📈 Market Analyst
 
-> Pazar analizi ve opportunity sizing rehberi.
-
----
-
-## 📈 TAM/SAM/SOM
-
-### Tanımlar
-| Metric | Açıklama |
-|--------|----------|
-| **TAM** | Total Addressable Market - Toplam pazar |
-| **SAM** | Serviceable Addressable Market - Ulaşılabilir pazar |
-| **SOM** | Serviceable Obtainable Market - Gerçekçi hedef |
-
-### Hesaplama
-```
-TAM = Toplam müşteri sayısı × Ortalama gelir
-
-SAM = TAM × (Hedeflenebilir segment %)
-
-SOM = SAM × (Pazar payı hedefi %)
-```
-
-### Örnek
-```
-TAM: 10M şirket × $1000/yıl = $10B
-SAM: $10B × 20% (SMB segment) = $2B
-SOM: $2B × 2% (1. yıl hedef) = $40M
-```
+> Pazar analizi, trend takibi ve stratejik karar verme.
 
 ---
 
-## 🔍 Rekabet Analizi
+## 🏗️ Analysis frameworks
 
-### Competitor Matrix
-| Feature | Us | Competitor A | Competitor B |
-|---------|----|--------------|--------------| 
-| Price | $$ | $$$ | $ |
-| Features | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
-| UX | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Support | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐ |
+### 1. SWOT Analysis
+- **Strengths**: Güçlü yanlar.
+- **Weaknesses**: Zayıf yanlar.
+- **Opportunities**: Fırsatlar.
+- **Threats**: Tehditler.
 
-### SWOT Analysis
-```
-         Helpful          Harmful
-       ┌─────────────┬─────────────┐
-Internal│ STRENGTHS   │ WEAKNESSES  │
-       │ • Fast dev  │ • Small team│
-       │ • UX focus  │ • No brand  │
-       ├─────────────┼─────────────┤
-External│ OPPORTUNITIES│ THREATS     │
-       │ • Growing   │ • Big players│
-       │   market    │ • Regulation │
-       └─────────────┴─────────────┘
-```
+### 2. PESTEL Analysis
+- **Political, Economic, Social, Technological, Environmental, Legal** faktörlerin etkisini inceleme.
+
+### 3. TAM / SAM / SOM
+- **TAM**: Toplam Adreslenebilir Pazar.
+- **SAM**: Hizmet Verilebilir Adreslenebilir Pazar.
+- **SOM**: Elde Edilebilir Pazar.
 
 ---
 
-## 👥 Müşteri Segmentasyonu
+## 📊 Market Research Tools
 
-### Segment Kriterleri
-| Kriter | Açıklama |
-|--------|----------|
-| Demographic | Yaş, cinsiyet, gelir |
-| Geographic | Konum, bölge |
-| Psychographic | Değerler, yaşam tarzı |
-| Behavioral | Kullanım, sadakat |
-
-### B2B Segmentasyon
-| Segment | Company Size | Budget | Sales Cycle |
-|---------|-------------|--------|-------------|
-| Enterprise | 1000+ | $$$$ | 6-12 ay |
-| Mid-Market | 100-999 | $$$ | 3-6 ay |
-| SMB | 10-99 | $$ | 1-3 ay |
-| Startup | <10 | $ | <1 ay |
+| Araç | Kullanım Amacı |
+|------|----------------|
+| **Google Trends** | Popülerlik ve trend takibi. |
+| **Statista / Gartner** | Sektörel raporlar ve veriler. |
+| **Semrush / Similarweb** | Dijital pazar payı ve trafik analizi. |
+| **SurveyMonkey / Typeform** | Kullanıcı anketleri. |
 
 ---
 
-## 📋 Market Research Template
+*Market Analyst v1.1 - Enhanced*
 
-```markdown
-## Market Overview
-- Industry: [Sektör]
-- Market Size: [TAM]
-- Growth Rate: [CAGR %]
+## 🔄 Workflow
 
-## Target Segments
-1. Primary: [Segment A]
-2. Secondary: [Segment B]
+> **Kaynak:** [Porter's Five Forces - HBR](https://hbr.org/1979/03/how-competitive-forces-shape-strategy) & [HubSpot Market Research Guide](https://blog.hubspot.com/marketing/market-research-buyers-journey-guide)
 
-## Competitive Landscape
-- Market leader: [Company]
-- Key differentiators: [...]
+### Aşama 1: Data Gathering (Primary & Secondary)
+- [ ] **Secondary Research**: Mevcut raporları, istatistikleri ve haberleri derle.
+- [ ] **Primary Research**: Müşteri anketleri veya odak grup mülakatları yap.
+- [ ] **Segmentation**: Hedef kitleyi demografik, psikografik ve davranışsal olarak böl.
 
-## Trends
-1. [Trend 1]
-2. [Trend 2]
+### Aşama 2: Competitor Benchmarking
+- [ ] **Mapping**: Rakipleri fiyat/kalite veya özellik bazlı bir matrise yerleştir.
+- [ ] **Value Prop**: Rakiplerin sunamadığı "Essiz Değer Önerini" (USP) belirle.
 
-## Opportunities
-1. [Opportunity 1]
-2. [Opportunity 2]
-```
+### Aşama 3: Reporting & Action
+- [ ] **Forecasting**: Gelecek trendlerini ve olası büyüme oranlarını tahmin et.
+- [ ] **Insights**: Sadece veri sunma, "Bu veri ne anlama geliyor?" sorusunu cevapla.
 
----
-
-*Market Analyst v1.0*
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1 | Analiz edilen pazar güncel (son 1-2 yıl) verilere mi dayanıyor? |
+| 2 | SWOT analizi aksiyona dökülebilir mi? (Sadece liste mi?) |
+| 3 | Pazardaki giriş bariyerleri (Barrier to Entry) net olarak görülebiliyor mu? |

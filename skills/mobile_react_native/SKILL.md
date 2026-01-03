@@ -1,116 +1,79 @@
 ---
 name: mobile_react_native
 router_kit: FullStackKit
-description: React Native best practices, hooks, navigation ve performance optimization.
+description: React Native ile cross-platform mobile app development, Native Modules ve Expo workflow.
 metadata:
   skillport:
-    category: development
-    tags: [accessibility, api integration, backend, browser apis, client-side, components, css3, debugging, deployment, frameworks, frontend, fullstack, html5, javascript, libraries, mobile react native, node.js, npm, performance optimization, responsive design, seo, state management, testing, typescript, ui/ux, web development]      - mobile-flutter
+    category: frontend
+    tags: [android, architecture, automation, best practices, clean code, coding, collaboration, compliance, cross-platform, debugging, development, documentation, efficiency, expo, frameworks, git, ios, javascript, mobile development, mobile react native, native modules, optimization, productivity, programming, project management, quality assurance, react native, refactoring, software engineering, standards, testing, typescript, ui/ux, utilities, version control, workflow]      - mobile-flutter
 ---
 
-# 📱 Mobile React Native
+# ⚛️ Mobile React Native
 
-> React Native best practices ve performance optimization.
+> React ile native mobil uygulama geliştirme.
 
 ---
 
-## 📁 1. Proje Yapısı
+## 🚀 Workflow Options
 
-```
-src/
-├── components/
-│   ├── common/        # Reusable
-│   └── screens/       # Screen components
-├── hooks/             # Custom hooks
-├── services/          # API, storage
-├── store/             # State (Zustand)
-├── navigation/
-└── App.tsx
+### 1. Expo (Önerilen)
+Hızlı başlangıç, managed infrastructure, EAS (Expo Application Services).
+```bash
+npx create-expo-app MyProject
 ```
 
----
-
-## ⚡ 2. Performance
-
-```typescript
-// FlatList optimizasyonu
-<FlatList
-  data={items}
-  keyExtractor={(item) => item.id}
-  removeClippedSubviews={true}
-  maxToRenderPerBatch={10}
-  windowSize={5}
-  getItemLayout={(data, index) => ({
-    length: ITEM_HEIGHT,
-    offset: ITEM_HEIGHT * index,
-    index,
-  })}
-/>
-
-// Memoization
-const Component = React.memo(({ data }) => { });
-const callback = useCallback(() => {}, [deps]);
-const value = useMemo(() => compute(), [deps]);
+### 2. React Native CLI
+Native kod (Java/Swift) üzerinde tam kontrol gerektiğinde.
+```bash
+npx react-native init MyProject
 ```
 
 ---
 
-## 🔐 3. Secure Storage
+## 🏗️ UI & components
 
-```typescript
-// ❌ AsyncStorage güvenli değil
-// ✅ SecureStore kullan
-import * as SecureStore from 'expo-secure-store';
-
-await SecureStore.setItemAsync('token', userToken);
-const token = await SecureStore.getItemAsync('token');
-```
-
----
-
-## 🧭 4. Navigation
-
-```typescript
-type RootStackParamList = {
-  Home: undefined;
-  Profile: { userId: string };
-};
-
-const Stack = createNativeStackNavigator<RootStackParamList>();
-```
+| React Native | HTML Karşılığı |
+|--------------|----------------|
+| `<View>` | `<div>` |
+| `<Text>` | `<span>` / `<p>` |
+| `<Image>` | `<img>` |
+| `<ScrollView>`| `overflow: scroll` |
+| `<FlatList>` | List rendering (optimize) |
 
 ---
 
-## 📦 5. State (Zustand)
+## 🔧 Key Libraries
 
-```typescript
-import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
-
-const useAuthStore = create(
-  persist(
-    (set) => ({
-      user: null,
-      login: (user) => set({ user }),
-      logout: () => set({ user: null }),
-    }),
-    { name: 'auth-storage' }
-  )
-);
-```
+- **Navigation**: `react-navigation`
+- **Styling**: `StyleSheet.create` or `Tailwind (NativeWind)`
+- **State**: `Zustand` or `Redux Toolkit`
+- **Animations**: `react-native-reanimated`
 
 ---
 
-## 📱 6. Platform-Specific
+*Mobile React Native v1.1 - Enhanced*
 
-```typescript
-import { Platform } from 'react-native';
+## 🔄 Workflow
 
-const padding = Platform.select({ ios: 20, android: 0 });
+> **Kaynak:** [React Native Documentation](https://reactnative.dev/docs/getting-started) & [Expo Documentation](https://docs.expo.dev/)
 
-// Dosya bazlı: Button.ios.tsx, Button.android.tsx
-```
+### Aşama 1: Environment & Setup
+- [ ] **Expo Workflow**: EAS (Expo Application Services) konfigürasyonunu yap.
+- [ ] **TypeScript**: Tüm projeyi tip güvenli (Strict mode) kur.
+- [ ] **Assets**: Splash screen ve uygulama ikonlarını tüm çözünürlükler için hazırla.
 
----
+### Aşama 2: Development Patterns
+- [ ] **Styling**: `StyleSheet` kullanırken `Flexbox` kurallarına sadık kal.
+- [ ] **Navigation**: `Stack` ve `Tab` navigasyon yapısını kurgula.
+- [ ] **Interactions**: Kullanıcı geri bildirimi için `Pressable` veya `Touchable` kullan.
 
-*Mobile React Native v1.0*
+### Aşama 3: Performance & Native
+- [ ] **Optimization**: `FlashList` kullanarak uzun listeleri akıcı hale getir.
+- [ ] **Native Modules**: Gerekliyse JSI (JavaScript Interface) üzerinden native köprüler kur.
+
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1 | Uygulama Android ve iOS simülatörlerinde aynı görünüyor mu? |
+| 2 | Deep Linking düzgün çalışıyor mu? |
+| 3 | Bundle boyutu (Release build) optimize mi? |

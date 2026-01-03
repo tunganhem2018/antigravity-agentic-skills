@@ -1,122 +1,82 @@
 ---
 name: mcp_builder
-router_kit: FullStackKit
-description: MCP (Model Context Protocol) server oluşturma, FastMCP/TypeScript SDK kullanımı ve API entegrasyonu rehberi.
+router_kit: ManagementKit
+description: Model Context Protocol (MCP) server inşa etme, resource ve tool tanımlama rehberi.
 metadata:
   skillport:
-    category: development
-    tags: [accessibility, api integration, backend, browser apis, client-side, components, css3, debugging, deployment, frameworks, frontend, fullstack, html5, javascript, libraries, mcp builder, node.js, npm, performance optimization, responsive design, seo, state management, testing, typescript, ui/ux, web development]      - server
+    category: operations
+    tags: [api integration, automation, backend, best practices, development, frameworks, javascript, mcp builder, mcp server, model context protocol, node.js, npm, optimization, software engineering, standards, typescript, utilities, workflow]      - mcp-server-developer
 ---
 
-# 🔌 MCP Builder
+# 🛠️ MCP Builder
 
-> MCP server oluşturma ve API entegrasyonu rehberi.
-
----
-
-## 📋 MCP Nedir?
-
-Model Context Protocol (MCP), LLM'lerin dış servislerle etkileşim kurmasını sağlayan standart bir protokoldür.
-
-### Kullanım Alanları
-- API entegrasyonları
-- Veritabanı bağlantıları
-- Dosya sistemi erişimi
-- Harici servis çağrıları
+> Model Context Protocol (MCP) server oluşturma ve araç (tool) geliştirme.
 
 ---
 
-## 🐍 Python (FastMCP)
+## 🏗️ MCP Core Concepts
 
-### Kurulum
-```bash
-pip install fastmcp
-```
-
-### Basit Server
-```python
-from fastmcp import FastMCP
-
-mcp = FastMCP("my-server")
-
-@mcp.tool()
-def hello(name: str) -> str:
-    """Say hello to someone."""
-    return f"Hello, {name}!"
-
-@mcp.tool()
-def add(a: int, b: int) -> int:
-    """Add two numbers."""
-    return a + b
-
-if __name__ == "__main__":
-    mcp.run()
-```
-
-### Resource Ekleme
-```python
-@mcp.resource("config://app")
-def get_config() -> str:
-    """Get application configuration."""
-    return json.dumps({"version": "1.0"})
-```
+- **Resources**: LLM'in okuyabileceği statik veriler (örn: dosyalar, DB kayıtları).
+- **Tools**: LLM'in çalıştırabileceği aksiyonlar (örn: API call, dosya yazma).
+- **Prompts**: LLM'e sunulan özel talimat şablonları.
 
 ---
 
-## 📘 TypeScript (MCP SDK)
+## 🚀 Creating a Tool
 
-### Kurulum
-```bash
-npm install @modelcontextprotocol/sdk
-```
-
-### Server Oluşturma
 ```typescript
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-
-const server = new McpServer({
-  name: "my-server",
-  version: "1.0.0",
-});
-
-server.tool("hello", { name: "string" }, async ({ name }) => {
-  return { content: [{ type: "text", text: `Hello, ${name}!` }] };
-});
-
-const transport = new StdioServerTransport();
-await server.connect(transport);
-```
-
----
-
-## ⚙️ Yapılandırma
-
-### mcp_config.json
-```json
-{
-  "mcpServers": {
-    "my-server": {
-      "command": "python",
-      "args": ["path/to/server.py"],
-      "env": {
-        "API_KEY": "your-key"
-      }
-    }
+server.tool(
+  "calculate_sum",
+  "Calculates the sum of two numbers",
+  {
+    a: z.number(),
+    b: z.number()
+  },
+  async ({ a, b }) => {
+    return {
+      content: [{ type: "text", text: (a + b).toString() }]
+    };
   }
-}
+);
 ```
 
 ---
 
-## 🎯 Best Practices
+## 📦 Implementation Details
 
-1. **Tool naming**: Açıklayıcı, lowercase, hyphen-separated
-2. **Descriptions**: Her tool için detaylı docstring
-3. **Error handling**: Try-catch ile hata yönetimi
-4. **Type hints**: Parametre tipleri belirt
-5. **Validation**: Input validation yap
+| Adım | İşlem |
+|------|-------|
+| **Setup** | `npx @modelcontextprotocol/create-server` |
+| **Define** | Resource ve tool'ları tanımla. |
+| **Logic** | Tool içerisindeki iş mantığını (Business logic) yaz. |
+| **Build** | `npm run build` ile derle. |
+| **Config** | Claude / IDE config dosyasına server'ı ekle. |
 
 ---
 
-*MCP Builder v1.0*
+*MCP Builder v1.1 - Enhanced*
+
+## 🔄 Workflow
+
+> **Kaynak:** [Model Context Protocol (MCP) Documentation](https://modelcontextprotocol.io/)
+
+### Aşama 1: Scope & Definition
+- [ ] **Identify**: LLM'in hangi yeteneğe/veriye ihtiyacı var? (Dosya okuma? API erişimi?).
+- [ ] **Capabilities**: Resource mu (Read-only) yoksa Tool mu (Action) olacağına karar ver.
+- [ ] **Schema**: Girdi parametrelerini `zod` ile sıkı şekilde tanımla.
+
+### Aşama 2: Development & Testing
+- [ ] **Server Setup**: `StdioServerTransport` veya `HttpServerTransport` seç.
+- [ ] **Error Handling**: Beklenmedik durumlarda LLM'e anlamlı hata mesajları dön.
+- [ ] **Inspector**: `mcp-inspector` kullanarak server'ı LLM dışında test et.
+
+### Aşama 3: Deployment & Config
+- [ ] **Binary**: Server'ı global bir paket veya executable haline getir.
+- [ ] **Integration**: `claude_desktop_config.json` içine server yolunu ve environment variable'ları ekle.
+
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1 | Tool açıklamaları (description) LLM için yeterince açıklayıcı mı? |
+| 2 | Hassas veriler (API Key) loglara sızıyor mu? |
+| 3 | Tool, uzun süren işlemlerde timeout'a düşüyor mu? |
