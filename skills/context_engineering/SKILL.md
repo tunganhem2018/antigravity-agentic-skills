@@ -1,32 +1,54 @@
 ---
 name: context_engineering
 router_kit: AIKit
-description: Apply optimization techniques to extend effective context capacity. Use when context limits constrain agent performance, when optimizing for cost or latency, or when implementing long-running agent systems.
+description: Context window, token management ve KV-cache optimizasyonu stratejileri.
 metadata:
   skillport:
-    category: auto-healed
-    tags: [architecture, automation, best practices, clean code, coding, collaboration, compliance, context engineering, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, utilities, version control, workflow]      - context_engineering
+    category: ai
+    tags: [architecture, automation, best practices, clean code, coding, collaboration, compliance, context engineering, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, utilities, version control, workflow]      - context-management
 ---
 
-# Context Optimization Techniques
+# 🧠 Context Engineering
 
-Context optimization extends the effective capacity of limited context windows through strategic compression, masking, caching, and partitioning. The goal is not to magically increase context windows but to make better use of available capacity. Effective optimization can double or triple effective context capacity without requiring larger models or longer contexts.
+> Context window ve token yönetimi uzmanlığı.
 
-## When to Activate
+---
 
-Activate this skill when:
-- Context limits constrain task complexity
-- Optimizing for cost reduction (fewer tokens = lower costs)
-- Reducing latency for long conversations
-- Implementing long-running agent systems
-- Needing to handle larger documents or conversations
-- Building production systems at scale
+## 🏗️ Context Optimization Techniques
 
-## Core Concepts
+### 1. KV-Cache Optimization
+- **Goal**: Minimize redundant computation.
+- **Strategy**: Keep system prompts and tool definitions at the prefix.
+- **Result**: Faster TTFT (Time to First Token).
 
-Context optimization extends effective capacity through four primary strategies: compaction (summarizing context near limits), observation masking (replacing verbose outputs with references), KV-cache optimization (reusing cached computations), and context partitioning (splitting work across isolated contexts).
+### 2. Context Compaction
+- **Technique**: Summarize old history.
+- **Threshold**: Compact when context reaches 80% limit.
+- **Preservation**: Keep key decisions and metrics.
 
-The key insight is that context quality matters more than quantity. Optimization preserves signal while reducing noise. The art lies in selecting what to keep versus what to discard, and when to apply each technique.
+---
+
+## 📊 Token Usage Matrix
+
+| Operation | Cost (Tokens) | Strategy |
+|-----------|---------------|----------|
+| **System Prompt** | ~1k-5k | Keep static |
+| **Tool Calls** | ~500/call | Use concise names |
+| **Long Context** | Up to 128k+ | Use caching |
+
+---
+
+## 🛠️ Context Budget Plan
+
+```json
+{
+  "system_instructions": 2000,
+  "tools_definition": 3000,
+  "history_buffer": 50000,
+  "scratchpad": 10000,
+  "reserve": 5000
+}
+```
 
 ## Detailed Topics
 
@@ -182,3 +204,32 @@ External resources:
 **Last Updated**: 2025-12-20
 **Author**: Agent Skills for Context Engineering Contributors
 **Version**: 1.0.0
+
+---
+
+*Context Engineering v1.1 - Enhanced*
+
+## 🔄 Workflow
+
+> **Kaynak:** [Anthropic Context Optimization Guide](https://docs.anthropic.com/en/docs/build-with-claude/context-caching)
+
+### Aşama 1: Analysis & Measurement
+- [ ] **Audit**: Mevcut prompt'u ve conversation history'yi tokenize et.
+- [ ] **Identify**: Statik blokları (Sistem prompt, tool definitions) belirle.
+- [ ] **Budget**: Toplam limitin %70'ini aşan kısımları işaretle.
+
+### Aşama 2: Optimization Implementation
+- [ ] **Cache**: Statik blokları (System Prompt + Tools) en başa al (KV-Cache Friendly).
+- [ ] **Compact**: Eski mesaj özetlerini (Compaction) oluştur.
+- [ ] **Mask**: Büyük tool çıktılarını (Observation Masking) `id` ile referansla.
+
+### Aşama 3: Performance Validation
+- [ ] **Recall Test**: "Needle in a haystack" testi ile kayıp bilgi var mı kontrol et.
+- [ ] **Latency**: TTFT (Time to First Token) süresindeki iyileşmeyi ölç.
+
+### Kontrol Noktaları
+| Aşama | Doğrulama |
+|-------|-----------|
+| 1 | Statik içerik her requestte değişmiyor (Timestamp vb. yok) |
+| 2 | Tool çıktıları raw JSON yerine özetlenmiş mi? |
+| 3 | Cache Hit Rate > %80 mi? |
