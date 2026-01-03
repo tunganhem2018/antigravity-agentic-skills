@@ -1,53 +1,16 @@
 ---
 name: git_workflow
-router_kit: ManagementKit
-description: Professional Git workflow, branching strategies ve conventional commits.
+router_kit: FullStackKit
+description: Git branching modelleri (Gitflow, Trunk-based), commit kuralları ve merge stratejileri.
 metadata:
   skillport:
-    category: operations
-    tags: [architecture, automation, best practices, branching, clean code, coding, collaboration, compliance, debugging, deployment, development, devops, efficiency, git, git workflow, GitHub CLI, optimization, productivity, programming, quality assurance, software engineering, standards, testing, version control, workflow]      - code-review
+    category: development
+    tags: [architecture, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, git workflow, optimization, productivity, programming, project management, quality assurance, refactoring, software engineering, standards, testing, utilities, version control, workflow]      - version-control
 ---
 
 # 🌿 Git Workflow
 
-> Professional Git workflow ve collaboration standartları.
-
----
-
-## 🏗️ Branching Strategy
-
-| Branch | Amaç |
-|--------|------|
-| `main` | Production (Her zaman stabil) |
-| `develop` | Integration (Yeni özelliklerin toplandığı yer) |
-| `feature/*` | Yeni özellik geliştirme |
-| `fix/*` | Bug fix |
-| `hotfix/*` | Acil production yamaları |
-
----
-
-## 📜 Conventional Commits
-
-Format: `<type>(<scope>): <description>`
-
-- `feat`: Yeni bir özellik
-- `fix`: Bug düzeltmesi
-- `docs`: Dokümantasyon değişikliği
-- `style`: Kod formatı değişikliği (boşluk, virgül vb)
-- `refactor`: Ne özellik ekleyen ne de bug düzelten kod değişikliği
-- `test`: Test ekleme veya mevcut testleri düzeltme
-- `chore`: Build süreci veya yardımcı araç değişiklikleri
-
----
-
-## 🔄 PR Workflow
-
-1. **Pull**: En güncel `develop` branch'ini çek.
-2. **Branch**: Yeni bir feature branch oluştur.
-3. **Commit**: Küçük, atomik ve conventional commit'ler yap.
-4. **Push**: Branch'i remote'a push et.
-5. **PR**: Bir Pull Request aç ve ekip arkadaşlarını review için ata.
-6. **Merge**: Onay sonrası `squash and merge` ile birleştir.
+> Etkin sürüm kontrolü ve işbirliği stratejileri.
 
 ---
 
@@ -55,25 +18,23 @@ Format: `<type>(<scope>): <description>`
 
 ## 🔄 Workflow
 
-> **Kaynak:** [Conventional Commits](https://www.conventionalcommits.org/) & [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow)
+> **Kaynak:** [Gitflow Workflow (Atlassian)](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) & [Conventional Commits](https://www.conventionalcommits.org/)
 
-### Aşama 1: Branching & Commits
-- [ ] **Naming**: Branch ismini `type/issue-id-short-description` (örn: `feat/12-user-login`) formatında aç.
-- [ ] **Atomic**: Her commit tek bir mantıksal değişikliği temsil etsin.
-- [ ] **Conventional**: Commit mesajlarını standartlara göre yaz.
+### Aşama 1: Branching Strategy
+- [ ] **Select Model**: Trunk-based (Küçük/Hızlı) veya Gitflow (Düzenli sürüm) seçimini yap.
+- [ ] **Branch Naming**: `feat/`, `fix/`, `chore/` prefix kurallarını belirle.
 
-### Aşama 2: Peer Review (PR)
-- [ ] **Description**: PR açıklamasında "ne yapıldı?", "nasıl test edilir?" ve "ilgili issue" bilgilerini ver.
-- [ ] **Self-Review**: PR'ı başkasına atmadan önce kendin kodunu diff üzerinden gözden geçir.
-- [ ] **Feedback**: Gelen yorumları hızlıca cevapla ve gerekli düzeltmeleri yap.
+### Aşama 2: Development & Committing
+- [ ] **Atomic Commits**: Her değişikliği küçük, bağımsız commit'lere böl.
+- [ ] **Conventional Commits**: Mesaj formatını (`type: description`) takip et.
 
-### Aşama 3: Cleanup
-- [ ] **Merge**: Merge sonrası lokal ve remote branch'leri sil.
-- [ ] **Rebase**: `main` geride kaldıysa `git rebase main` ile çelişkileri (conflict) çöz.
+### Aşama 3: Pull Request & Review
+- [ ] **Review**: Kodu ana branch ile birleştirmeden önce PR aç ve review iste.
+- [ ] **Merge**: Merge, Squash veya Rebase yöntemlerinden uygun olanı kullan.
 
 ### Kontrol Noktaları
 | Aşama | Doğrulama |
 |-------|-----------|
-| 1 | Commit mesajı 50 karakterden kısa ve emir kipiyle (Imperative) başlıyor mu? |
-| 2 | PR'da "Work In Progress" (WIP) etiketi var mı? |
-| 3 | Merge edilmeden önce tüm CI/CD testleri geçti mi? |
+| 1 | Commit mesajları projeyi bilmeyen biri için anlaşılır mı? |
+| 2 | Kod çakışmaları (Conflicts) ana branch'e dokunmadan çözüldü mü? |
+| 3 | Merge sonrası commit geçmişi (History) temiz mi? |
